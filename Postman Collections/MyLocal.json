@@ -1,0 +1,55 @@
+{
+  "info": {
+    "name": "MyLocal",
+    "_postman_id": "4358eb74-52ee-9232-4054-1109c6f9d09d",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "ebd061e3-e735-98e4-d150-7b969f97abb6",
+      "name": "GET - Node Hello World ",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
+              "postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
+              "postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "localhost:8080",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
+        },
+        "description": ""
+      }
+    }
+  ]
+}
