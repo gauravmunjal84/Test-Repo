@@ -469,56 +469,6 @@
       "response": []
     },
     {
-      "_postman_id": "0681e56a-f2c5-abdb-69ce-18c0f1db4b03",
-      "name": "GET notifications @after GET upgradePackages",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "",
-              "tests[\"Verify published notification is unacknowledged by default\"] = data.content[0].ack.ackState === \"UNACK\";",
-              "",
-              "tests[\"Verify the severity of notification\"] = data.content[0].severity === \"NOTIFICATION\";",
-              "",
-              "tests[\"Verify the category of notification\"] = data.content[0].category === \"MONITORING\";"
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://{{ip}}:8443/api/v1/events?filter=properties.component eq\"TelMgr\" and catalogCode eq \"TLM\" and summary eq\"An upgrade package of version: 2.0.0-5-SNAPSHOT is available to download from the upgrades tab.\"",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "1e582870-c17f-6a25-b79f-c2a22c2d0ff6",
       "name": "Assign a package to a serial number",
       "request": {
