@@ -772,32 +772,6 @@
       "response": []
     },
     {
-      "_postman_id": "5bcc4717-ef23-6698-e71a-85652efab01f",
-      "name": "GET file by id",
-      "request": {
-        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages/{{esrsPackageId}}",
-        "method": "GET",
-        "header": [
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
-        },
-        "description": "Reads the response from catalog"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "7e83847c-49b9-c20b-dcab-9186624deeb4",
       "name": "GET esrs upgrade package schedule  ",
       "event": [
