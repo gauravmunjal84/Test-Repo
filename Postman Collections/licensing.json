@@ -68,7 +68,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n\r\n\"type\":\"unserved\", \r\n\r\n \"key\": \"#############################################################\\n# EMC License File\\n# Activation Date:  Jun 15, 2016 04:23:48 PM\\n# Activated By:  xxxxBobbie xxxxBourque\\n# Type:UNSERVED\\n#############################################################\\nINCREMENT EMC_ECDM EMCLM 1.0 permanent uncounted \\n\\tVENDOR_STRING=\\\"TYPE=CAPACITY;FETB=1;PRODUCT_LINE=EMC \\n\\tECDM;FEATURE_NAME=EMC Enterprise Copy Data \\n\\tManagement;UOM_CODE=CA;UOM_NAME=Registered Capacity in \\n\\tTB;SWID=ELM24DQLD04S22;PLC=ECDM\\\" HOSTID=ANY \\n\\tdist_info=\\\"ACTIVATED TO Nordstrom\\\" ISSUER=EMC \\n\\tISSUED=15-Jun-2016 NOTICE=\\\"ACTIVATED TO License Site Number: \\n\\tPTA15JUN20161264559\\\" SN=2351747 TS_OK SIGN=\\\"00A1 956D 84BD \\n\\tE61C 8F25 4AE1 D6DA CB00 BC87 9C29 7F11 01C6 C051 6F10 FC02\\\"\"\r\n}"
+          "raw": "{{licenseKey}}"
         },
         "description": "This request will POST a valid license"
       },
