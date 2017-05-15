@@ -318,49 +318,6 @@
       ]
     },
     {
-      "_postman_id": "1a81ea0d-b553-4a63-4181-876c0330a25f",
-      "name": "Post valid license",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/licenses/{{licenseId}}",
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{ \n\t\"type\":\"unserved\", \n\t\"key\": \"{{licenseKey}}\" \n\t\n}\n"
-        },
-        "description": "This request will POST a valid license"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "34b9ff10-8d73-2f56-7092-cd360b354769",
       "name": "Get License @before adding",
       "event": [
@@ -409,6 +366,49 @@
         ],
         "body": {},
         "description": "This request will return existing license; blank response if no license"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "1a81ea0d-b553-4a63-4181-876c0330a25f",
+      "name": "Post valid license",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/licenses/{{licenseId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \n\t\"type\":\"unserved\", \n\t\"key\": \"{{licenseKey}}\" \n\t\n}\n"
+        },
+        "description": "This request will POST a valid license"
       },
       "response": []
     },
