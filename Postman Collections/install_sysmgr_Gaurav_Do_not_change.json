@@ -1,0 +1,2805 @@
+{
+  "variables": [],
+  "info": {
+    "name": "install_sysmgr_Gaurav_Do_not_change",
+    "_postman_id": "d363ef2e-93eb-12c7-a434-cb822b08e56d",
+    "description": "This suite will run the following:\nGET /api/v1/login\nGET /api/v1/nodes\nGET /api/v1/nodes/{id}\nGET /api/v1/nodes/{id}/configurations\nGET /api/v1/nodes/{id}/configurations/{id}",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "76f95f78-f64b-707d-c778-a48272bce20a",
+      "name": "init",
+      "description": "",
+      "item": []
+    },
+    {
+      "_postman_id": "e8d830af-0541-1553-dd1c-afe56f3ad750",
+      "name": "GET list of nodes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": [
+        {
+          "id": "1ecdc824-a059-5136-d174-26a0b43e1fb7",
+          "name": "sky30  maintenance failed",
+          "originalRequest": {
+            "url": "https://{{ip}}:8443/api/v1/tasks",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "enabled": true,
+                "description": "The mime type of this content"
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "enabled": true
+              }
+            ],
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Access-Control-Allow-Headers",
+              "key": "Access-Control-Allow-Headers",
+              "value": "x-requested-with",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "key": "Access-Control-Allow-Methods",
+              "value": "PUT, POST, GET, OPTIONS, DELETE",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "key": "Access-Control-Allow-Origin",
+              "value": "*, https://10.13.204.30:14443",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Max-Age",
+              "key": "Access-Control-Max-Age",
+              "value": "3600",
+              "description": ""
+            },
+            {
+              "name": "Cache-Control",
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate",
+              "description": ""
+            },
+            {
+              "name": "Content-Length",
+              "key": "Content-Length",
+              "value": "13029",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Fri, 29 Apr 2016 23:40:03 GMT",
+              "description": ""
+            },
+            {
+              "name": "Expires",
+              "key": "Expires",
+              "value": "0",
+              "description": ""
+            },
+            {
+              "name": "Pragma",
+              "key": "Pragma",
+              "value": "no-cache",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "Apache-Coyote/1.1",
+              "description": ""
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000 ; includeSubDomains",
+              "description": ""
+            },
+            {
+              "name": "X-Content-Type-Options",
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "description": ""
+            },
+            {
+              "name": "X-XSS-Protection",
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "description": ""
+            },
+            {
+              "name": "x-auth-token",
+              "key": "x-auth-token",
+              "value": "b5024fbc-7127-4a44-8dde-88c5d06640b0",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "127",
+          "body": "{\"content\":[{\"id\":\"c3a24540-f147-48a5-b297-5e82454935b9\",\"name\":\"Syncing the log level of LogSource: Configuration Manager\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/09904fa7-0149-463a-9ae5-d9f71a8cfabd\"}},\"description\":\"Syncing the log level of LogSource: Configuration Manager from: INFO to: DEBUG\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:05:52.368+0000\",\"endTime\":\"2016-04-29T23:05:53.962+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Configuration Manager has been successfully synced at log level: DEBUG\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"525d8d7b-1933-4105-aa32-acbcb6c952c6\",\"name\":\"Syncing the log level of LogSource: Authservice\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/d05cc8cb-c204-491f-b111-723b4280de32\"}},\"description\":\"Syncing the log level of LogSource: Authservice from: INFO to: DEBUG\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:05:54.086+0000\",\"endTime\":\"2016-04-29T23:05:55.696+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Authservice has been successfully synced at log level: DEBUG\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"b3155e7e-c9e7-40a3-a909-c38c6085917c\",\"name\":\"Syncing the log level of LogSource: Authservice\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/d05cc8cb-c204-491f-b111-723b4280de32\"}},\"description\":\"Syncing the log level of LogSource: Authservice from: DEBUG to: INFO\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:23.549+0000\",\"endTime\":\"2016-04-29T23:18:24.954+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Authservice has been successfully synced at log level: INFO\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"7ec0f89e-4801-4206-9da3-b4c314b688ff\",\"name\":\"Workflow: WorkflowExec (Compliance Verification 1461971889506)\",\"category\":\"MANAGE\",\"username\":\"componentAdmin\",\"children\":[{\"id\":\"db03bc91-95a9-4a38-981b-d8191485248f\",\"link\":{\"rel\":\"child\",\"href\":\"/tasks/db03bc91-95a9-4a38-981b-d8191485248f\"}}],\"owner\":{\"name\":\"workflow\",\"link\":{\"rel\":\"workflow\",\"href\":\"/workflows/6f9ef4f1-0dd5-4776-932c-f3f1a81269c2\"}},\"description\":\"Task for Workflow: WorkflowExec (Compliance Verification 1461971889506) (6f9ef4f1-0dd5-4776-932c-f3f1a81269c2)\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:20:09.884+0000\",\"endTime\":\"2016-04-29T23:23:00.344+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"c34ef812-61d1-42b3-8983-75e160f78902\",\"name\":\"Workflow: WorkflowExec (Compliance Verification 1461971889506)\",\"category\":\"MANAGE\",\"username\":\"componentAdmin\",\"children\":[{\"id\":\"948ca744-ff46-4e7e-aae8-ba5220db6f0b\",\"link\":{\"rel\":\"child\",\"href\":\"/tasks/948ca744-ff46-4e7e-aae8-ba5220db6f0b\"}}],\"owner\":{\"name\":\"workflow\",\"link\":{\"rel\":\"workflow\",\"href\":\"/workflows/6f9ef4f1-0dd5-4776-932c-f3f1a81269c2\"}},\"description\":\"Task for Workflow: WorkflowExec (Compliance Verification 1461971889506) (6f9ef4f1-0dd5-4776-932c-f3f1a81269c2)\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:35:10.080+0000\",\"endTime\":\"2016-04-29T23:37:02.656+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"65316a65-305f-4ae3-86ee-2072ef0e94f0\",\"name\":\"Syncing the log level of LogSource: System Manager\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/174c927e-1a10-4768-b2e2-370b9284363d\"}},\"description\":\"Syncing the log level of LogSource: System Manager from: INFO to: DEBUG\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:05:50.336+0000\",\"endTime\":\"2016-04-29T23:05:51.990+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource System Manager has been successfully synced at log level: DEBUG\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"48c9a047-4b8b-4f58-9b45-96ef4e88d63d\",\"name\":\"Syncing the log level of LogSource: Discovery Service\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/b589a1ac-dcc1-474b-ac3d-ccb848e50740\"}},\"description\":\"Syncing the log level of LogSource: Discovery Service from: INFO to: DEBUG\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:05:55.906+0000\",\"endTime\":\"2016-04-29T23:05:57.524+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Discovery Service has been successfully synced at log level: DEBUG\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"a6bcbedc-c90a-4daa-be32-a34ede37195d\",\"name\":\"Discovery Service\",\"category\":\"DISCOVER\",\"username\":\"componentAdmin\",\"owner\":{\"name\":\"Discovery Service: f7e3b9aa-87cf-409c-bff4-0938424edf67\",\"link\":{\"rel\":\"discoveryJob\",\"href\":\"/discoveryJobs/f7e3b9aa-87cf-409c-bff4-0938424edf67\"}},\"description\":\"Start a discovery job execution\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:06:00.545+0000\",\"endTime\":\"2016-04-29T23:06:33.630+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"70c506c9-6988-4a58-89ee-5a4c2cdca4ed\",\"name\":\"StorageMgrTask\",\"category\":\"CONFIG\",\"username\":\"componentAdmin\",\"parent\":{\"id\":\"178fdc1a-bd67-462b-a15d-08ec805d0e50\",\"link\":{\"rel\":\"workflowTask\",\"href\":\"/tasks/178fdc1a-bd67-462b-a15d-08ec805d0e50\"}},\"owner\":{\"name\":\"StorageMgrTask\",\"link\":{\"rel\":\"\",\"href\":\"\"}},\"description\":\"StorageMgrTask, Type Configuration,Operation ConfigureVdisks\",\"state\":\"Running\",\"startTime\":\"2016-04-29T23:18:12.764+0000\",\"progress\":0,\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"d0e1eaf7-2b6e-4cca-9f77-bd99a2b0aae1\",\"name\":\"Syncing the log level of LogSource: Discovery Service\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/b589a1ac-dcc1-474b-ac3d-ccb848e50740\"}},\"description\":\"Syncing the log level of LogSource: Discovery Service from: DEBUG to: INFO\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:25.101+0000\",\"endTime\":\"2016-04-29T23:18:26.460+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Discovery Service has been successfully synced at log level: INFO\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"db03bc91-95a9-4a38-981b-d8191485248f\",\"name\":\"Discovery Service\",\"category\":\"DISCOVER\",\"username\":\"componentAdmin\",\"parent\":{\"id\":\"7ec0f89e-4801-4206-9da3-b4c314b688ff\",\"link\":{\"rel\":\"workflowTask\",\"href\":\"/tasks/7ec0f89e-4801-4206-9da3-b4c314b688ff\"}},\"owner\":{\"name\":\"Discovery Service: 8d2c39e9-1a0a-4ba4-853b-2477b0d9a6a0\",\"link\":{\"rel\":\"discoveryJob\",\"href\":\"/discoveryJobs/8d2c39e9-1a0a-4ba4-853b-2477b0d9a6a0\"}},\"description\":\"Start a discovery job execution\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:20:10.116+0000\",\"endTime\":\"2016-04-29T23:22:50.409+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"ee764f1a-bea9-4ac4-8661-a7af69b9dfd3\",\"name\":\"Discovery Service\",\"category\":\"DISCOVER\",\"username\":\"componentAdmin\",\"owner\":{\"name\":\"Discovery Service: 18653455-5149-4d7c-a498-c5ad5c586709\",\"link\":{\"rel\":\"discoveryJob\",\"href\":\"/discoveryJobs/18653455-5149-4d7c-a498-c5ad5c586709\"}},\"description\":\"Start a discovery job execution\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:06:53.921+0000\",\"endTime\":\"2016-04-29T23:17:52.443+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"178fdc1a-bd67-462b-a15d-08ec805d0e50\",\"name\":\"Workflow: WorkflowExec (ConfigurePPVmaxWorkflow 1461971891138)\",\"category\":\"MANAGE\",\"username\":\"componentAdmin\",\"children\":[{\"id\":\"70c506c9-6988-4a58-89ee-5a4c2cdca4ed\",\"link\":{\"rel\":\"child\",\"href\":\"/tasks/70c506c9-6988-4a58-89ee-5a4c2cdca4ed\"}}],\"owner\":{\"name\":\"workflow\",\"link\":{\"rel\":\"workflow\",\"href\":\"/workflows/0750595e-ede6-4574-8076-26b499da529f\"}},\"description\":\"Task for Workflow: WorkflowExec (ConfigurePPVmaxWorkflow 1461971891138) (0750595e-ede6-4574-8076-26b499da529f)\",\"state\":\"Running\",\"startTime\":\"2016-04-29T23:18:12.275+0000\",\"progress\":0,\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"5393bd7c-c7ce-42c8-8f0e-019db7b2bb12\",\"name\":\"LogBundle: 230f2a31-8c02-4b9c-b132-1f9ed5a072dd\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logBundle\",\"href\":\"/logBundles/230f2a31-8c02-4b9c-b132-1f9ed5a072dd\"}},\"description\":\"Building log Bundle with ID: 230f2a31-8c02-4b9c-b132-1f9ed5a072dd\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:18.803+0000\",\"endTime\":\"2016-04-29T23:18:19.462+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"f69a3e0f-2250-463d-bd86-e1c761070ab7\",\"name\":\"Syncing the log level of LogSource: System Manager\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/174c927e-1a10-4768-b2e2-370b9284363d\"}},\"description\":\"Syncing the log level of LogSource: System Manager from: DEBUG to: INFO\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:20.439+0000\",\"endTime\":\"2016-04-29T23:18:21.866+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource System Manager has been successfully synced at log level: INFO\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"5080e4b0-9e8c-430e-8427-d5e6921b4b6f\",\"name\":\"Syncing the log level of LogSource: Configuration Manager\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/09904fa7-0149-463a-9ae5-d9f71a8cfabd\"}},\"description\":\"Syncing the log level of LogSource: Configuration Manager from: DEBUG to: INFO\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:21.996+0000\",\"endTime\":\"2016-04-29T23:18:23.459+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Configuration Manager has been successfully synced at log level: INFO\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"3b74ae70-1466-49d9-953d-f2ba7f27d42c\",\"name\":\"Dynamic Protection Service\",\"category\":\"VALIDATE\",\"username\":\"componentAdmin\",\"owner\":{\"name\":\"Dynamic Protection service: 6e03e63e-f540-4b43-8664-341c7c45f89e\",\"link\":{\"rel\":\"complianceResults\",\"href\":\"/complianceResults/6e03e63e-f540-4b43-8664-341c7c45f89e\"}},\"description\":\"Start a compliance results generation\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:22:58.846+0000\",\"endTime\":\"2016-04-29T23:22:59.852+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"complianceResults\",\"href\":\"/complianceResults/6e03e63e-f540-4b43-8664-341c7c45f89e\"},{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"948ca744-ff46-4e7e-aae8-ba5220db6f0b\",\"name\":\"Discovery Service\",\"category\":\"DISCOVER\",\"username\":\"componentAdmin\",\"parent\":{\"id\":\"c34ef812-61d1-42b3-8983-75e160f78902\",\"link\":{\"rel\":\"workflowTask\",\"href\":\"/tasks/c34ef812-61d1-42b3-8983-75e160f78902\"}},\"owner\":{\"name\":\"Discovery Service: 8d2c39e9-1a0a-4ba4-853b-2477b0d9a6a0\",\"link\":{\"rel\":\"discoveryJob\",\"href\":\"/discoveryJobs/8d2c39e9-1a0a-4ba4-853b-2477b0d9a6a0\"}},\"description\":\"Start a discovery job execution\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:35:10.313+0000\",\"endTime\":\"2016-04-29T23:36:53.396+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"0658a71e-e7ff-46dc-b130-d42b8372c360\",\"name\":\"Dynamic Protection Service\",\"category\":\"VALIDATE\",\"username\":\"componentAdmin\",\"owner\":{\"name\":\"Dynamic Protection service: 142a1164-d37c-4330-975a-c1582c7159dc\",\"link\":{\"rel\":\"complianceResults\",\"href\":\"/complianceResults/142a1164-d37c-4330-975a-c1582c7159dc\"}},\"description\":\"Start a compliance results generation\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:37:01.358+0000\",\"endTime\":\"2016-04-29T23:37:02.145+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"complianceResults\",\"href\":\"/complianceResults/142a1164-d37c-4330-975a-c1582c7159dc\"},{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]}],\"page\":{\"size\":19,\"number\":1,\"totalPages\":1,\"totalElements\":19}}"
+        }
+      ]
+    },
+    {
+      "_postman_id": "37c630cd-156e-56b1-abf3-6c4306184c19",
+      "name": "Get nodes by ID",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "cb8e78ea-288c-d56c-478f-1429f34ee50f",
+      "name": "Get Eulas",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"eulaId\", data.content[0].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "1927a5fc-4133-2394-d388-1e39ccb01bf0",
+      "name": "PUT Eulas By Id ",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":\"{{eulaId}}\", \"nodeId\":\"{{nodeId}}\", \"accepted\":\"true\"}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "de64ec2a-333a-1fe5-607e-f2ea7717b8b6",
+      "name": "Get Eulas By Id",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "a7d23d20-37e8-a659-800b-c74fe0c70821",
+      "name": "GET /networks",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "GET /networks"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "7a9eac71-afae-0bf2-5050-ab8a4a73e0a0",
+      "name": "GET /networks/id",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/{{networkId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "GET /networks"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "0e90a725-33af-ab89-ea02-74a3120e4e82",
+      "name": "GET /networks/id copy",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/{{networkId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"{{networkId}}\",\n  \"interfaceName\": \"eth0\",\n  \"ipAddressFamily\": \"IPv6\",\n  \"fqdn\": \"lava24429.vdp.emc.com\",\n  \"ipAddress\": [\n    \"2620:0000:0170:0714:b452:911f:e264:cf95\"\n  ],\n  \"gateway\": \"2620:0000:0170:0714:0000:0000:0000:0001\",\n  \"dnsServers\": [\n    \"2620:0000:0170:070c:e9ef:fd39:54ec:6ed6\"\n  ],\n  \"links\": [\n    {\n      \"href\": \"/system/nodes/21781983-21a6-4dcf-a996-03b1151bbbbb/networks/c0079dde-0a07-4e68-b4da-c6a47215b068\",\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"/system/nodes/21781983-21a6-4dcf-a996-03b1151bbbbb\",\n      \"rel\": \"Node\"\n    },\n    {\n      \"href\": \"/system/nodes/21781983-21a6-4dcf-a996-03b1151bbbbb/configurations/57bd73f0-3f64-4790-9ba2-fe193e59a9ca\",\n      \"rel\": \"Configuration\"\n    }\n  ],\n  \"prefix\": \"64\"\n}"
+        },
+        "description": "GET /networks"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "a58f5fc6-78a0-af19-33ed-4e021f25955c",
+      "name": "GET OS Users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[1].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[2].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers?orderby=userName",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "cc4fa463-ecbf-214b-115c-a6b10ad4ccf4",
+      "name": "PUT /osUsers/{rootId}}",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{rootId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n      \"id\": \"{{rootId}}\",\n      \"userName\": \"root\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "4a7d1a6e-3751-de0c-8801-4a80ae8ffb8a",
+      "name": "PUT /osUsers/adminId}}",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{adminId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n      \"id\": \"{{adminId}}\",\n      \"userName\": \"admin\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "00b9d6ec-84ad-b67f-9bcc-7b52dc2f42c0",
+      "name": "PUT /osUsers/{supportId}}",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{supportId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n      \"id\": \"{{supportId}}\",\n      \"userName\": \"support\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "a0ac36c6-d948-1c01-8a35-e87a66712a83",
+      "name": "GET lockboxes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/lockboxes",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "0c9c2cdb-2b92-b113-5426-bd0b53e07e42",
+      "name": "PUT lockboxes",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/lockboxes/{{lockId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n      \"id\": \"{{lockId}}\",\n      \"userName\": \"Lockbox\",\n      \"passphrase\":\"Changeme@2\",\n      \"newPassphrase\":\"Changeme@1\"\n }"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "d031143c-530f-d003-4a23-a6441d9dd534",
+      "name": "PUT nodes by ID",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":\"{{nodeId}}\", \"status\":\"MAINTENANCE\"}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "c840818a-02db-4919-a535-88c31e510ae2",
+      "name": "https://{{ip}}:8443/api/v1/events",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/events?filter=properties.component eq\"SysMgr\"",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "GET Events"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "22c4777e-5bfc-3a57-0298-84ab3ed8f629",
+      "name": "GET /disks",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"diskId\", data.content[0].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/disks",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "GET /networks"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "d880c922-cbea-260e-5fec-8ddded301534",
+      "name": "GET /disks/id",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/disks/{{diskId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "GET /networks"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "3bcc57f8-a4a8-0a28-f33b-b3ee92a6d698",
+      "name": "Get all components",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"workflow\", content.id[0]);",
+              "postman.setEnvironmentVariable(\"catalog\" , content[1].id);",
+              "postman.setEnvironmentVariable(\"rabbit\"  , content[2].id);",
+              "postman.setEnvironmentVariable(\"auth\", content[3].id);",
+              "postman.setEnvironmentVariable(\"discovery\", content[4].id);",
+              "postman.setEnvironmentVariable(\"serverdr\", content[5].id);",
+              "postman.setEnvironmentVariable(\"scheduler\", content[6].id);",
+              "postman.setEnvironmentVariable(\"event\", content[7].id);",
+              "postman.setEnvironmentVariable(\"taskmgr\", content[8].id);",
+              "postman.setEnvironmentVariable(\"catalog\", content[9].id);",
+              "postman.setEnvironmentVariable(\"rest\", content[10].id);",
+              "postman.setEnvironmentVariable(\"dynamic\", content[11].id);",
+              "postman.setEnvironmentVariable(\"hds\", content[12].id);",
+              "postman.setEnvironmentVariable(\"skyline-ui\", content[13].id);",
+              "postman.setEnvironmentVariable(\"dashboard\", content[14].id);",
+              "postman.setEnvironmentVariable(\"mediamgr\", content[15].id);",
+              "postman.setEnvironmentVariable(\"configmgr\", content[16].id);",
+              "postman.setEnvironmentVariable(\"protmgr\", content[17].id);",
+              "postman.setEnvironmentVariable(\"sysmgr\", content[18].id);",
+              "postman.setEnvironmentVariable(\"storagemgr\", content[19].id);",
+              "postman.setEnvironmentVariable(\"elasticsearch\", content[20].id);",
+              "postman.setEnvironmentVariable(\"zookeeper\", content[21].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/components/",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "03c94262-569f-4e80-493a-c83cc75b63b3",
+      "name": "Get System States",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/stage",
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "value": null,
+              "type": "file",
+              "enabled": true
+            }
+          ]
+        },
+        "description": "System Should return states as \"OPERATIONAL\" and \"MAINTENANCE\""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "d96b228b-e3d1-591c-f66e-778920bc82d5",
+      "name": "GET /node/nodeId/timezones",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"timezoneId\", data.content[0].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "4bf50237-e298-f77b-08bb-5c4b812b9b2f",
+      "name": "GET /timezones/id",
+      "request": {
+        "url": "https://10.7.244.22:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "e7b6e1fe-e1fa-d4d6-72f6-047c744cab69",
+      "name": "GET /timezones/id ",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "ee7722d1-5d69-e2b2-2e2e-aa2273509b2e",
+      "name": "GET /node/{id}/configurations/{id}/configLogs",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}/configLogs",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "Task Progress"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "1e82b3ea-52f0-749f-ad23-171f98f47734",
+      "name": "PUT /node/{id}/configurations/{id}",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"{{configId}}\",\n  \"network\": [\n    {\n      \"interfaceName\": \"eth0\",\n      \"fqdn\": \"sky30.lss.emc.com\",\n      \"ipAddress\": [\n        \"10.13.204.30\"\n      ],\n      \"netMask\": \"255.255.255.0\",\n      \"gateway\": \"10.13.204.1\",\n      \"dnsServers\": [\n         \"10.13.200.50\",\n        \"10.13.201.149\"\n      ],\n      \"ipaddressFamily\": \"IPv4\"\n    }\n  ],\n  \"timeZone\": \"America/Detroit\",\n  \"userName\": \"root\"\n}\n\n"
+        },
+        "description": "Change Network Details"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "c7f48f80-6afd-2902-347b-9240741afc6f",
+      "name": "PATCH Network  /configurations/{configId}",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\n{\n  \"id\": \"{{configId}}\",\n  \n \"networks\": [\n        {\n          \n          \"fqdn\": \"lava24449.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.49\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ]\n   \n  \n}\n"
+        },
+        "description": "Change Network Details"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "16513a4b-1d49-3c1e-2294-03097d41fc50",
+      "name": "PATCH osUser - root user  /configurations/{id} ",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n         \r\n         \"userName\": \"root\",\r\n         \"password\": \"?Strong1?\",\r\n         \"newPassword\" : \"Changeme@1\"\r\n   }"
+        },
+        "description": "Change root password"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "40b7ad63-463b-b2a7-e5de-fd8ba29772e0",
+      "name": "PATCH osUser - admin user  /configurations/{id} ",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n      \"osUsers\": [\r\n        {\r\n         \"userName\": \"admin\",\r\n          \"password\":\"?Strong1\",\r\n          \"newPassword\":\"@ppAdm1n\"\r\n         \r\n   }\r\n   ]\r\n   }"
+        },
+        "description": "Change admin Details"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "60167176-837b-adac-0de7-646d186b9454",
+      "name": "PATCH osUser - support user  /configurations/{id} ",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n      \"osUsers\": [\r\n        {\r\n         \"userName\": \"support\",\r\n         \"password\":\"$upp0rt!\",\r\n          \"newPassword\":\"?Strong1?\"\r\n   }\r\n   ]\r\n   }"
+        },
+        "description": "Change support user password"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "374363bc-86d8-ed57-ebfb-f7843d34c1ab",
+      "name": "PATCH lockbox  /configurations/{id}",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"lockbox\" : {\r\n        \r\n        \"name\": \"Lockbox\",\r\n        \"passphrase\":\"?Strong1?\",\r\n       \"newPassphrase\":\"Changeme@1\"\r\n        }\r\n}"
+        },
+        "description": "Change lockbox password"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "563cf0f3-8402-43b3-f632-cb6c210cd4e8",
+      "name": "PATCH timezone/configurations/{id} ",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"timeZone\": \"America/Detroit\"\r\n}"
+        },
+        "description": "Change timezone"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "67693e83-841e-f90c-4245-1403b62884a6",
+      "name": "PATCH landlord /configurations/{id} - Negative",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"timeZone\": \"America/Detroit\"\r\n}"
+        },
+        "description": "Changing landlord should not be allowed"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "feb20136-9875-e100-1a68-fa848633c79f",
+      "name": "PATCH timezone and password together - Negative",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"timeZone\": \"America/Detroit\",\r\n\"osUsers\": [\r\n      \t{\r\n         \"userName\": \"support\",\r\n         \"password\": \"Changeme@1\",\r\n         \"newPassword\" : \"?Strong1?\"\r\n   }\r\n   ]\r\n}"
+        },
+        "description": "Changing more than one property should not be allowed in PATCH operation"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "efd6a8c5-a4a1-f19c-a652-25b4991aef8b",
+      "name": "Get /node/{id}/configurations/{id} - After PUT",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);\r",
+              "tests[\"FQDN\"] = data.network.fqdn === \"lava24421.op.local\";\r",
+              "tests[\"ipAddress\"] = data.network.ipAddress === \"10.7.244.21\";\r",
+              "tests[\"netMask\"] = data.network.netMask === \"255.255.255.0\";\r",
+              "tests[\"gateway\"] = data.network.gateway === \"10.7.244.1\";\r",
+              "tests[\"dnsServers\"] = data.network.dnsServers[0] === \"10.7.244.30\";\r",
+              "tests[\"timeZone\"] = data.timeZone === \"America/Denver\";\r",
+              "tests[\"userName\"] = data.userName === \"root\";\r",
+              "tests[\"state\"] = data.state === \"COMPLETED\";"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "GET network configurations in detail"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "558ecbc7-25d8-1835-e63f-65ab9f76afe8",
+      "name": "PUT Tasks",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n      \"id\": \"{id}\",\n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "490924d9-e8b5-c068-f592-b2be2f02fb61",
+      "name": "PUT Tasks copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n      \"id\": \"{id}\",\n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "438810b2-0cf1-5f3b-e63a-d3213a45ff3b",
+      "name": "GET Tasks",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/tasks?filter=state eq \"Pending_Cancellation\"&orderby=name",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n      \n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "14c9346d-8a9b-a3f9-6a5c-1c52ba3a1192",
+      "name": "Login - ESRS",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://10.7.244.132:9443/esrs/v1/devices?Domain=LocalHost&Username=admin&Password=Changeme@1",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/xhtml+xml",
+            "description": ""
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic YWRtaW46Q2hhbmdlbWVAMQ==",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\", \"password\":\"Changeme@1\"}"
+        },
+        "description": "This request will return auth token from aaa component"
+      },
+      "response": [
+        {
+          "id": "27322681-34ef-63f7-8b98-3259e7033b59",
+          "name": "token",
+          "originalRequest": {
+            "url": "https://{{ip}}:8443/api/login",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
+            },
+            "description": "This request will return auth token from aaa component"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Access-Control-Allow-Headers",
+              "key": "Access-Control-Allow-Headers",
+              "value": "x-requested-with",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "key": "Access-Control-Allow-Methods",
+              "value": "PUT, POST, GET, OPTIONS, DELETE",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "key": "Access-Control-Allow-Origin",
+              "value": "*",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Max-Age",
+              "key": "Access-Control-Max-Age",
+              "value": "3600",
+              "description": ""
+            },
+            {
+              "name": "Cache-Control",
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate",
+              "description": ""
+            },
+            {
+              "name": "Content-Length",
+              "key": "Content-Length",
+              "value": "44",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Thu, 01 Oct 2015 23:07:38 GMT",
+              "description": ""
+            },
+            {
+              "name": "Expires",
+              "key": "Expires",
+              "value": "0",
+              "description": ""
+            },
+            {
+              "name": "Pragma",
+              "key": "Pragma",
+              "value": "no-cache",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "Apache-Coyote/1.1",
+              "description": ""
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000 ; includeSubDomains",
+              "description": ""
+            },
+            {
+              "name": "X-Content-Type-Options",
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "description": ""
+            },
+            {
+              "name": "X-XSS-Protection",
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "192",
+          "body": "{\"token\":\"5E01B1AB793F47E532A64E455D9A62A5\"}"
+        },
+        {
+          "id": "41dd002c-7656-55de-e45a-999e323dbab4",
+          "name": "X-Auth-Token",
+          "originalRequest": {
+            "url": "https://10.7.244.21:8443/api/login",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
+            },
+            "description": "This request will return auth token from aaa component"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Access-Control-Allow-Headers",
+              "key": "Access-Control-Allow-Headers",
+              "value": "x-requested-with",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "key": "Access-Control-Allow-Methods",
+              "value": "PUT, POST, GET, OPTIONS, DELETE",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "key": "Access-Control-Allow-Origin",
+              "value": "*",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Max-Age",
+              "key": "Access-Control-Max-Age",
+              "value": "3600",
+              "description": ""
+            },
+            {
+              "name": "Cache-Control",
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate",
+              "description": ""
+            },
+            {
+              "name": "Content-Length",
+              "key": "Content-Length",
+              "value": "44",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json; charset=UTF-8",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Sat, 11 Jul 2015 00:06:14 GMT",
+              "description": ""
+            },
+            {
+              "name": "Expires",
+              "key": "Expires",
+              "value": "0",
+              "description": ""
+            },
+            {
+              "name": "Pragma",
+              "key": "Pragma",
+              "value": "no-cache",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "Jetty(9.2.9.v20150224)",
+              "description": ""
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000 ; includeSubDomains",
+              "description": ""
+            },
+            {
+              "name": "X-Content-Type-Options",
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "description": ""
+            },
+            {
+              "name": "X-XSS-Protection",
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "160",
+          "body": "{\"token\":\"280B1FA3D408BE734A5A340F280348FD\"}"
+        }
+      ]
+    },
+    {
+      "_postman_id": "484b44a5-feb2-c1c0-6080-19fc9314afa1",
+      "name": "Get upgradePackages",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"packageId\", data.content[0].id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/upgradePackages/",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "size",
+              "value": "original",
+              "type": "text",
+              "enabled": true,
+              "warning": ""
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "enabled": true,
+              "warning": "",
+              "src": {
+                "0": {
+                  "name": "ecdm-upgrade-1.1.0-24.pkg",
+                  "lastModified": 1480709663998,
+                  "lastModifiedDate": "2016-12-02T20:14:23.998Z",
+                  "webkitRelativePath": "",
+                  "size": 1153624710,
+                  "type": ""
+                },
+                "length": 1
+              }
+            }
+          ]
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "5a83ecfa-e307-5329-25a0-1d4838e1765e",
+      "name": "PUT UpgradePackages by Id",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/upgradePackages/{{packageId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\n  \n   {\n     \"id\": \"{{packageId}}\",\n      \"name\": \"EMC eCDM - Major Release\",\n      \"type\": \"RELEASE\",\n      \"madeAvailable\": \"2017-04-21T20:24:44.000+0000\",\n      \"description\": \"This package upgrades all the components\",\n      \"rebootRequired\": false,\n      \"state\": \"INSTALLED\",\n      \"fileName\": \"ecdm-upgrade-2.0.0-4-SNAPSHOT.pkg\",\n      \"packageVersion\": \"2.0.0-1-SNAPSHOT\",\n      \"sizeInBytes\": 1794823976,\n      \"certificateTrustedByUser\": true\n    }"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "4ec52c7d-3c42-282f-a7c9-3dab2b36b3a3",
+      "name": "GET Tasks copy",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/tasks?filter=state eq \"Pending_Cancellation\"&orderby=name",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n      \n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "3672a148-0bea-46eb-be41-9970c2774358",
+      "name": "Get /node/{id}/configurations",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "description": "GET network configurations"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "476efe62-2dc2-fb58-1c66-5cfa573cfd5c",
+      "name": "Login - Default",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
+              "//postman.setEnvironmentVariable(\"ip\", \"10.7.84.100\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.244.2\");",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/login",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"tenant\":\"qaLandlord\"}"
+        },
+        "description": "This request will return auth token from aaa component"
+      },
+      "response": [
+        {
+          "id": "9b62a3c9-811d-9585-c0ab-b49c78093b8e",
+          "name": "X-Auth-Token",
+          "originalRequest": {
+            "url": "https://10.7.244.21:8443/api/login",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
+            },
+            "description": "This request will return auth token from aaa component"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Access-Control-Allow-Headers",
+              "key": "Access-Control-Allow-Headers",
+              "value": "x-requested-with",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "key": "Access-Control-Allow-Methods",
+              "value": "PUT, POST, GET, OPTIONS, DELETE",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "key": "Access-Control-Allow-Origin",
+              "value": "*",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Max-Age",
+              "key": "Access-Control-Max-Age",
+              "value": "3600",
+              "description": ""
+            },
+            {
+              "name": "Cache-Control",
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate",
+              "description": ""
+            },
+            {
+              "name": "Content-Length",
+              "key": "Content-Length",
+              "value": "44",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json; charset=UTF-8",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Sat, 11 Jul 2015 00:06:14 GMT",
+              "description": ""
+            },
+            {
+              "name": "Expires",
+              "key": "Expires",
+              "value": "0",
+              "description": ""
+            },
+            {
+              "name": "Pragma",
+              "key": "Pragma",
+              "value": "no-cache",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "Jetty(9.2.9.v20150224)",
+              "description": ""
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000 ; includeSubDomains",
+              "description": ""
+            },
+            {
+              "name": "X-Content-Type-Options",
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "description": ""
+            },
+            {
+              "name": "X-XSS-Protection",
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "160",
+          "body": "{\"token\":\"280B1FA3D408BE734A5A340F280348FD\"}"
+        },
+        {
+          "id": "b2c210be-56d2-bed7-e244-05b803504df3",
+          "name": "token",
+          "originalRequest": {
+            "url": "https://{{ip}}:8443/api/login",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
+            },
+            "description": "This request will return auth token from aaa component"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Access-Control-Allow-Headers",
+              "key": "Access-Control-Allow-Headers",
+              "value": "x-requested-with",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "key": "Access-Control-Allow-Methods",
+              "value": "PUT, POST, GET, OPTIONS, DELETE",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "key": "Access-Control-Allow-Origin",
+              "value": "*",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Max-Age",
+              "key": "Access-Control-Max-Age",
+              "value": "3600",
+              "description": ""
+            },
+            {
+              "name": "Cache-Control",
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate",
+              "description": ""
+            },
+            {
+              "name": "Content-Length",
+              "key": "Content-Length",
+              "value": "44",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Thu, 01 Oct 2015 23:07:38 GMT",
+              "description": ""
+            },
+            {
+              "name": "Expires",
+              "key": "Expires",
+              "value": "0",
+              "description": ""
+            },
+            {
+              "name": "Pragma",
+              "key": "Pragma",
+              "value": "no-cache",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "Apache-Coyote/1.1",
+              "description": ""
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000 ; includeSubDomains",
+              "description": ""
+            },
+            {
+              "name": "X-Content-Type-Options",
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "description": ""
+            },
+            {
+              "name": "X-XSS-Protection",
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "192",
+          "body": "{\"token\":\"5E01B1AB793F47E532A64E455D9A62A5\"}"
+        }
+      ]
+    },
+    {
+      "_postman_id": "a9aec180-53ae-be00-bb05-ee6be76d806d",
+      "name": "GET /node/{id}/configurations/{id}/configStatus",
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}/configStatus",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "Task Progress"
+      },
+      "response": [
+        {
+          "id": "f8626f95-a2c0-b2c9-5524-2d0c0362554e",
+          "name": "configStatus",
+          "originalRequest": {
+            "url": "https://10.7.244.19:8443/api/v1/system/nodes/d74040a8-c1fd-4cc8-adf5-df945e79088f/configurations/ea9226f7-11bd-42f8-81e0-66ec2832b9a3/configStatus",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "name": "Content-Type",
+                "enabled": true
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "dfe6e28b-9e63-4438-8a7a-b5b30888ec57",
+                "name": "X-Auth-Token",
+                "enabled": true
+              },
+              {
+                "key": "Cache-Control",
+                "name": "Cache-Control",
+                "value": "no-cache"
+              },
+              {
+                "key": "Postman-Token",
+                "name": "Postman-Token",
+                "value": "5fc2f9d6-cf7e-4676-3afc-a20f0cac8c14"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                "{",
+                "\"",
+                "u",
+                "s",
+                "e",
+                "r",
+                "n",
+                "a",
+                "m",
+                "e",
+                "\"",
+                ":",
+                "\"",
+                "a",
+                "d",
+                "m",
+                "i",
+                "n",
+                "\"",
+                ",",
+                " ",
+                "\"",
+                "p",
+                "a",
+                "s",
+                "s",
+                "w",
+                "o",
+                "r",
+                "d",
+                "\"",
+                ":",
+                "\"",
+                "a",
+                "d",
+                "m",
+                "i",
+                "n",
+                "\"",
+                ",",
+                "\"",
+                "t",
+                "e",
+                "n",
+                "a",
+                "n",
+                "t",
+                "\"",
+                ":",
+                "\"",
+                "q",
+                "a",
+                "L",
+                "a",
+                "n",
+                "d",
+                "l",
+                "o",
+                "r",
+                "d",
+                "\"",
+                "}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Access-Control-Allow-Headers",
+              "key": "Access-Control-Allow-Headers",
+              "value": "x-requested-with",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "key": "Access-Control-Allow-Methods",
+              "value": "PUT, POST, GET, OPTIONS, DELETE",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "key": "Access-Control-Allow-Origin",
+              "value": "*",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Max-Age",
+              "key": "Access-Control-Max-Age",
+              "value": "3600",
+              "description": ""
+            },
+            {
+              "name": "Cache-Control",
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate",
+              "description": ""
+            },
+            {
+              "name": "Content-Length",
+              "key": "Content-Length",
+              "value": "1885",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Sat, 06 Feb 2016 00:00:11 GMT",
+              "description": ""
+            },
+            {
+              "name": "Expires",
+              "key": "Expires",
+              "value": "0",
+              "description": ""
+            },
+            {
+              "name": "Pragma",
+              "key": "Pragma",
+              "value": "no-cache",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "Apache-Coyote/1.1",
+              "description": ""
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000 ; includeSubDomains",
+              "description": ""
+            },
+            {
+              "name": "X-Content-Type-Options",
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "description": ""
+            },
+            {
+              "name": "X-XSS-Protection",
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "1570",
+          "body": "{\"content\":[{\"id\":\"ea9226f7-11bd-42f8-81e0-66ec2832b9a3\",\"percentageCompleted\":\"100\",\"currentStage\":{\"status\":\"SUCCESS\",\"description\":\"Skyline Install Completed\"},\"completedStage\":[{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Skyline Install Completed\",\"percentageCompleted\":\"100\",\"endTime\":\"2016-02-04T21:50:05.614+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Configuring password\",\"percentageCompleted\":\"91\",\"endTime\":\"2016-02-04T21:50:05.522+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Waiting for service startup\",\"percentageCompleted\":\"83\",\"endTime\":\"2016-02-04T21:50:01.852+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Installing Platform Components\",\"percentageCompleted\":\"75\",\"endTime\":\"2016-02-04T21:50:00.563+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Setting DNS name servers and search domain\",\"percentageCompleted\":\"66\",\"endTime\":\"2016-02-04T21:49:56.833+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Starting zookeeper\",\"percentageCompleted\":\"58\",\"endTime\":\"2016-02-04T21:49:56.270+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Updating timezone\",\"percentageCompleted\":\"41\",\"endTime\":\"2016-02-04T21:49:55.760+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Configuring hostname\",\"percentageCompleted\":\"33\",\"endTime\":\"2016-02-04T21:49:55.373+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Refreshing repo\",\"percentageCompleted\":\"16\",\"endTime\":\"2016-02-04T21:49:53.221+0000\"},{\"status\":\"SUCCESS\",\"description\":\"Attempt 0 : Initializing Skyline install\",\"percentageCompleted\":\"8\",\"endTime\":\"2016-02-04T21:49:53.027+0000\"}],\"links\":[{\"href\":\"/system/nodes/d74040a8-c1fd-4cc8-adf5-df945e79088f/configurations/795a09b5-1949-4161-b40c-05af8ea4c510/configStatus\",\"rel\":\"self\"},{\"href\":\"/system/nodes/d74040a8-c1fd-4cc8-adf5-df945e79088f/configurations/795a09b5-1949-4161-b40c-05af8ea4c510\",\"rel\":\"parent\"}]}]}"
+        }
+      ]
+    },
+    {
+      "_postman_id": "2e7fdde0-a30a-0756-d7cf-56f6dd134816",
+      "name": "GET nodes post configuration",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": [
+        {
+          "id": "3a4641e9-1826-d676-7158-fed07c8e9f1e",
+          "name": "sky30  maintenance failed",
+          "originalRequest": {
+            "url": "https://{{ip}}:8443/api/v1/tasks",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "enabled": true,
+                "description": "The mime type of this content"
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "enabled": true
+              }
+            ],
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Access-Control-Allow-Headers",
+              "key": "Access-Control-Allow-Headers",
+              "value": "x-requested-with",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Methods",
+              "key": "Access-Control-Allow-Methods",
+              "value": "PUT, POST, GET, OPTIONS, DELETE",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Allow-Origin",
+              "key": "Access-Control-Allow-Origin",
+              "value": "*, https://10.13.204.30:14443",
+              "description": ""
+            },
+            {
+              "name": "Access-Control-Max-Age",
+              "key": "Access-Control-Max-Age",
+              "value": "3600",
+              "description": ""
+            },
+            {
+              "name": "Cache-Control",
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate",
+              "description": ""
+            },
+            {
+              "name": "Content-Length",
+              "key": "Content-Length",
+              "value": "13029",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Fri, 29 Apr 2016 23:40:03 GMT",
+              "description": ""
+            },
+            {
+              "name": "Expires",
+              "key": "Expires",
+              "value": "0",
+              "description": ""
+            },
+            {
+              "name": "Pragma",
+              "key": "Pragma",
+              "value": "no-cache",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "Apache-Coyote/1.1",
+              "description": ""
+            },
+            {
+              "name": "Strict-Transport-Security",
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000 ; includeSubDomains",
+              "description": ""
+            },
+            {
+              "name": "X-Content-Type-Options",
+              "key": "X-Content-Type-Options",
+              "value": "nosniff",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "DENY",
+              "description": ""
+            },
+            {
+              "name": "X-XSS-Protection",
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block",
+              "description": ""
+            },
+            {
+              "name": "x-auth-token",
+              "key": "x-auth-token",
+              "value": "b5024fbc-7127-4a44-8dde-88c5d06640b0",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "127",
+          "body": "{\"content\":[{\"id\":\"c3a24540-f147-48a5-b297-5e82454935b9\",\"name\":\"Syncing the log level of LogSource: Configuration Manager\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/09904fa7-0149-463a-9ae5-d9f71a8cfabd\"}},\"description\":\"Syncing the log level of LogSource: Configuration Manager from: INFO to: DEBUG\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:05:52.368+0000\",\"endTime\":\"2016-04-29T23:05:53.962+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Configuration Manager has been successfully synced at log level: DEBUG\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"525d8d7b-1933-4105-aa32-acbcb6c952c6\",\"name\":\"Syncing the log level of LogSource: Authservice\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/d05cc8cb-c204-491f-b111-723b4280de32\"}},\"description\":\"Syncing the log level of LogSource: Authservice from: INFO to: DEBUG\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:05:54.086+0000\",\"endTime\":\"2016-04-29T23:05:55.696+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Authservice has been successfully synced at log level: DEBUG\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"b3155e7e-c9e7-40a3-a909-c38c6085917c\",\"name\":\"Syncing the log level of LogSource: Authservice\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/d05cc8cb-c204-491f-b111-723b4280de32\"}},\"description\":\"Syncing the log level of LogSource: Authservice from: DEBUG to: INFO\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:23.549+0000\",\"endTime\":\"2016-04-29T23:18:24.954+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Authservice has been successfully synced at log level: INFO\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"7ec0f89e-4801-4206-9da3-b4c314b688ff\",\"name\":\"Workflow: WorkflowExec (Compliance Verification 1461971889506)\",\"category\":\"MANAGE\",\"username\":\"componentAdmin\",\"children\":[{\"id\":\"db03bc91-95a9-4a38-981b-d8191485248f\",\"link\":{\"rel\":\"child\",\"href\":\"/tasks/db03bc91-95a9-4a38-981b-d8191485248f\"}}],\"owner\":{\"name\":\"workflow\",\"link\":{\"rel\":\"workflow\",\"href\":\"/workflows/6f9ef4f1-0dd5-4776-932c-f3f1a81269c2\"}},\"description\":\"Task for Workflow: WorkflowExec (Compliance Verification 1461971889506) (6f9ef4f1-0dd5-4776-932c-f3f1a81269c2)\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:20:09.884+0000\",\"endTime\":\"2016-04-29T23:23:00.344+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"c34ef812-61d1-42b3-8983-75e160f78902\",\"name\":\"Workflow: WorkflowExec (Compliance Verification 1461971889506)\",\"category\":\"MANAGE\",\"username\":\"componentAdmin\",\"children\":[{\"id\":\"948ca744-ff46-4e7e-aae8-ba5220db6f0b\",\"link\":{\"rel\":\"child\",\"href\":\"/tasks/948ca744-ff46-4e7e-aae8-ba5220db6f0b\"}}],\"owner\":{\"name\":\"workflow\",\"link\":{\"rel\":\"workflow\",\"href\":\"/workflows/6f9ef4f1-0dd5-4776-932c-f3f1a81269c2\"}},\"description\":\"Task for Workflow: WorkflowExec (Compliance Verification 1461971889506) (6f9ef4f1-0dd5-4776-932c-f3f1a81269c2)\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:35:10.080+0000\",\"endTime\":\"2016-04-29T23:37:02.656+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"65316a65-305f-4ae3-86ee-2072ef0e94f0\",\"name\":\"Syncing the log level of LogSource: System Manager\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/174c927e-1a10-4768-b2e2-370b9284363d\"}},\"description\":\"Syncing the log level of LogSource: System Manager from: INFO to: DEBUG\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:05:50.336+0000\",\"endTime\":\"2016-04-29T23:05:51.990+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource System Manager has been successfully synced at log level: DEBUG\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"48c9a047-4b8b-4f58-9b45-96ef4e88d63d\",\"name\":\"Syncing the log level of LogSource: Discovery Service\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/b589a1ac-dcc1-474b-ac3d-ccb848e50740\"}},\"description\":\"Syncing the log level of LogSource: Discovery Service from: INFO to: DEBUG\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:05:55.906+0000\",\"endTime\":\"2016-04-29T23:05:57.524+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Discovery Service has been successfully synced at log level: DEBUG\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"a6bcbedc-c90a-4daa-be32-a34ede37195d\",\"name\":\"Discovery Service\",\"category\":\"DISCOVER\",\"username\":\"componentAdmin\",\"owner\":{\"name\":\"Discovery Service: f7e3b9aa-87cf-409c-bff4-0938424edf67\",\"link\":{\"rel\":\"discoveryJob\",\"href\":\"/discoveryJobs/f7e3b9aa-87cf-409c-bff4-0938424edf67\"}},\"description\":\"Start a discovery job execution\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:06:00.545+0000\",\"endTime\":\"2016-04-29T23:06:33.630+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"70c506c9-6988-4a58-89ee-5a4c2cdca4ed\",\"name\":\"StorageMgrTask\",\"category\":\"CONFIG\",\"username\":\"componentAdmin\",\"parent\":{\"id\":\"178fdc1a-bd67-462b-a15d-08ec805d0e50\",\"link\":{\"rel\":\"workflowTask\",\"href\":\"/tasks/178fdc1a-bd67-462b-a15d-08ec805d0e50\"}},\"owner\":{\"name\":\"StorageMgrTask\",\"link\":{\"rel\":\"\",\"href\":\"\"}},\"description\":\"StorageMgrTask, Type Configuration,Operation ConfigureVdisks\",\"state\":\"Running\",\"startTime\":\"2016-04-29T23:18:12.764+0000\",\"progress\":0,\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"d0e1eaf7-2b6e-4cca-9f77-bd99a2b0aae1\",\"name\":\"Syncing the log level of LogSource: Discovery Service\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/b589a1ac-dcc1-474b-ac3d-ccb848e50740\"}},\"description\":\"Syncing the log level of LogSource: Discovery Service from: DEBUG to: INFO\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:25.101+0000\",\"endTime\":\"2016-04-29T23:18:26.460+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Discovery Service has been successfully synced at log level: INFO\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"db03bc91-95a9-4a38-981b-d8191485248f\",\"name\":\"Discovery Service\",\"category\":\"DISCOVER\",\"username\":\"componentAdmin\",\"parent\":{\"id\":\"7ec0f89e-4801-4206-9da3-b4c314b688ff\",\"link\":{\"rel\":\"workflowTask\",\"href\":\"/tasks/7ec0f89e-4801-4206-9da3-b4c314b688ff\"}},\"owner\":{\"name\":\"Discovery Service: 8d2c39e9-1a0a-4ba4-853b-2477b0d9a6a0\",\"link\":{\"rel\":\"discoveryJob\",\"href\":\"/discoveryJobs/8d2c39e9-1a0a-4ba4-853b-2477b0d9a6a0\"}},\"description\":\"Start a discovery job execution\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:20:10.116+0000\",\"endTime\":\"2016-04-29T23:22:50.409+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"ee764f1a-bea9-4ac4-8661-a7af69b9dfd3\",\"name\":\"Discovery Service\",\"category\":\"DISCOVER\",\"username\":\"componentAdmin\",\"owner\":{\"name\":\"Discovery Service: 18653455-5149-4d7c-a498-c5ad5c586709\",\"link\":{\"rel\":\"discoveryJob\",\"href\":\"/discoveryJobs/18653455-5149-4d7c-a498-c5ad5c586709\"}},\"description\":\"Start a discovery job execution\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:06:53.921+0000\",\"endTime\":\"2016-04-29T23:17:52.443+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"178fdc1a-bd67-462b-a15d-08ec805d0e50\",\"name\":\"Workflow: WorkflowExec (ConfigurePPVmaxWorkflow 1461971891138)\",\"category\":\"MANAGE\",\"username\":\"componentAdmin\",\"children\":[{\"id\":\"70c506c9-6988-4a58-89ee-5a4c2cdca4ed\",\"link\":{\"rel\":\"child\",\"href\":\"/tasks/70c506c9-6988-4a58-89ee-5a4c2cdca4ed\"}}],\"owner\":{\"name\":\"workflow\",\"link\":{\"rel\":\"workflow\",\"href\":\"/workflows/0750595e-ede6-4574-8076-26b499da529f\"}},\"description\":\"Task for Workflow: WorkflowExec (ConfigurePPVmaxWorkflow 1461971891138) (0750595e-ede6-4574-8076-26b499da529f)\",\"state\":\"Running\",\"startTime\":\"2016-04-29T23:18:12.275+0000\",\"progress\":0,\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"5393bd7c-c7ce-42c8-8f0e-019db7b2bb12\",\"name\":\"LogBundle: 230f2a31-8c02-4b9c-b132-1f9ed5a072dd\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logBundle\",\"href\":\"/logBundles/230f2a31-8c02-4b9c-b132-1f9ed5a072dd\"}},\"description\":\"Building log Bundle with ID: 230f2a31-8c02-4b9c-b132-1f9ed5a072dd\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:18.803+0000\",\"endTime\":\"2016-04-29T23:18:19.462+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"f69a3e0f-2250-463d-bd86-e1c761070ab7\",\"name\":\"Syncing the log level of LogSource: System Manager\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/174c927e-1a10-4768-b2e2-370b9284363d\"}},\"description\":\"Syncing the log level of LogSource: System Manager from: DEBUG to: INFO\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:20.439+0000\",\"endTime\":\"2016-04-29T23:18:21.866+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource System Manager has been successfully synced at log level: INFO\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"5080e4b0-9e8c-430e-8427-d5e6921b4b6f\",\"name\":\"Syncing the log level of LogSource: Configuration Manager\",\"category\":\"CONFIG\",\"username\":\"admin\",\"owner\":{\"name\":\"LogManager\",\"link\":{\"rel\":\"logSource\",\"href\":\"/logSources/09904fa7-0149-463a-9ae5-d9f71a8cfabd\"}},\"description\":\"Syncing the log level of LogSource: Configuration Manager from: DEBUG to: INFO\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:18:21.996+0000\",\"endTime\":\"2016-04-29T23:18:23.459+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"LogSource Configuration Manager has been successfully synced at log level: INFO\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"3b74ae70-1466-49d9-953d-f2ba7f27d42c\",\"name\":\"Dynamic Protection Service\",\"category\":\"VALIDATE\",\"username\":\"componentAdmin\",\"owner\":{\"name\":\"Dynamic Protection service: 6e03e63e-f540-4b43-8664-341c7c45f89e\",\"link\":{\"rel\":\"complianceResults\",\"href\":\"/complianceResults/6e03e63e-f540-4b43-8664-341c7c45f89e\"}},\"description\":\"Start a compliance results generation\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:22:58.846+0000\",\"endTime\":\"2016-04-29T23:22:59.852+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"complianceResults\",\"href\":\"/complianceResults/6e03e63e-f540-4b43-8664-341c7c45f89e\"},{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"948ca744-ff46-4e7e-aae8-ba5220db6f0b\",\"name\":\"Discovery Service\",\"category\":\"DISCOVER\",\"username\":\"componentAdmin\",\"parent\":{\"id\":\"c34ef812-61d1-42b3-8983-75e160f78902\",\"link\":{\"rel\":\"workflowTask\",\"href\":\"/tasks/c34ef812-61d1-42b3-8983-75e160f78902\"}},\"owner\":{\"name\":\"Discovery Service: 8d2c39e9-1a0a-4ba4-853b-2477b0d9a6a0\",\"link\":{\"rel\":\"discoveryJob\",\"href\":\"/discoveryJobs/8d2c39e9-1a0a-4ba4-853b-2477b0d9a6a0\"}},\"description\":\"Start a discovery job execution\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:35:10.313+0000\",\"endTime\":\"2016-04-29T23:36:53.396+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]},{\"id\":\"0658a71e-e7ff-46dc-b130-d42b8372c360\",\"name\":\"Dynamic Protection Service\",\"category\":\"VALIDATE\",\"username\":\"componentAdmin\",\"owner\":{\"name\":\"Dynamic Protection service: 142a1164-d37c-4330-975a-c1582c7159dc\",\"link\":{\"rel\":\"complianceResults\",\"href\":\"/complianceResults/142a1164-d37c-4330-975a-c1582c7159dc\"}},\"description\":\"Start a compliance results generation\",\"state\":\"Completed\",\"startTime\":\"2016-04-29T23:37:01.358+0000\",\"endTime\":\"2016-04-29T23:37:02.145+0000\",\"progress\":100,\"result\":{\"status\":\"OK\",\"error\":\"\"},\"attributes\":{},\"links\":[{\"rel\":\"complianceResults\",\"href\":\"/complianceResults/142a1164-d37c-4330-975a-c1582c7159dc\"},{\"rel\":\"tenant\",\"href\":\"/tenants/00000000-0000-0000-0000-000000000001\"}]}],\"page\":{\"size\":19,\"number\":1,\"totalPages\":1,\"totalElements\":19}}"
+        }
+      ]
+    },
+    {
+      "_postman_id": "51e5dacb-9bc1-ef1f-642b-0e438e59842a",
+      "name": "PUT /configurations by id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\n\n    {\n      \"id\": \"{{configId}}\",\n      \n   \n      \"landlordTenantName\": \"ACME\",\n       \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ],\n          \"nslookupSuccess\": true\n        }\n      ],\n      \"timeZone\": \"America/Denver\",\n     \n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"changeme\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$upp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"name\": \"lockbox\",\n      \"passphrase\":\"Ch@ngeme1\",\n      \"newPassphrase\":\"Changeme@1\"\n    }\n  \n"
+        },
+        "description": "GET configurations By id"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "7789f56b-d6dc-be0c-2c44-d181579b403d",
+      "name": "GET /configurationsId post configuration",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
+        },
+        "description": "GET configurations By id"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "7cb48b1c-052a-a6a7-c23f-5c50deba450b",
+      "name": "GET /configurations by id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
+        },
+        "description": "GET configurations By id"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "9bcce856-83d0-c34b-907d-7970f5e007a8",
+      "name": "Get /node/{id}/configurations/{id}",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+              "var data = JSON.parse(responseBody);\r",
+              "tests[\"FQDN\"] = data.network[0].fqdn === \"lava24429.op.local\";\r",
+              "tests[\"ipAddress\"] = data.network[0].ipAddress[0] === \"10.7.244.29\";\r",
+              "tests[\"netMask\"] = data.network[0].netMask === \"255.255.255.0\";\r",
+              "tests[\"gateway\"] = data.network[0].gateway === \"10.7.244.1\";\r",
+              "tests[\"dnsServers\"] = data.network[0].dnsServers[0] === \"10.7.244.30\";\r",
+              "tests[\"ipFamily\"] = data.network[0].ipaddressFamily === \"IPv4\";\r",
+              "tests[\"timeZone\"] = data.timeZone === \"PST8PDT\";\r",
+              "tests[\"userName\"] = data.userName === \"root\";\r",
+              "tests[\"state\"] = data.state === \"PENDING\";\r",
+              "\r",
+              "\r",
+              "\r",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "GET network configurations in detail"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "84e5c6fb-4669-2ddc-efe7-4bdfd5d2611b",
+      "name": "GET /configurations",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations/",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
+        },
+        "description": "GET configurations"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "df8f33be-d7be-0415-e1ef-5b393ad6637f",
+      "name": "GET /configurations",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/configurations",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
+        },
+        "description": "GET configurations By id"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "720e172d-def8-1765-1228-e08b4857b4e5",
+      "name": "Login - Default copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
+              "postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/login",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
+        },
+        "description": "This request will return auth token from aaa component"
+      },
+      "response": []
+    }
+  ]
+}
