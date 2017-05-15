@@ -669,51 +669,6 @@
       "response": []
     },
     {
-      "_postman_id": "3ca136bc-fd76-3bc2-ff17-f652896904e2",
-      "name": "Generate CT session with MFT backend",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"ctsession\", data[\"token\"]);"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds ",
-        "method": "POST",
-        "header": [
-          {
-            "key": "username",
-            "value": "krishp18",
-            "description": ""
-          },
-          {
-            "key": "fobkeyvalue",
-            "value": "Password1",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "7e83847c-49b9-c20b-dcab-9186624deeb4",
       "name": "GET esrs upgrade package schedule  ",
       "event": [
