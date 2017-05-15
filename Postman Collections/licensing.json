@@ -469,32 +469,6 @@
       "response": []
     },
     {
-      "_postman_id": "1e582870-c17f-6a25-b79f-c2a22c2d0ff6",
-      "name": "Assign a package to a serial number",
-      "request": {
-        "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/multipleAssign",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Cookie",
-            "value": "CTSESSION={{ctsession}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"productName\" :\"EMCeCDM\", \n  \"serialNumber\":\"{{serialNumber}}\",\n  \"fileNameList\" :[\"{{esrsPackageName}}\" ]\n  \n}"
-        },
-        "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
-      },
-      "response": []
-    },
-    {
       "_postman_id": "24c9f080-611e-310e-02bc-a24725423b01",
       "name": "GET fileNames after new file is found in catalog",
       "event": [
