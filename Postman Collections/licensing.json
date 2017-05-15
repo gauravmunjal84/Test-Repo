@@ -68,7 +68,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{ \n\t\"type\":\"unserved\", \n\t\"key\": \"{[licenseKey}}\" \n\t\n}\n"
+          "raw": "{ \n\t\"type\":\"unserved\", \n\t\"key\": \"{{licenseKey}}\" \n\t\n}\n"
         },
         "description": "This request will POST a valid license"
       },
