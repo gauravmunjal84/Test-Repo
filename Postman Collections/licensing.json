@@ -68,7 +68,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{{licenseKey}}"
+          "raw": "postman.getEnvrionmentVariable"
         },
         "description": "This request will POST a valid license"
       },
