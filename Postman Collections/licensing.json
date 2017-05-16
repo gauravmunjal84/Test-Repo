@@ -1308,6 +1308,53 @@
         "description": "This request will return existing license; blank response if no license"
       },
       "response": []
+    },
+    {
+      "_postman_id": "fb956128-3d1e-3a7f-8bb8-c44c2f3c774f",
+      "name": "Login - Default",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);",
+              "",
+              "",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/login",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"tenant\":\"qaLandlord\"}"
+        },
+        "description": "This request will return auth token from aaa component"
+      },
+      "response": []
     }
   ]
 }
