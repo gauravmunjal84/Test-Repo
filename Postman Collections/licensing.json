@@ -496,6 +496,106 @@
         "description": ""
       },
       "response": []
+    },
+    {
+      "_postman_id": "1e582870-c17f-6a25-b79f-c2a22c2d0ff6",
+      "name": "Assign a package to a serial number",
+      "request": {
+        "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/multipleAssign",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "CTSESSION={{ctsession}}",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productName\" :\"EMCeCDM\", \n  \"serialNumber\":\"{{serialNumber}}\",\n  \"fileNameList\" :[\"{{esrsPackageName}}\" ]\n  \n}"
+        },
+        "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "24c9f080-611e-310e-02bc-a24725423b01",
+      "name": "GET fileNames after new file is found in catalog",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//      Getting the response into object",
+              "",
+              "var data = JSON.parse(responseBody);",
+              "",
+              "    //  Test status code",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "    //  Verify the condition if code === 200 and size is NOT equal 0",
+              "",
+              "if((responseCode.code === 200) && (data.page.size!==0)){",
+              "    ",
+              "        //  Set envrionment variable for upgrade package ID if code === 200",
+              "    ",
+              "    postman.setEnvironmentVariable(\"esrsPackageId\", data.content[0].id);",
+              "    ",
+              "        //  Run assertions when code === 200 and size is NOT zero",
+              "    ",
+              "    ",
+              "    tests[\"Verify the title of package\"] = data.content[0].title === \"EMC eCDM - Major Release\";",
+              "    tests[\"Verify Package Name\"] = data.content[0].packageName === \"ecdm-upgrade-2.0.0-5-SNAPSHOT.pkg\";",
+              "    tests[\"Verify Package Version\"] = data.content[0].packageVersion === \"2.0.0-5-SNAPSHOT\";",
+              "    tests[\"Verify Package Description\"] = data.content[0].description === \"This package will upgrade all the skyline components\";",
+              "    tests[\"Verify Package Available Date\"] = data.content[0].madeAvailable === \"04/20/2017\";",
+              "  //  tests[\"Size\"] = responseBody.has(\"2.0.0-4-SNAPSHOT\");",
+              "    tests[\"Verify Download State\"] = data.content[0].state === \"AVAILABLE\";",
+              "    tests[\"Verify links rel\"] = data.content[0].links[0].rel === \"self\";",
+              "    tests[\"Your test name\"] = data.content[0].links[0].href === '/telemetry/file/'+postman.getEnvironmentVariable(\"esrsPackageId\") ;",
+              "",
+              "}",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages",
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
+        },
+        "description": "GET file will return filenames of newer packages available in the backend for download"
+      },
+      "response": []
     }
   ]
 }
