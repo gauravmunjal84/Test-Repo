@@ -704,7 +704,7 @@
       ],
       "request": {
         "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages",
-        "method": "GET",
+        "method": "DELETE",
         "header": [
           {
             "key": "X-Auth-Token",
