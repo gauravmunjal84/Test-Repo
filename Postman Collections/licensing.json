@@ -8,12 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "e9f91c00-189c-a145-c2a3-8b6fc94ffc30",
-      "name": "1licensing",
-      "description": "",
-      "item": []
-    },
-    {
       "_postman_id": "30d01532-c77b-4aed-8145-0e62ea5e606b",
       "name": "Login - Default",
       "event": [
