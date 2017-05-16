@@ -703,7 +703,7 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages",
+        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages/{{esrsPackageId}}",
         "method": "DELETE",
         "header": [
           {
