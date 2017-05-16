@@ -653,7 +653,7 @@
     },
     {
       "_postman_id": "a656868a-314f-cbcf-0487-6eb4fa9c8239",
-      "name": "GET remotePackage from catalog copy",
+      "name": "IGNORE remotePackage from catalog ",
       "event": [
         {
           "listen": "test",
