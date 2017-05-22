@@ -8,51 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "41265d79-068f-75dd-c09a-01ef8ca8633f",
-      "name": "Generate CT session with MFT backend",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"ctsession\", data[\"token\"]);"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds ",
-        "method": "POST",
-        "header": [
-          {
-            "key": "username",
-            "value": "krishp18",
-            "description": ""
-          },
-          {
-            "key": "fobkeyvalue",
-            "value": "Password1",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "698c6f15-3276-9226-f3e9-d23053b558d0",
       "name": "Assign a package to a serial number",
       "request": {
