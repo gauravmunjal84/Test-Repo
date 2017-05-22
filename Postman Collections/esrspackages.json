@@ -294,6 +294,67 @@
       ]
     },
     {
+      "_postman_id": "2fe96b02-09b7-1183-3e89-00f21741774e",
+      "name": "GET notifications @after GET upgradePackages",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "",
+              "",
+              "",
+              "tests[\"Verify published notification is unacknowledged by default\"] = data.content[0].ack.ackState === \"UNACK\";",
+              "",
+              "tests[\"Verify the severity of notification\"] = data.content[0].severity === \"NOTIFICATION\";",
+              "",
+              "tests[\"Verify the category of notification\"] = data.content[0].category === \"MONITORING\";",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://{{ip}}:8443/api/v1/events?filter=properties.component eq\"TelMgr\" and catalogCode eq \"TLM\" and summary eq\"An upgrade package of version: ecdm-upgrade-2.0.0-5-SNAPSHOT.pkg is available to download from the upgrades tab.\"",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          },
+          {
+            "key": "X-Auth-Token",
+            "value": "{{token}}",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "e0d82663-d75a-da37-4cea-e94f5289f88b",
       "name": "GET remotePackage from catalog",
       "event": [
