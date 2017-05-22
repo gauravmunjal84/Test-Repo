@@ -294,56 +294,6 @@
       ]
     },
     {
-      "_postman_id": "0849d0ae-4952-cb6f-2455-b51ede43e0fa",
-      "name": "Get device connections",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"deviceId\", data.content[0].id);"
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
-          },
-          {
-            "key": "xbrs_tenant",
-            "value": "*",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": "This request will return existing license; blank response if no license"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "6ddb4190-b8ee-5af9-eff0-22712f4db8f3",
       "name": "Post device connections",
       "event": [
