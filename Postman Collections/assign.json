@@ -6,32 +6,5 @@
     "description": "",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
-  "item": [
-    {
-      "_postman_id": "698c6f15-3276-9226-f3e9-d23053b558d0",
-      "name": "Assign a package to a serial number",
-      "request": {
-        "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/multipleAssign",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Cookie",
-            "value": "CTSESSION={{ctsession}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"productName\" :\"EMCeCDM\", \n  \"serialNumber\":\"{{serialNumber}}\",\n  \"fileNameList\" :[\"{{esrsPackageName}}\" ]\n  \n}"
-        },
-        "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
-      },
-      "response": []
-    }
-  ]
+  "item": []
 }
