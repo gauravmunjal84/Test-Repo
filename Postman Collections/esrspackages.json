@@ -294,32 +294,6 @@
       ]
     },
     {
-      "_postman_id": "d2d47f4d-91f2-a5ba-081f-b70c012608c8",
-      "name": "GET remotePackage by id",
-      "request": {
-        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages/{{esrsPackageId}}",
-        "method": "GET",
-        "header": [
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
-        },
-        "description": "Reads the response from catalog"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "5d9b0973-08e9-a2a0-c9a8-bb8229ccb5ea",
       "name": "Download remotePackage",
       "event": [
