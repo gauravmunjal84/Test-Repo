@@ -953,7 +953,7 @@
           "_postman_id": "4be67855-4a63-6d33-c9de-391478159108",
           "name": "Set upgradeVersion dataitem value for particular serial number",
           "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageVersion",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMQNLHHBLYNYX/UpgradePackageVersion",
             "method": "POST",
             "header": [
               {
