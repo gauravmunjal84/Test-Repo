@@ -930,7 +930,7 @@
           "_postman_id": "aac34da8-cdb2-7807-2a1c-94d1db88b2ba",
           "name": "GET dataitem value associated to serial number",
           "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageVersion",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMQNLHHBLYNYX/UpgradePackageVersion",
             "method": "GET",
             "header": [
               {
