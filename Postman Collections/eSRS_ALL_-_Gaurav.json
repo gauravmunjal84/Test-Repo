@@ -2514,7 +2514,18 @@
           "request": {
             "url": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
             "body": {},
             "description": ""
           },
