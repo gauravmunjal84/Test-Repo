@@ -2507,19 +2507,20 @@
       "_postman_id": "cc19504c-89e4-1440-16f5-b08271c92839",
       "name": "Catalog Access",
       "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "946c4d91-3196-e387-49e1-06c22b1be80f",
-      "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
-      "request": {
-        "url": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
+      "item": [
+        {
+          "_postman_id": "946c4d91-3196-e387-49e1-06c22b1be80f",
+          "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
+          "request": {
+            "url": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
