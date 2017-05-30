@@ -2530,6 +2530,29 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "cfa08e60-ab8d-e13d-ff5d-3baebd1603ff",
+          "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents copy",
+          "request": {
+            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
