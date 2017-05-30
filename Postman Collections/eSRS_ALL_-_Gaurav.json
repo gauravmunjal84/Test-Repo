@@ -2512,7 +2512,7 @@
           "_postman_id": "946c4d91-3196-e387-49e1-06c22b1be80f",
           "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
           "request": {
-            "url": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
+            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/",
             "method": "GET",
             "header": [
               {
