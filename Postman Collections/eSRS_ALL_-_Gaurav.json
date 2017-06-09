@@ -2479,7 +2479,7 @@
             }
           ],
           "request": {
-            "url": "https://{{ip}}:8443/api/v1/telemetry/deviceConnections/{{deviceId}}",
+            "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway/6e6f9d09-5773-474f-a491-c791af592f79",
             "method": "DELETE",
             "header": [
               {
