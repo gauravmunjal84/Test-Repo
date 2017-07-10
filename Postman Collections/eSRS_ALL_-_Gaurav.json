@@ -2053,7 +2053,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
+              "raw": "{\"username\":\"admin\", \"password\":\"Changeme@1\"}"
             },
             "description": "This request will return auth token from aaa component"
           },
