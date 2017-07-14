@@ -11,7 +11,34 @@
       "_postman_id": "76f95f78-f64b-707d-c778-a48272bce20a",
       "name": "init",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "00b9d6ec-84ad-b67f-9bcc-7b52dc2f42c0",
+          "name": "PUT /osUsers/{supportId}}",
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{supportId}}",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": " {\n      \"id\": \"{{supportId}}\",\n      \"userName\": \"support\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "e8d830af-0541-1553-dd1c-afe56f3ad750",
@@ -457,32 +484,6 @@
       "response": []
     },
     {
-      "_postman_id": "00b9d6ec-84ad-b67f-9bcc-7b52dc2f42c0",
-      "name": "PUT /osUsers/{supportId}}",
-      "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{supportId}}",
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": " {\n      \"id\": \"{{supportId}}\",\n      \"userName\": \"support\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "a0ac36c6-d948-1c01-8a35-e87a66712a83",
       "name": "GET lockboxes",
       "event": [
@@ -725,8 +726,7 @@
             {
               "key": "file",
               "value": null,
-              "type": "file",
-              "enabled": true
+              "type": "file"
             }
           ]
         },
@@ -1679,13 +1679,11 @@
               "key": "size",
               "value": "original",
               "type": "text",
-              "enabled": true,
               "warning": ""
             },
             {
               "key": "file",
               "type": "file",
-              "enabled": true,
               "warning": "",
               "src": {
                 "0": {
