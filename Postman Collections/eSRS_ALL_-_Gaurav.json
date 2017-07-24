@@ -2196,7 +2196,7 @@
             }
           ],
           "request": {
-            "url": "https://{{ip}}:8443/api/v1/schedules?filter=name eq \"ESRSUpgradePackage\"",
+            "url": "https://{{ip}}:8443/api/v2/users",
             "method": "GET",
             "header": [
               {
