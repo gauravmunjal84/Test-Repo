@@ -8,6 +8,1735 @@
   },
   "item": [
     {
+      "_postman_id": "cc19504c-89e4-1440-16f5-b08271c92839",
+      "name": "Catalog Access",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "946c4d91-3196-e387-49e1-06c22b1be80f",
+          "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
+          "request": {
+            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cfa08e60-ab8d-e13d-ff5d-3baebd1603ff",
+          "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents copy",
+          "request": {
+            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/esrsupgradefileinfo/documents",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7cc784db-2017-a87a-b464-066b75cb90b1",
+          "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents copy",
+          "request": {
+            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "4ba4aa08-eba3-21e7-8229-59f42e0c8fe6",
+      "name": "Cleanup",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "6be0953e-5b17-7d5c-724e-bc33c976bb42",
+          "name": "DELETE device connections ",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"licenseId\", data.content[0].id);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway/6e6f9d09-5773-474f-a491-c791af592f79",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"emcSupportUsername\":\"scott.jones@nordstrom.com\", \"emcSupportPassword\":\"Password1\", \"gatewayHostAddress\":\"10.7.252.39\"}"
+            },
+            "description": "This request will return existing license; blank response if no license"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "6d0cb410-8fa4-8c6c-922d-18fdb3aab752",
+      "name": "Device Connection",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "c72b46df-6866-0997-3306-2960a9d87877",
+          "name": "Login - Default",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);",
+                  "",
+                  "",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
+                  "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
+                  "//postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
+                  "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/login",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"admin\", \"password\":\"Changeme@1\"}"
+            },
+            "description": "This request will return auth token from aaa component"
+          },
+          "response": [
+            {
+              "id": "08d88656-9613-36b8-d7c3-c1eb6d7e7345",
+              "name": "X-Auth-Token",
+              "originalRequest": {
+                "url": "https://10.7.244.21:8443/api/login",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
+                },
+                "description": "This request will return auth token from aaa component"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "javascript",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "name": "Access-Control-Allow-Headers",
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "x-requested-with",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Allow-Methods",
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "PUT, POST, GET, OPTIONS, DELETE",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Max-Age",
+                  "key": "Access-Control-Max-Age",
+                  "value": "3600",
+                  "description": ""
+                },
+                {
+                  "name": "Cache-Control",
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Length",
+                  "key": "Content-Length",
+                  "value": "44",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json; charset=UTF-8",
+                  "description": ""
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Sat, 11 Jul 2015 00:06:14 GMT",
+                  "description": ""
+                },
+                {
+                  "name": "Expires",
+                  "key": "Expires",
+                  "value": "0",
+                  "description": ""
+                },
+                {
+                  "name": "Pragma",
+                  "key": "Pragma",
+                  "value": "no-cache",
+                  "description": ""
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "Jetty(9.2.9.v20150224)",
+                  "description": ""
+                },
+                {
+                  "name": "Strict-Transport-Security",
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000 ; includeSubDomains",
+                  "description": ""
+                },
+                {
+                  "name": "X-Content-Type-Options",
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff",
+                  "description": ""
+                },
+                {
+                  "name": "X-Frame-Options",
+                  "key": "X-Frame-Options",
+                  "value": "DENY",
+                  "description": ""
+                },
+                {
+                  "name": "X-XSS-Protection",
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "160",
+              "body": "{\"token\":\"280B1FA3D408BE734A5A340F280348FD\"}"
+            },
+            {
+              "id": "e18250d5-fa84-92c3-5862-9b8ed7eb0c45",
+              "name": "token",
+              "originalRequest": {
+                "url": "https://{{ip}}:8443/api/login",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
+                },
+                "description": "This request will return auth token from aaa component"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "javascript",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "name": "Access-Control-Allow-Headers",
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "x-requested-with",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Allow-Methods",
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "PUT, POST, GET, OPTIONS, DELETE",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Max-Age",
+                  "key": "Access-Control-Max-Age",
+                  "value": "3600",
+                  "description": ""
+                },
+                {
+                  "name": "Cache-Control",
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Length",
+                  "key": "Content-Length",
+                  "value": "44",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8",
+                  "description": ""
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Thu, 01 Oct 2015 23:07:38 GMT",
+                  "description": ""
+                },
+                {
+                  "name": "Expires",
+                  "key": "Expires",
+                  "value": "0",
+                  "description": ""
+                },
+                {
+                  "name": "Pragma",
+                  "key": "Pragma",
+                  "value": "no-cache",
+                  "description": ""
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "Apache-Coyote/1.1",
+                  "description": ""
+                },
+                {
+                  "name": "Strict-Transport-Security",
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000 ; includeSubDomains",
+                  "description": ""
+                },
+                {
+                  "name": "X-Content-Type-Options",
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff",
+                  "description": ""
+                },
+                {
+                  "name": "X-Frame-Options",
+                  "key": "X-Frame-Options",
+                  "value": "DENY",
+                  "description": ""
+                },
+                {
+                  "name": "X-XSS-Protection",
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "192",
+              "body": "{\"token\":\"5E01B1AB793F47E532A64E455D9A62A5\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "ca4c6fe8-f44c-7258-ac41-acb9b3d19020",
+          "name": "Get device connections",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"deviceId\", data.content[0].id);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/telemetry/deviceConnections/",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              },
+              {
+                "key": "xbrs_tenant",
+                "value": "*",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This request will return existing license; blank response if no license"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "46c9a764-ea42-5c6e-a772-42fa80f26687",
+          "name": "Post device connections",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"licenseId\", data.content[0].id);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/telemetry/deviceConnections/",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"emcSupportUsername\":\"scott.jones@nordstrom.com\", \"emcSupportPassword\":\"Password1\", \"gatewayHostAddress\":\"10.7.252.39\"}"
+            },
+            "description": "This request will return existing license; blank response if no license"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ce1d4a61-b1be-235b-d63e-eae415066a41",
+          "name": "Get device connections after POST",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"deviceId\", data.content[0].id);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/telemetry/deviceConnections/",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              },
+              {
+                "key": "xbrs_tenant",
+                "value": "*",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This request will return existing license; blank response if no license"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "ffa1b31a-f8e5-ebd8-001d-8e6e39c0934e",
+      "name": "ESRS Backend - MFT API's",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "a1e54987-8c20-f53e-5c69-f05063cee56d",
+          "name": "Generate CT session with MFT backend",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"ctsession\", data[\"token\"]);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds ",
+            "method": "POST",
+            "header": [
+              {
+                "key": "username",
+                "value": "krishp18",
+                "description": ""
+              },
+              {
+                "key": "fobkeyvalue",
+                "value": "Password1",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ab3afb33-23fd-eb47-81a3-2315602bf958",
+          "name": "Create a new dataitem for the product",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/metadata/products/EMCeCDM",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
+            },
+            "description": "Create a new dataitem for the product, remember this is at product level, there will be a different API to set this value in context with the serial number because values can be different for different serial numbers or different eCDM's"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "aac34da8-cdb2-7807-2a1c-94d1db88b2ba",
+          "name": "GET dataitem value associated to serial number",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMQNLHHBLYNYX/UpgradePackageVersion",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "GET dataitem by name with serial number of product"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4be67855-4a63-6d33-c9de-391478159108",
+          "name": "Set upgradeVersion dataitem value for particular serial number",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradeSoftwareVersion",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"value\":\"2.0.0-5-SNAPSHOT\"\r\n}"
+            },
+            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "be77dad2-16a7-3909-e6b5-4ff4daa3c958",
+          "name": "GET the structure of file uploaded in DL",
+          "request": {
+            "url": "http://esrs-mftcore-stg.isus.emc.com/esrs/v1/distlockersvc/getfilestructure/EMCeCDM/mft",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "Get metadata from MFT backend, default dataitems basically"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4e984a2b-60b5-5c2e-7c86-dcfb35ffd507",
+          "name": "GET default dataitems for the product copy",
+          "request": {
+            "url": "https://mftdataitemsvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/metadata/products/EMCeCDM",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "Get metadata from MFT backend, default dataitems basically"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7d8cbf76-584b-90bf-5700-24c33a16ce41",
+          "name": "GET package download history",
+          "request": {
+            "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/EMCeCDM/instances/ELMKT94PDTJ0X5/audit",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "Get metadata from MFT backend, default dataitems basically"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "40b0faa7-9f1c-5c13-72bb-a4bc3e54140d",
+          "name": "GET transfer status for particular serial number",
+          "request": {
+            "url": "https://productlockermftv3service-test.cfcq.isus.emc.com /mft/productlocker/v1/products/queuedPackages/EMCeCDM/ELM24DQLD04S22/audit",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "Get metadata from MFT backend, default dataitems basically"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bbb24a2f-ca59-dda2-56d6-0e11dcd7e441",
+          "name": "GET packages available to fetch from the backend",
+          "request": {
+            "url": "http://productlockermftv3service-test.cfcq.isus.emc.com/mft/productlocker/v1/products/queuedPackages/EMCeCDM/ELM24DQLD04S22",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "Get metadata from MFT backend, default dataitems basically"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f9a436a9-048b-2c2f-4752-7b7560a328a0",
+          "name": "GET active package transfer to eCDM",
+          "request": {
+            "url": "http://mftfiletransferprogressDetailsSvc-tst.cfcq.isus.emc.com/mft/filetransferprogress/status/ELM24DQLD04S22/EMCeCDM",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3e113f86-483a-b15b-d473-f32026ede9ea",
+          "name": "Set Title dataitem value for particular serial number",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageName",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"value\":\"EMC eCDM - Major Release\"\r\n}"
+            },
+            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "216a49e3-5291-3871-5658-43be05383fcf",
+          "name": "Set description dataitem value for particular serial number",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/{{serialNumber}}/UpgradePackageDescription",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"value\":\"This package will upgrade all the skyline components\"\r\n}"
+            },
+            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "23ed25e5-ecc0-f371-a798-d42f73b10119",
+          "name": "Set madeAvailable dataitem value for particular serial number ",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageMadeAvailableDate",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"value\":\"04/05/2017\"\r\n}"
+            },
+            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3204cc37-17a9-f756-277f-4e1e2cddf9df",
+          "name": "Create a new dateAvailable dataitem for the product",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/metadata/products/EMCeCDM",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[{    \"name\": \"UpgradePackageMadeAvailableDate\",\r\n      \"description\": \"Date since new Upgrade Package version is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
+            },
+            "description": "Create a new dataitem for the product, remember this is at product level, there will be a different API to set this value in context with the serial number because values can be different for different serial numbers or different eCDM's"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6426dc88-c1b2-a8f3-2631-08a5537b1e75",
+          "name": "GET dateAvailable dataitem value associated to serial number",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageMadeAvailableDate",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "GET dataitem by name with serial number of product"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8c1c9bfb-dc54-d42b-6296-484d7eb444f7",
+          "name": "GET active jobs",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"serialNumber\", \"ELMKT94PDTJ0X5\");",
+                  "//postman.setEnvironmentVariable(\"serialNumber\", \"ELMQNLHHBLYNYX\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core /mft/productlocker/v1/products/EMCeCDM/instances/ELMKT94PDTJ0X5/audit",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "GET dataitem by name with serial number of product"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f609e445-7418-5c62-9d73-cffed5de5138",
+          "name": "Set currentVersion dataitem value for particular serial number",
+          "request": {
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/ApplianceCurrentVersion",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"value\":\"2.0.0-5-SNAPSHOT\"\r\n}"
+            },
+            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "4239bfa2-808c-b110-f34a-c9c1a08a3678",
+      "name": "ESRS VE - The Gateway",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "6b82c66b-abf8-b2f1-0c6a-ad763497a40d",
+          "name": "Add eCDM to Gateway",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"esrsDeviceKey\", data.deviceKey);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": " https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Authorization",
+                "value": "scott.jones@nordstrom.com:Password1",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "30123da9-7f4b-af89-de74-9bd552a6af65",
+          "name": "GET from gateway using HMAC",
+          "request": {
+            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/keepalive",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "EMCeCDM:ELMKT94PDTJ0X5:eziQRfexPLbnxXsQfrdbCPFbYD8=,domain=Device",
+                "description": ""
+              },
+              {
+                "key": "Date",
+                "value": "Date: Thu Apr 20 13:20:50 MDT 2017",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3c47ed7b-baf7-7bfd-21e8-c68e17c1eeb1",
+          "name": "GET from gateway using HMAC 1",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var key = 'my_api_key';\r",
+                  "var base64Secret = 'my_b64_secret';\r",
+                  "\r",
+                  "var timestampHeader = new Date();\r",
+                  "\r",
+                  "// Load required 3rd party JS libs via jQuery\r",
+                  "// http://stackoverflow.com/a/11803418\r",
+                  "\r",
+                  "$.when(\r",
+                  "    $.getScript( \"https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.1/sha256.js\" ),\r",
+                  "    $.getScript( \"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/md5.js\" ),\r",
+                  "    $.getScript( \"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js\" ),\r",
+                  "    $.Deferred(function( deferred ){\r",
+                  "        $( deferred.resolve );\r",
+                  "    })\r",
+                  ").done(function(){\r",
+                  "\r",
+                  "    var time = timestampHeader;\r",
+                  "    var method = request.method;\r",
+                  "    var encodedUri = encodeURIComponent(request.url).toLowerCase();\r",
+                  "\r",
+                  "    var signString = method + \"\\n\\n\" + \"application/json\" + \"\\n\" + time + \"\\n\" + encodedUri;\r",
+                  "\r",
+                  "    // Generate HMAC SHA256 signature\r",
+                  "    // Using library: http://caligatio.github.io/jsSHA/\r",
+                  "    var shaObj = new jsSHA(\"SHA-256\", \"TEXT\");\r",
+                  "    shaObj.setHMACKey(base64Secret, \"B64\");\r",
+                  "    shaObj.update(rawSignature);\r",
+                  "    var signature = shaObj.getHMAC(\"B64\");\r",
+                  "\r",
+                  "    postman.setEnvironmentVariable('key', key);\r",
+                  "    postman.setEnvironmentVariable('time', time);\r",
+                  "    postman.setEnvironmentVariable('nonce', nonce);\r",
+                  "    postman.setEnvironmentVariable('signature', signature);\r",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": " https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "EMCeCDM:{{serialNumber}}:SB2vpXC0TiM1QVpKiC88m/CJxAg=,domain=Device",
+                "description": ""
+              },
+              {
+                "key": "Date",
+                "value": "Tue Mar 21 2017 17:56:00 GMT",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ad801bc5-f11b-23eb-ee15-ede2b1ac19cd",
+          "name": "GET files to download using gateway API",
+          "request": {
+            "url": " https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/mft/getfiles/list",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "EMCeCDM:ELMKT94PDTJ0X5:XCkL59TrbnnmZdzqoynLrfoJgQc=,domain=Device",
+                "description": ""
+              },
+              {
+                "key": "Date",
+                "value": "Tue Mar 21 2017 17:56:00 GMT",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "42b3cd90-095e-6c99-677d-01b87672a62d",
+          "name": "GET fileName to download using gateway API",
+          "request": {
+            "url": " https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/mft/ecdm-upgrade-2.0.0-3-SNAPSHOT.pkg",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "EMCeCDM:ELMKT94PDTJ0X5:oAMSY9IEcpGULPfLx2DdCE4u+70=,domain=Device",
+                "description": ""
+              },
+              {
+                "key": "Date",
+                "value": "Tue Mar 21 2017 17:56:00 GMT",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "8dd59a21-7019-528b-795a-0b810546083f",
+      "name": "Licensing",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "7a19e400-5d93-402c-c52a-d8c69242f2c4",
+          "name": "Login - Default",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);",
+                  "",
+                  "",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
+                  "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
+                  "//postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
+                  "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/login",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
+            },
+            "description": "This request will return auth token from aaa component"
+          },
+          "response": [
+            {
+              "id": "09df1d04-44b4-41e7-8726-0c5067ef04a2",
+              "name": "token",
+              "originalRequest": {
+                "url": "https://{{ip}}:8443/api/login",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
+                },
+                "description": "This request will return auth token from aaa component"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "javascript",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "name": "Access-Control-Allow-Headers",
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "x-requested-with",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Allow-Methods",
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "PUT, POST, GET, OPTIONS, DELETE",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Max-Age",
+                  "key": "Access-Control-Max-Age",
+                  "value": "3600",
+                  "description": ""
+                },
+                {
+                  "name": "Cache-Control",
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Length",
+                  "key": "Content-Length",
+                  "value": "44",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8",
+                  "description": ""
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Thu, 01 Oct 2015 23:07:38 GMT",
+                  "description": ""
+                },
+                {
+                  "name": "Expires",
+                  "key": "Expires",
+                  "value": "0",
+                  "description": ""
+                },
+                {
+                  "name": "Pragma",
+                  "key": "Pragma",
+                  "value": "no-cache",
+                  "description": ""
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "Apache-Coyote/1.1",
+                  "description": ""
+                },
+                {
+                  "name": "Strict-Transport-Security",
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000 ; includeSubDomains",
+                  "description": ""
+                },
+                {
+                  "name": "X-Content-Type-Options",
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff",
+                  "description": ""
+                },
+                {
+                  "name": "X-Frame-Options",
+                  "key": "X-Frame-Options",
+                  "value": "DENY",
+                  "description": ""
+                },
+                {
+                  "name": "X-XSS-Protection",
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "192",
+              "body": "{\"token\":\"5E01B1AB793F47E532A64E455D9A62A5\"}"
+            },
+            {
+              "id": "df1acb58-4fd7-d62e-8771-38d8bbf1f4bc",
+              "name": "X-Auth-Token",
+              "originalRequest": {
+                "url": "https://10.7.244.21:8443/api/login",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
+                },
+                "description": "This request will return auth token from aaa component"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "javascript",
+              "_postman_previewtype": "html",
+              "header": [
+                {
+                  "name": "Access-Control-Allow-Headers",
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "x-requested-with",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Allow-Methods",
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "PUT, POST, GET, OPTIONS, DELETE",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Allow-Origin",
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "description": ""
+                },
+                {
+                  "name": "Access-Control-Max-Age",
+                  "key": "Access-Control-Max-Age",
+                  "value": "3600",
+                  "description": ""
+                },
+                {
+                  "name": "Cache-Control",
+                  "key": "Cache-Control",
+                  "value": "no-cache, no-store, max-age=0, must-revalidate",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Length",
+                  "key": "Content-Length",
+                  "value": "44",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json; charset=UTF-8",
+                  "description": ""
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Sat, 11 Jul 2015 00:06:14 GMT",
+                  "description": ""
+                },
+                {
+                  "name": "Expires",
+                  "key": "Expires",
+                  "value": "0",
+                  "description": ""
+                },
+                {
+                  "name": "Pragma",
+                  "key": "Pragma",
+                  "value": "no-cache",
+                  "description": ""
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "Jetty(9.2.9.v20150224)",
+                  "description": ""
+                },
+                {
+                  "name": "Strict-Transport-Security",
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000 ; includeSubDomains",
+                  "description": ""
+                },
+                {
+                  "name": "X-Content-Type-Options",
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff",
+                  "description": ""
+                },
+                {
+                  "name": "X-Frame-Options",
+                  "key": "X-Frame-Options",
+                  "value": "DENY",
+                  "description": ""
+                },
+                {
+                  "name": "X-XSS-Protection",
+                  "key": "X-XSS-Protection",
+                  "value": "1; mode=block",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "160",
+              "body": "{\"token\":\"280B1FA3D408BE734A5A340F280348FD\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "14dfe8ad-f73f-acdc-9f94-e2de1b0c5441",
+          "name": "Get License @before adding",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"id\", data.id);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/system/licenses",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This request will return existing license; blank response if no license"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0d343da7-58c8-9c36-1c54-532bbd3906fb",
+          "name": "Post valid license",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"licenseCatalogId\", data.id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/system/licenses/",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\r\n\"type\":\"unserved\", \r\n\r\n \"key\": \"#############################################################\\n# EMC License File\\n# Activation Date:  Jun 15, 2016 04:23:48 PM\\n# Activated By:  xxxxBobbie xxxxBourque\\n# Type:UNSERVED\\n#############################################################\\nINCREMENT EMC_ECDM EMCLM 1.0 permanent uncounted \\n\\tVENDOR_STRING=\\\"TYPE=CAPACITY;FETB=1;PRODUCT_LINE=EMC \\n\\tECDM;FEATURE_NAME=EMC Enterprise Copy Data \\n\\tManagement;UOM_CODE=CA;UOM_NAME=Registered Capacity in \\n\\tTB;SWID=ELM24DQLD04S22;PLC=ECDM\\\" HOSTID=ANY \\n\\tdist_info=\\\"ACTIVATED TO Nordstrom\\\" ISSUER=EMC \\n\\tISSUED=15-Jun-2016 NOTICE=\\\"ACTIVATED TO License Site Number: \\n\\tPTA15JUN20161264559\\\" SN=2351747 TS_OK SIGN=\\\"00A1 956D 84BD \\n\\tE61C 8F25 4AE1 D6DA CB00 BC87 9C29 7F11 01C6 C051 6F10 FC02\\\"\"\r\n\r\n}"
+            },
+            "description": "This request will POST a valid license"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c376e90e-5bb5-c261-dc48-61c40dd66c8b",
+          "name": "Get License copy @after adding",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"id\", data.id);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/system/licenses",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "This request will return existing license; blank response if no license"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "9e6a6f71-236f-082c-ad07-4592873b0a63",
+      "name": "MFT - Assign Packages",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "16bd33b8-9f05-0cb2-2d95-d16880882d83",
+          "name": "Generate CT session with MFT backend",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"ctsession\", data[\"token\"]);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds ",
+            "method": "POST",
+            "header": [
+              {
+                "key": "username",
+                "value": "krishp18",
+                "description": ""
+              },
+              {
+                "key": "fobkeyvalue",
+                "value": "Password1",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c5190850-c855-adcf-0736-ef3a8c3933af",
+          "name": "Set Title dataitem value for particular serial number copy",
+          "request": {
+            "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/multipleAssign",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "CTSESSION={{ctsession}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"productName\" :\"EMCeCDM\", \n\t\"serialNumber\":\"{{serialNumber}}\",\n\t\"fileNameList\" :[\"{{esrsPackageName}}\" ]\n\t\n}"
+            },
+            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "f7ba8f3c-997e-e87e-90d4-4a824366f6aa",
       "name": "Scheduler",
       "description": "",
@@ -847,17 +2576,10 @@
             "description": "This API downloads the file by name that is available in the backend to download, should be the newer version."
           },
           "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "ffa1b31a-f8e5-ebd8-001d-8e6e39c0934e",
-      "name": "ESRS Backend - MFT API's",
-      "description": "",
-      "item": [
+        },
         {
-          "_postman_id": "a1e54987-8c20-f53e-5c69-f05063cee56d",
-          "name": "Generate CT session with MFT backend",
+          "_postman_id": "f099051b-de27-d534-66bf-9d68587dd7dd",
+          "name": "GET esrs upgrade package schedule   copy",
           "event": [
             {
               "listen": "test",
@@ -865,1042 +2587,13 @@
                 "type": "text/javascript",
                 "exec": [
                   "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"ctsession\", data[\"token\"]);"
+                  "postman.setEnvironmentVariable(\"schIdNotify\", data.content[0].id);"
                 ]
               }
             }
           ],
           "request": {
-            "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds ",
-            "method": "POST",
-            "header": [
-              {
-                "key": "username",
-                "value": "krishp18",
-                "description": ""
-              },
-              {
-                "key": "fobkeyvalue",
-                "value": "Password1",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ab3afb33-23fd-eb47-81a3-2315602bf958",
-          "name": "Create a new dataitem for the product",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/metadata/products/EMCeCDM",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
-            },
-            "description": "Create a new dataitem for the product, remember this is at product level, there will be a different API to set this value in context with the serial number because values can be different for different serial numbers or different eCDM's"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "aac34da8-cdb2-7807-2a1c-94d1db88b2ba",
-          "name": "GET dataitem value associated to serial number",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMQNLHHBLYNYX/UpgradePackageVersion",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "GET dataitem by name with serial number of product"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "4be67855-4a63-6d33-c9de-391478159108",
-          "name": "Set upgradeVersion dataitem value for particular serial number",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradeSoftwareVersion",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\t\"value\":\"2.0.0-5-SNAPSHOT\"\r\n}"
-            },
-            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "be77dad2-16a7-3909-e6b5-4ff4daa3c958",
-          "name": "GET the structure of file uploaded in DL",
-          "request": {
-            "url": "http://esrs-mftcore-stg.isus.emc.com/esrs/v1/distlockersvc/getfilestructure/EMCeCDM/mft",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "Get metadata from MFT backend, default dataitems basically"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "4e984a2b-60b5-5c2e-7c86-dcfb35ffd507",
-          "name": "GET default dataitems for the product copy",
-          "request": {
-            "url": "https://mftdataitemsvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/metadata/products/EMCeCDM",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "Get metadata from MFT backend, default dataitems basically"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7d8cbf76-584b-90bf-5700-24c33a16ce41",
-          "name": "GET package download history",
-          "request": {
-            "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/EMCeCDM/instances/ELMKT94PDTJ0X5/audit",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "Get metadata from MFT backend, default dataitems basically"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "40b0faa7-9f1c-5c13-72bb-a4bc3e54140d",
-          "name": "GET transfer status for particular serial number",
-          "request": {
-            "url": "https://productlockermftv3service-test.cfcq.isus.emc.com /mft/productlocker/v1/products/queuedPackages/EMCeCDM/ELM24DQLD04S22/audit",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "Get metadata from MFT backend, default dataitems basically"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "bbb24a2f-ca59-dda2-56d6-0e11dcd7e441",
-          "name": "GET packages available to fetch from the backend",
-          "request": {
-            "url": "http://productlockermftv3service-test.cfcq.isus.emc.com/mft/productlocker/v1/products/queuedPackages/EMCeCDM/ELM24DQLD04S22",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "Get metadata from MFT backend, default dataitems basically"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f9a436a9-048b-2c2f-4752-7b7560a328a0",
-          "name": "GET active package transfer to eCDM",
-          "request": {
-            "url": "http://mftfiletransferprogressDetailsSvc-tst.cfcq.isus.emc.com/mft/filetransferprogress/status/ELM24DQLD04S22/EMCeCDM",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3e113f86-483a-b15b-d473-f32026ede9ea",
-          "name": "Set Title dataitem value for particular serial number",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageName",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"value\":\"EMC eCDM - Major Release\"\r\n}"
-            },
-            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "216a49e3-5291-3871-5658-43be05383fcf",
-          "name": "Set description dataitem value for particular serial number",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/{{serialNumber}}/UpgradePackageDescription",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"value\":\"This package will upgrade all the skyline components\"\r\n}"
-            },
-            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "23ed25e5-ecc0-f371-a798-d42f73b10119",
-          "name": "Set madeAvailable dataitem value for particular serial number ",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageMadeAvailableDate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"value\":\"04/05/2017\"\r\n}"
-            },
-            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3204cc37-17a9-f756-277f-4e1e2cddf9df",
-          "name": "Create a new dateAvailable dataitem for the product",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/metadata/products/EMCeCDM",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "[{    \"name\": \"UpgradePackageMadeAvailableDate\",\r\n      \"description\": \"Date since new Upgrade Package version is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
-            },
-            "description": "Create a new dataitem for the product, remember this is at product level, there will be a different API to set this value in context with the serial number because values can be different for different serial numbers or different eCDM's"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "6426dc88-c1b2-a8f3-2631-08a5537b1e75",
-          "name": "GET dateAvailable dataitem value associated to serial number",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageMadeAvailableDate",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "GET dataitem by name with serial number of product"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8c1c9bfb-dc54-d42b-6296-484d7eb444f7",
-          "name": "GET active jobs",
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable(\"serialNumber\", \"ELMKT94PDTJ0X5\");",
-                  "//postman.setEnvironmentVariable(\"serialNumber\", \"ELMQNLHHBLYNYX\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core /mft/productlocker/v1/products/EMCeCDM/instances/ELMKT94PDTJ0X5/audit",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "GET dataitem by name with serial number of product"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f609e445-7418-5c62-9d73-cffed5de5138",
-          "name": "Set currentVersion dataitem value for particular serial number",
-          "request": {
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/ApplianceCurrentVersion",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"value\":\"2.0.0-5-SNAPSHOT\"\r\n}"
-            },
-            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "4239bfa2-808c-b110-f34a-c9c1a08a3678",
-      "name": "ESRS VE - The Gateway",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "6b82c66b-abf8-b2f1-0c6a-ad763497a40d",
-          "name": "Add eCDM to Gateway",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"esrsDeviceKey\", data.deviceKey);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": " https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Authorization",
-                "value": "scott.jones@nordstrom.com:Password1",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "30123da9-7f4b-af89-de74-9bd552a6af65",
-          "name": "GET from gateway using HMAC",
-          "request": {
-            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/keepalive",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "EMCeCDM:ELMKT94PDTJ0X5:eziQRfexPLbnxXsQfrdbCPFbYD8=,domain=Device",
-                "description": ""
-              },
-              {
-                "key": "Date",
-                "value": "Date: Thu Apr 20 13:20:50 MDT 2017",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3c47ed7b-baf7-7bfd-21e8-c68e17c1eeb1",
-          "name": "GET from gateway using HMAC 1",
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var key = 'my_api_key';\r",
-                  "var base64Secret = 'my_b64_secret';\r",
-                  "\r",
-                  "var timestampHeader = new Date();\r",
-                  "\r",
-                  "// Load required 3rd party JS libs via jQuery\r",
-                  "// http://stackoverflow.com/a/11803418\r",
-                  "\r",
-                  "$.when(\r",
-                  "    $.getScript( \"https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.1/sha256.js\" ),\r",
-                  "    $.getScript( \"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/md5.js\" ),\r",
-                  "    $.getScript( \"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js\" ),\r",
-                  "    $.Deferred(function( deferred ){\r",
-                  "        $( deferred.resolve );\r",
-                  "    })\r",
-                  ").done(function(){\r",
-                  "\r",
-                  "    var time = timestampHeader;\r",
-                  "    var method = request.method;\r",
-                  "    var encodedUri = encodeURIComponent(request.url).toLowerCase();\r",
-                  "\r",
-                  "    var signString = method + \"\\n\\n\" + \"application/json\" + \"\\n\" + time + \"\\n\" + encodedUri;\r",
-                  "\r",
-                  "    // Generate HMAC SHA256 signature\r",
-                  "    // Using library: http://caligatio.github.io/jsSHA/\r",
-                  "    var shaObj = new jsSHA(\"SHA-256\", \"TEXT\");\r",
-                  "    shaObj.setHMACKey(base64Secret, \"B64\");\r",
-                  "    shaObj.update(rawSignature);\r",
-                  "    var signature = shaObj.getHMAC(\"B64\");\r",
-                  "\r",
-                  "    postman.setEnvironmentVariable('key', key);\r",
-                  "    postman.setEnvironmentVariable('time', time);\r",
-                  "    postman.setEnvironmentVariable('nonce', nonce);\r",
-                  "    postman.setEnvironmentVariable('signature', signature);\r",
-                  "});"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": " https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "EMCeCDM:{{serialNumber}}:SB2vpXC0TiM1QVpKiC88m/CJxAg=,domain=Device",
-                "description": ""
-              },
-              {
-                "key": "Date",
-                "value": "Tue Mar 21 2017 17:56:00 GMT",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ad801bc5-f11b-23eb-ee15-ede2b1ac19cd",
-          "name": "GET files to download using gateway API",
-          "request": {
-            "url": " https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/mft/getfiles/list",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "EMCeCDM:ELMKT94PDTJ0X5:XCkL59TrbnnmZdzqoynLrfoJgQc=,domain=Device",
-                "description": ""
-              },
-              {
-                "key": "Date",
-                "value": "Tue Mar 21 2017 17:56:00 GMT",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "42b3cd90-095e-6c99-677d-01b87672a62d",
-          "name": "GET fileName to download using gateway API",
-          "request": {
-            "url": " https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/mft/ecdm-upgrade-2.0.0-3-SNAPSHOT.pkg",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "EMCeCDM:ELMKT94PDTJ0X5:oAMSY9IEcpGULPfLx2DdCE4u+70=,domain=Device",
-                "description": ""
-              },
-              {
-                "key": "Date",
-                "value": "Tue Mar 21 2017 17:56:00 GMT",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "9e6a6f71-236f-082c-ad07-4592873b0a63",
-      "name": "MFT - Assign Packages",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "16bd33b8-9f05-0cb2-2d95-d16880882d83",
-          "name": "Generate CT session with MFT backend",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"ctsession\", data[\"token\"]);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds ",
-            "method": "POST",
-            "header": [
-              {
-                "key": "username",
-                "value": "krishp18",
-                "description": ""
-              },
-              {
-                "key": "fobkeyvalue",
-                "value": "Password1",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c5190850-c855-adcf-0736-ef3a8c3933af",
-          "name": "Set Title dataitem value for particular serial number copy",
-          "request": {
-            "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/multipleAssign",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Cookie",
-                "value": "CTSESSION={{ctsession}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"productName\" :\"EMCeCDM\", \n\t\"serialNumber\":\"{{serialNumber}}\",\n\t\"fileNameList\" :[\"{{esrsPackageName}}\" ]\n\t\n}"
-            },
-            "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "8dd59a21-7019-528b-795a-0b810546083f",
-      "name": "Licensing",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "7a19e400-5d93-402c-c52a-d8c69242f2c4",
-          "name": "Login - Default",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);",
-                  "",
-                  "",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
-                  "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
-                  "//postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
-                  "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/login",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
-            },
-            "description": "This request will return auth token from aaa component"
-          },
-          "response": [
-            {
-              "id": "09df1d04-44b4-41e7-8726-0c5067ef04a2",
-              "name": "token",
-              "originalRequest": {
-                "url": "https://{{ip}}:8443/api/login",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
-                },
-                "description": "This request will return auth token from aaa component"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "javascript",
-              "_postman_previewtype": "html",
-              "header": [
-                {
-                  "name": "Access-Control-Allow-Headers",
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "x-requested-with",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Allow-Methods",
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "PUT, POST, GET, OPTIONS, DELETE",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Allow-Origin",
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Max-Age",
-                  "key": "Access-Control-Max-Age",
-                  "value": "3600",
-                  "description": ""
-                },
-                {
-                  "name": "Cache-Control",
-                  "key": "Cache-Control",
-                  "value": "no-cache, no-store, max-age=0, must-revalidate",
-                  "description": ""
-                },
-                {
-                  "name": "Content-Length",
-                  "key": "Content-Length",
-                  "value": "44",
-                  "description": ""
-                },
-                {
-                  "name": "Content-Type",
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8",
-                  "description": ""
-                },
-                {
-                  "name": "Date",
-                  "key": "Date",
-                  "value": "Thu, 01 Oct 2015 23:07:38 GMT",
-                  "description": ""
-                },
-                {
-                  "name": "Expires",
-                  "key": "Expires",
-                  "value": "0",
-                  "description": ""
-                },
-                {
-                  "name": "Pragma",
-                  "key": "Pragma",
-                  "value": "no-cache",
-                  "description": ""
-                },
-                {
-                  "name": "Server",
-                  "key": "Server",
-                  "value": "Apache-Coyote/1.1",
-                  "description": ""
-                },
-                {
-                  "name": "Strict-Transport-Security",
-                  "key": "Strict-Transport-Security",
-                  "value": "max-age=31536000 ; includeSubDomains",
-                  "description": ""
-                },
-                {
-                  "name": "X-Content-Type-Options",
-                  "key": "X-Content-Type-Options",
-                  "value": "nosniff",
-                  "description": ""
-                },
-                {
-                  "name": "X-Frame-Options",
-                  "key": "X-Frame-Options",
-                  "value": "DENY",
-                  "description": ""
-                },
-                {
-                  "name": "X-XSS-Protection",
-                  "key": "X-XSS-Protection",
-                  "value": "1; mode=block",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "192",
-              "body": "{\"token\":\"5E01B1AB793F47E532A64E455D9A62A5\"}"
-            },
-            {
-              "id": "df1acb58-4fd7-d62e-8771-38d8bbf1f4bc",
-              "name": "X-Auth-Token",
-              "originalRequest": {
-                "url": "https://10.7.244.21:8443/api/login",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
-                },
-                "description": "This request will return auth token from aaa component"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "javascript",
-              "_postman_previewtype": "html",
-              "header": [
-                {
-                  "name": "Access-Control-Allow-Headers",
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "x-requested-with",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Allow-Methods",
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "PUT, POST, GET, OPTIONS, DELETE",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Allow-Origin",
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Max-Age",
-                  "key": "Access-Control-Max-Age",
-                  "value": "3600",
-                  "description": ""
-                },
-                {
-                  "name": "Cache-Control",
-                  "key": "Cache-Control",
-                  "value": "no-cache, no-store, max-age=0, must-revalidate",
-                  "description": ""
-                },
-                {
-                  "name": "Content-Length",
-                  "key": "Content-Length",
-                  "value": "44",
-                  "description": ""
-                },
-                {
-                  "name": "Content-Type",
-                  "key": "Content-Type",
-                  "value": "application/json; charset=UTF-8",
-                  "description": ""
-                },
-                {
-                  "name": "Date",
-                  "key": "Date",
-                  "value": "Sat, 11 Jul 2015 00:06:14 GMT",
-                  "description": ""
-                },
-                {
-                  "name": "Expires",
-                  "key": "Expires",
-                  "value": "0",
-                  "description": ""
-                },
-                {
-                  "name": "Pragma",
-                  "key": "Pragma",
-                  "value": "no-cache",
-                  "description": ""
-                },
-                {
-                  "name": "Server",
-                  "key": "Server",
-                  "value": "Jetty(9.2.9.v20150224)",
-                  "description": ""
-                },
-                {
-                  "name": "Strict-Transport-Security",
-                  "key": "Strict-Transport-Security",
-                  "value": "max-age=31536000 ; includeSubDomains",
-                  "description": ""
-                },
-                {
-                  "name": "X-Content-Type-Options",
-                  "key": "X-Content-Type-Options",
-                  "value": "nosniff",
-                  "description": ""
-                },
-                {
-                  "name": "X-Frame-Options",
-                  "key": "X-Frame-Options",
-                  "value": "DENY",
-                  "description": ""
-                },
-                {
-                  "name": "X-XSS-Protection",
-                  "key": "X-XSS-Protection",
-                  "value": "1; mode=block",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "160",
-              "body": "{\"token\":\"280B1FA3D408BE734A5A340F280348FD\"}"
-            }
-          ]
-        },
-        {
-          "_postman_id": "14dfe8ad-f73f-acdc-9f94-e2de1b0c5441",
-          "name": "Get License @before adding",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"id\", data.id);"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/system/licenses",
+            "url": "https://{{ip}}:8443/api/v1/schedules?filter=name eq \"ESRSUpgradePackage\"",
             "method": "GET",
             "header": [
               {
@@ -1915,665 +2608,7 @@
               }
             ],
             "body": {},
-            "description": "This request will return existing license; blank response if no license"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "0d343da7-58c8-9c36-1c54-532bbd3906fb",
-          "name": "Post valid license",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"licenseCatalogId\", data.id);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/system/licenses/",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\r\n\"type\":\"unserved\", \r\n\r\n \"key\": \"#############################################################\\n# EMC License File\\n# Activation Date:  Jun 15, 2016 04:23:48 PM\\n# Activated By:  xxxxBobbie xxxxBourque\\n# Type:UNSERVED\\n#############################################################\\nINCREMENT EMC_ECDM EMCLM 1.0 permanent uncounted \\n\\tVENDOR_STRING=\\\"TYPE=CAPACITY;FETB=1;PRODUCT_LINE=EMC \\n\\tECDM;FEATURE_NAME=EMC Enterprise Copy Data \\n\\tManagement;UOM_CODE=CA;UOM_NAME=Registered Capacity in \\n\\tTB;SWID=ELM24DQLD04S22;PLC=ECDM\\\" HOSTID=ANY \\n\\tdist_info=\\\"ACTIVATED TO Nordstrom\\\" ISSUER=EMC \\n\\tISSUED=15-Jun-2016 NOTICE=\\\"ACTIVATED TO License Site Number: \\n\\tPTA15JUN20161264559\\\" SN=2351747 TS_OK SIGN=\\\"00A1 956D 84BD \\n\\tE61C 8F25 4AE1 D6DA CB00 BC87 9C29 7F11 01C6 C051 6F10 FC02\\\"\"\r\n\r\n}"
-            },
-            "description": "This request will POST a valid license"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c376e90e-5bb5-c261-dc48-61c40dd66c8b",
-          "name": "Get License copy @after adding",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"id\", data.id);"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/system/licenses",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This request will return existing license; blank response if no license"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "6d0cb410-8fa4-8c6c-922d-18fdb3aab752",
-      "name": "Device Connection",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "c72b46df-6866-0997-3306-2960a9d87877",
-          "name": "Login - Default",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);",
-                  "",
-                  "",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
-                  "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
-                  "//postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
-                  "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/login",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"username\":\"admin\", \"password\":\"Changeme@1\"}"
-            },
-            "description": "This request will return auth token from aaa component"
-          },
-          "response": [
-            {
-              "id": "08d88656-9613-36b8-d7c3-c1eb6d7e7345",
-              "name": "X-Auth-Token",
-              "originalRequest": {
-                "url": "https://10.7.244.21:8443/api/login",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
-                },
-                "description": "This request will return auth token from aaa component"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "javascript",
-              "_postman_previewtype": "html",
-              "header": [
-                {
-                  "name": "Access-Control-Allow-Headers",
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "x-requested-with",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Allow-Methods",
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "PUT, POST, GET, OPTIONS, DELETE",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Allow-Origin",
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Max-Age",
-                  "key": "Access-Control-Max-Age",
-                  "value": "3600",
-                  "description": ""
-                },
-                {
-                  "name": "Cache-Control",
-                  "key": "Cache-Control",
-                  "value": "no-cache, no-store, max-age=0, must-revalidate",
-                  "description": ""
-                },
-                {
-                  "name": "Content-Length",
-                  "key": "Content-Length",
-                  "value": "44",
-                  "description": ""
-                },
-                {
-                  "name": "Content-Type",
-                  "key": "Content-Type",
-                  "value": "application/json; charset=UTF-8",
-                  "description": ""
-                },
-                {
-                  "name": "Date",
-                  "key": "Date",
-                  "value": "Sat, 11 Jul 2015 00:06:14 GMT",
-                  "description": ""
-                },
-                {
-                  "name": "Expires",
-                  "key": "Expires",
-                  "value": "0",
-                  "description": ""
-                },
-                {
-                  "name": "Pragma",
-                  "key": "Pragma",
-                  "value": "no-cache",
-                  "description": ""
-                },
-                {
-                  "name": "Server",
-                  "key": "Server",
-                  "value": "Jetty(9.2.9.v20150224)",
-                  "description": ""
-                },
-                {
-                  "name": "Strict-Transport-Security",
-                  "key": "Strict-Transport-Security",
-                  "value": "max-age=31536000 ; includeSubDomains",
-                  "description": ""
-                },
-                {
-                  "name": "X-Content-Type-Options",
-                  "key": "X-Content-Type-Options",
-                  "value": "nosniff",
-                  "description": ""
-                },
-                {
-                  "name": "X-Frame-Options",
-                  "key": "X-Frame-Options",
-                  "value": "DENY",
-                  "description": ""
-                },
-                {
-                  "name": "X-XSS-Protection",
-                  "key": "X-XSS-Protection",
-                  "value": "1; mode=block",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "160",
-              "body": "{\"token\":\"280B1FA3D408BE734A5A340F280348FD\"}"
-            },
-            {
-              "id": "e18250d5-fa84-92c3-5862-9b8ed7eb0c45",
-              "name": "token",
-              "originalRequest": {
-                "url": "https://{{ip}}:8443/api/login",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
-                },
-                "description": "This request will return auth token from aaa component"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "javascript",
-              "_postman_previewtype": "html",
-              "header": [
-                {
-                  "name": "Access-Control-Allow-Headers",
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "x-requested-with",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Allow-Methods",
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "PUT, POST, GET, OPTIONS, DELETE",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Allow-Origin",
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "description": ""
-                },
-                {
-                  "name": "Access-Control-Max-Age",
-                  "key": "Access-Control-Max-Age",
-                  "value": "3600",
-                  "description": ""
-                },
-                {
-                  "name": "Cache-Control",
-                  "key": "Cache-Control",
-                  "value": "no-cache, no-store, max-age=0, must-revalidate",
-                  "description": ""
-                },
-                {
-                  "name": "Content-Length",
-                  "key": "Content-Length",
-                  "value": "44",
-                  "description": ""
-                },
-                {
-                  "name": "Content-Type",
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8",
-                  "description": ""
-                },
-                {
-                  "name": "Date",
-                  "key": "Date",
-                  "value": "Thu, 01 Oct 2015 23:07:38 GMT",
-                  "description": ""
-                },
-                {
-                  "name": "Expires",
-                  "key": "Expires",
-                  "value": "0",
-                  "description": ""
-                },
-                {
-                  "name": "Pragma",
-                  "key": "Pragma",
-                  "value": "no-cache",
-                  "description": ""
-                },
-                {
-                  "name": "Server",
-                  "key": "Server",
-                  "value": "Apache-Coyote/1.1",
-                  "description": ""
-                },
-                {
-                  "name": "Strict-Transport-Security",
-                  "key": "Strict-Transport-Security",
-                  "value": "max-age=31536000 ; includeSubDomains",
-                  "description": ""
-                },
-                {
-                  "name": "X-Content-Type-Options",
-                  "key": "X-Content-Type-Options",
-                  "value": "nosniff",
-                  "description": ""
-                },
-                {
-                  "name": "X-Frame-Options",
-                  "key": "X-Frame-Options",
-                  "value": "DENY",
-                  "description": ""
-                },
-                {
-                  "name": "X-XSS-Protection",
-                  "key": "X-XSS-Protection",
-                  "value": "1; mode=block",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "192",
-              "body": "{\"token\":\"5E01B1AB793F47E532A64E455D9A62A5\"}"
-            }
-          ]
-        },
-        {
-          "_postman_id": "ca4c6fe8-f44c-7258-ac41-acb9b3d19020",
-          "name": "Get device connections",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"deviceId\", data.content[0].id);"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/telemetry/deviceConnections/",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              },
-              {
-                "key": "xbrs_tenant",
-                "value": "*",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This request will return existing license; blank response if no license"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "46c9a764-ea42-5c6e-a772-42fa80f26687",
-          "name": "Post device connections",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"licenseId\", data.content[0].id);"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/telemetry/deviceConnections/",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"emcSupportUsername\":\"scott.jones@nordstrom.com\", \"emcSupportPassword\":\"Password1\", \"gatewayHostAddress\":\"10.7.252.39\"}"
-            },
-            "description": "This request will return existing license; blank response if no license"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ce1d4a61-b1be-235b-d63e-eae415066a41",
-          "name": "Get device connections after POST",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"deviceId\", data.content[0].id);"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/telemetry/deviceConnections/",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              },
-              {
-                "key": "xbrs_tenant",
-                "value": "*",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "This request will return existing license; blank response if no license"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "4ba4aa08-eba3-21e7-8229-59f42e0c8fe6",
-      "name": "Cleanup",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "6be0953e-5b17-7d5c-724e-bc33c976bb42",
-          "name": "DELETE device connections ",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"licenseId\", data.content[0].id);"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway/6e6f9d09-5773-474f-a491-c791af592f79",
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"emcSupportUsername\":\"scott.jones@nordstrom.com\", \"emcSupportPassword\":\"Password1\", \"gatewayHostAddress\":\"10.7.252.39\"}"
-            },
-            "description": "This request will return existing license; blank response if no license"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "cc19504c-89e4-1440-16f5-b08271c92839",
-      "name": "Catalog Access",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "946c4d91-3196-e387-49e1-06c22b1be80f",
-          "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents",
-          "request": {
-            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "cfa08e60-ab8d-e13d-ff5d-3baebd1603ff",
-          "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents copy",
-          "request": {
-            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/esrsupgradefileinfo/documents",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7cc784db-2017-a87a-b464-066b75cb90b1",
-          "name": "http://{{ip}}:9760/documentSpaces/sysmgr/documentTypes/node/documents copy",
-          "request": {
-            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
+            "description": "GET ESRS notification schedule for upgrade package"
           },
           "response": []
         }
