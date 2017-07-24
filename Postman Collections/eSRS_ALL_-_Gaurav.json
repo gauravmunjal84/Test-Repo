@@ -2181,6 +2181,41 @@
           "response": []
         },
         {
+          "_postman_id": "f099051b-de27-d534-66bf-9d68587dd7dd",
+          "name": "GET esrs upgrade package schedule   copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"schIdNotify\", data.content[0].id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "https://{{ip}}:8443/api/v1/schedules?filter=name eq \"ESRSUpgradePackage\"",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "X-Auth-Token",
+                "value": "{{token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "GET ESRS notification schedule for upgrade package"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "f298f246-b7d0-fdd8-ff80-286860f8ab26",
           "name": "GET fileNames after new file is found in backend",
           "event": [
@@ -2574,41 +2609,6 @@
               "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
             },
             "description": "This API downloads the file by name that is available in the backend to download, should be the newer version."
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f099051b-de27-d534-66bf-9d68587dd7dd",
-          "name": "GET esrs upgrade package schedule   copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"schIdNotify\", data.content[0].id);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "https://{{ip}}:8443/api/v1/schedules?filter=name eq \"ESRSUpgradePackage\"",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              },
-              {
-                "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "GET ESRS notification schedule for upgrade package"
           },
           "response": []
         }
