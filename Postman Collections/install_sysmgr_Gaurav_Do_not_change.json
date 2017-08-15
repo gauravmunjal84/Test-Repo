@@ -1115,7 +1115,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n\"timeZon\": \"America/Detroit\"\r\n}"
+          "raw": "{\r\n\"timeZone\": \"America/Detroit\"\r\n}"
         },
         "description": "Change timezone"
       },
