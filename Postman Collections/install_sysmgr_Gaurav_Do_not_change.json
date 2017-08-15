@@ -939,7 +939,7 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
@@ -955,7 +955,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": " {\r\n         \r\n         \"userName\": \"root\",\r\n         \"password\": \"?Strong1?\",\r\n         \"newPassword\" : \"Changeme@1\"\r\n   }"
+          "raw": " {\r\n         \r\n         \"userName\": \"root\",\r\n         \"password\": \"changeme\",\r\n         \"newPassword\" : \"Changeme@1\"\r\n   }"
         },
         "description": "Change root password"
       },
