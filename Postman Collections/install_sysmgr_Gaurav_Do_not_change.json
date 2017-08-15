@@ -2686,7 +2686,7 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/",
+        "url": "https://{{ip}}:8443/api/v2/configurations/",
         "method": "GET",
         "header": [
           {
