@@ -2089,7 +2089,7 @@
       "_postman_id": "a9aec180-53ae-be00-bb05-ee6be76d806d",
       "name": "GET /node/{id}/configurations/{id}/configStatus",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}/configStatus",
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}/configStatus",
         "method": "GET",
         "header": [
           {
