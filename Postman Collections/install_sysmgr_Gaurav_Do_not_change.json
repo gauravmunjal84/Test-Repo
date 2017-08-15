@@ -2503,7 +2503,7 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "method": "PUT",
         "header": [
           {
@@ -2519,7 +2519,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "\n\n    {\n      \"id\": \"{{configId}}\",\n      \n   \n      \"landlordTenantName\": \"ACME\",\n       \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ],\n          \"nslookupSuccess\": true\n        }\n      ],\n      \"timeZone\": \"America/Denver\",\n     \n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"changeme\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$upp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"name\": \"lockbox\",\n      \"passphrase\":\"Ch@ngeme1\",\n      \"newPassphrase\":\"Changeme@1\"\n    }\n  \n"
+          "raw": "\n\n    {\n      \"id\": \"{{configId}}\",\n      \n   \n      \"landlordTenantName\": \"ACME\",\n       \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ],\n          \"nslookupSuccess\": true\n        }\n      ],\n      \"timeZone\": \"America/Denver\",\n     \n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$upp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"name\": \"lockbox\",\n      \"passphrase\":\"Ch@ngeme1\",\n      \"newPassphrase\":\"Changeme@1\"\n    }\n  \n"
         },
         "description": "GET configurations By id"
       },
