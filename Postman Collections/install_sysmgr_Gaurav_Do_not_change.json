@@ -1139,7 +1139,7 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
