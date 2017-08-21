@@ -1708,7 +1708,7 @@
       "name": "PUT UpgradePackages by Id",
       "request": {
         "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}",
-        "method": "PUT",
+        "method": "GET",
         "header": [
           {
             "key": "X-Auth-Token",
