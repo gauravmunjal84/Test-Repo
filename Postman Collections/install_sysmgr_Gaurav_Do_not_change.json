@@ -1658,7 +1658,7 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/upgradePackages/",
+        "url": "https://{{ip}}:8443/api/v2/upgradePackages/",
         "method": "GET",
         "header": [
           {
