@@ -1708,7 +1708,7 @@
       "name": "PUT UpgradePackages by Id",
       "request": {
         "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}",
-        "method": "GET",
+        "method": "PUT",
         "header": [
           {
             "key": "X-Auth-Token",
@@ -1723,7 +1723,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "\n  \n   {\n     \"id\": \"{{packageId}}\",\n      \"name\": \"EMC eCDM - Major Release\",\n      \"type\": \"RELEASE\",\n      \"madeAvailable\": \"2017-04-21T20:24:44.000+0000\",\n      \"description\": \"This package upgrades all the components\",\n      \"rebootRequired\": false,\n      \"state\": \"INSTALLED\",\n      \"fileName\": \"ecdm-upgrade-2.0.0-4-SNAPSHOT.pkg\",\n      \"packageVersion\": \"2.0.0-1-SNAPSHOT\",\n      \"sizeInBytes\": 1794823976,\n      \"certificateTrustedByUser\": true\n    }"
+          "raw": "\n  \n   {\n     \"id\": \"{{packageId}}\",\n      \"name\": \"EMC eCDM - Major Release\",\n      \"type\": \"RELEASE\",\n      \"madeAvailable\": \"2017-08-22T15:33:58.000+0000\",\n      \"description\": \"This package upgrades all the components\",\n      \"rebootRequired\": false,\n      \"state\": \"AVAILABLE\",\n      \"fileName\": \"ecdm_upgradepackage_2.0.0.1_snaphsot_20170822.pkg\",\n      \"packageVersion\": \"2.0.0-1-SNAPSHOT\",\n      \"sizeInBytes\": 2046925208,\n      \"certificateTrustedByUser\": true\n    }"
         },
         "description": ""
       },
