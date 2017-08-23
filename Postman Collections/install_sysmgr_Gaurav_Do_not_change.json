@@ -1723,7 +1723,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "\n  \n   {\n     \"id\": \"{{packageId}}\",\n      \"name\": \"EMC eCDM - Major Release\",\n      \"type\": \"RELEASE\",\n      \"madeAvailable\": \"2017-08-22T15:33:58.000+0000\",\n      \"description\": \"This package upgrades all the components\",\n      \"rebootRequired\": false,\n      \"state\": \"AVAILABLE\",\n      \"fileName\": \"ecdm_upgradepackage_2.0.0.1_snaphsot_20170822.pkg\",\n      \"packageVersion\": \"2.0.0-1-SNAPSHOT\",\n      \"sizeInBytes\": 2046925208,\n      \"certificateTrustedByUser\": false\n    }"
+          "raw": "{\n  \n   \"id\": \"e5acc44a-29cf-4d6d-8667-3bcb1a5359cc\",\n            \"name\": \"EMC eCDM - Major Release\",\n            \"packageVersion\": \"2.0.0-1-SNAPSHOT\",\n            \"type\": \"RELEASE\",\n            \"madeAvailable\": \"2017-08-22T15:33:58.000+0000\",\n            \"description\": \"This package upgrades all the components\",\n            \"rebootRequired\": false,\n            \"sizeInBytes\": 2046925208,\n            \"state\": \"AVAILABLE\",\n            \"fileName\": \"ecdm_upgradepackage_2.0.0.1_snaphsot_20170822.pkg\",\n            \"certificateTrustedByUser\": false\n}"
         },
         "description": ""
       },
