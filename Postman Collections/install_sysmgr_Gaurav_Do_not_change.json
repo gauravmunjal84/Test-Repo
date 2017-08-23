@@ -2737,7 +2737,7 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/login",
+        "url": "https://{{ip}}:8443/api/v2/login",
         "method": "POST",
         "header": [
           {
@@ -2747,8 +2747,15 @@
           }
         ],
         "body": {
-          "mode": "raw",
-          "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "Content-Type",
+              "value": "",
+              "description": "",
+              "type": "text"
+            }
+          ]
         },
         "description": "This request will return auth token from aaa component"
       },
