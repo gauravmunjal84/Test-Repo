@@ -2333,7 +2333,7 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes",
+        "url": "https://{{ip}}:8443/api/v2/licenses",
         "method": "GET",
         "header": [
           {
