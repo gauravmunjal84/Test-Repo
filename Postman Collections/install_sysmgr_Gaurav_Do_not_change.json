@@ -1821,7 +1821,7 @@
             "exec": [
               "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
               "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
-              "//postman.setEnvironmentVariable(\"ip\", \"10.7.84.100\");",
+              "postman.setEnvironmentVariable(\"ip\", \"10.7.244.49\");",
               "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.244.2\");",
               ""
             ]
@@ -1840,7 +1840,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\"username\":\"admin\", \"password\":\"?Strong1?\"}"
+          "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"tenant\":\"qaLandlord\"}"
         },
         "description": "This request will return auth token from aaa component"
       },
