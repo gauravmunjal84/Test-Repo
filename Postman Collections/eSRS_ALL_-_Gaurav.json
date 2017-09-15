@@ -701,7 +701,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n\t\"value\":\"2.0.0-5-SNAPSHOT\"\r\n}"
+              "raw": "{\r\n  \"value\":\"2.0.0-6\"\r\n}"
             },
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
           },
