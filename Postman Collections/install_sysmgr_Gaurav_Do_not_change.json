@@ -16,24 +16,22 @@
           "_postman_id": "00b9d6ec-84ad-b67f-9bcc-7b52dc2f42c0",
           "name": "PUT /osUsers/{supportId}}",
           "request": {
-            "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{supportId}}",
             "method": "PUT",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               },
               {
                 "key": "X-Auth-Token",
-                "value": "{{token}}",
-                "description": ""
+                "value": "{{token}}"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": " {\n      \"id\": \"{{supportId}}\",\n      \"userName\": \"support\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
             },
+            "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{supportId}}",
             "description": ""
           },
           "response": []
@@ -56,21 +54,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v2/nodes",
         "description": ""
       },
       "response": [
@@ -78,7 +74,6 @@
           "id": "1ecdc824-a059-5136-d174-26a0b43e1fb7",
           "name": "sky30  maintenance failed",
           "originalRequest": {
-            "url": "https://{{ip}}:8443/api/v1/tasks",
             "method": "GET",
             "header": [
               {
@@ -93,12 +88,12 @@
                 "enabled": true
               }
             ],
-            "body": {}
+            "body": {},
+            "url": "https://{{ip}}:8443/api/v1/tasks"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -207,21 +202,19 @@
       "_postman_id": "37c630cd-156e-56b1-abf3-6c4306184c19",
       "name": "Get nodes by ID",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}",
         "description": ""
       },
       "response": []
@@ -242,21 +235,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas",
         "description": ""
       },
       "response": []
@@ -265,24 +256,22 @@
       "_postman_id": "1927a5fc-4133-2394-d388-1e39ccb01bf0",
       "name": "PUT Eulas By Id ",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\"id\":\"{{eulaId}}\", \"nodeId\":\"{{nodeId}}\", \"accepted\":\"true\"}"
         },
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}",
         "description": ""
       },
       "response": []
@@ -291,21 +280,19 @@
       "_postman_id": "de64ec2a-333a-1fe5-607e-f2ea7717b8b6",
       "name": "Get Eulas By Id",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}",
         "description": ""
       },
       "response": []
@@ -326,21 +313,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/",
         "description": "GET /networks"
       },
       "response": []
@@ -349,21 +334,19 @@
       "_postman_id": "7a9eac71-afae-0bf2-5050-ab8a4a73e0a0",
       "name": "GET /networks/id",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/{{networkId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/{{networkId}}",
         "description": "GET /networks"
       },
       "response": []
@@ -372,24 +355,22 @@
       "_postman_id": "0e90a725-33af-ab89-ea02-74a3120e4e82",
       "name": "GET /networks/id copy",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/{{networkId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"id\": \"{{networkId}}\",\n  \"interfaceName\": \"eth0\",\n  \"ipAddressFamily\": \"IPv6\",\n  \"fqdn\": \"lava24429.vdp.emc.com\",\n  \"ipAddress\": [\n    \"2620:0000:0170:0714:b452:911f:e264:cf95\"\n  ],\n  \"gateway\": \"2620:0000:0170:0714:0000:0000:0000:0001\",\n  \"dnsServers\": [\n    \"2620:0000:0170:070c:e9ef:fd39:54ec:6ed6\"\n  ],\n  \"links\": [\n    {\n      \"href\": \"/system/nodes/21781983-21a6-4dcf-a996-03b1151bbbbb/networks/c0079dde-0a07-4e68-b4da-c6a47215b068\",\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"/system/nodes/21781983-21a6-4dcf-a996-03b1151bbbbb\",\n      \"rel\": \"Node\"\n    },\n    {\n      \"href\": \"/system/nodes/21781983-21a6-4dcf-a996-03b1151bbbbb/configurations/57bd73f0-3f64-4790-9ba2-fe193e59a9ca\",\n      \"rel\": \"Configuration\"\n    }\n  ],\n  \"prefix\": \"64\"\n}"
         },
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/networks/{{networkId}}",
         "description": "GET /networks"
       },
       "response": []
@@ -412,21 +393,40 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers?orderby=userName",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers?orderby=userName",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v1",
+            "system",
+            "nodes",
+            "{{nodeId}}",
+            "osUsers"
+          ],
+          "query": [
+            {
+              "key": "orderby",
+              "value": "userName"
+            }
+          ]
+        },
         "description": ""
       },
       "response": []
@@ -435,24 +435,22 @@
       "_postman_id": "cc4fa463-ecbf-214b-115c-a6b10ad4ccf4",
       "name": "PUT /osUsers/{rootId}}",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{rootId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\n      \"id\": \"{{rootId}}\",\n      \"userName\": \"root\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
         },
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{rootId}}",
         "description": ""
       },
       "response": []
@@ -461,24 +459,22 @@
       "_postman_id": "4a7d1a6e-3751-de0c-8801-4a80ae8ffb8a",
       "name": "PUT /osUsers/adminId}}",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{adminId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\n      \"id\": \"{{adminId}}\",\n      \"userName\": \"admin\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
         },
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{adminId}}",
         "description": ""
       },
       "response": []
@@ -499,21 +495,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/lockboxes",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/lockboxes",
         "description": ""
       },
       "response": []
@@ -522,24 +516,22 @@
       "_postman_id": "0c9c2cdb-2b92-b113-5426-bd0b53e07e42",
       "name": "PUT lockboxes",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/lockboxes/{{lockId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\n      \"id\": \"{{lockId}}\",\n      \"userName\": \"Lockbox\",\n      \"passphrase\":\"{{password}}\",\n      \"newPassphrase\":\"{{newPassword}}\"\n }"
         },
+        "url": "https://{{ip}}:8443/api/v1/system/lockboxes/{{lockId}}",
         "description": ""
       },
       "response": []
@@ -548,24 +540,22 @@
       "_postman_id": "d031143c-530f-d003-4a23-a6441d9dd534",
       "name": "PUT nodes by ID",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\"id\":\"{{nodeId}}\", \"status\":\"MAINTENANCE\"}"
         },
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}",
         "description": ""
       },
       "response": []
@@ -574,21 +564,37 @@
       "_postman_id": "c840818a-02db-4919-a535-88c31e510ae2",
       "name": "https://{{ip}}:8443/api/v1/events",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/events?filter=properties.component eq\"SysMgr\"",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v1/events?filter=properties.component eq\"SysMgr\"",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v1",
+            "events"
+          ],
+          "query": [
+            {
+              "key": "filter",
+              "value": "properties.component eq\"SysMgr\""
+            }
+          ]
+        },
         "description": "GET Events"
       },
       "response": []
@@ -609,21 +615,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/disks",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/disks",
         "description": "GET /networks"
       },
       "response": []
@@ -632,21 +636,19 @@
       "_postman_id": "d880c922-cbea-260e-5fec-8ddded301534",
       "name": "GET /disks/id",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/disks/{{diskId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/disks/{{diskId}}",
         "description": "GET /networks"
       },
       "response": []
@@ -688,21 +690,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/components/",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/components/",
         "description": ""
       },
       "response": []
@@ -711,13 +711,11 @@
       "_postman_id": "03c94262-569f-4e80-493a-c83cc75b63b3",
       "name": "Get System States",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/stage",
         "method": "GET",
         "header": [
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
@@ -730,6 +728,7 @@
             }
           ]
         },
+        "url": "https://{{ip}}:8443/api/v1/system/stage",
         "description": "System Should return states as \"OPERATIONAL\" and \"MAINTENANCE\""
       },
       "response": []
@@ -750,21 +749,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones",
         "description": ""
       },
       "response": []
@@ -773,21 +770,19 @@
       "_postman_id": "4bf50237-e298-f77b-08bb-5c4b812b9b2f",
       "name": "GET /timezones/id",
       "request": {
-        "url": "https://10.7.244.22:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://10.7.244.22:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}",
         "description": ""
       },
       "response": []
@@ -796,24 +791,22 @@
       "_postman_id": "e7b6e1fe-e1fa-d4d6-72f6-047c744cab69",
       "name": "GET /timezones/id ",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": ""
         },
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}",
         "description": ""
       },
       "response": []
@@ -822,21 +815,19 @@
       "_postman_id": "ee7722d1-5d69-e2b2-2e2e-aa2273509b2e",
       "name": "GET /node/{id}/configurations/{id}/configLogs",
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/updateStatus",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v2/updateStatus",
         "description": "Task Progress"
       },
       "response": []
@@ -859,24 +850,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"id\": \"{{configId}}\",\n  \"network\": [\n    {\n      \"interfaceName\": \"eth0\",\n      \"fqdn\": \"sky30.lss.emc.com\",\n      \"ipAddress\": [\n        \"10.13.204.30\"\n      ],\n      \"netMask\": \"255.255.255.0\",\n      \"gateway\": \"10.13.204.1\",\n      \"dnsServers\": [\n         \"10.13.200.50\",\n        \"10.13.201.149\"\n      ],\n      \"ipaddressFamily\": \"IPv4\"\n    }\n  ],\n  \"timeZone\": \"America/Detroit\",\n  \"userName\": \"root\"\n}\n\n"
         },
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
         "description": "Change Network Details"
       },
       "response": []
@@ -899,24 +888,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "\n{\n  \"id\": \"{{configId}}\",\n  \n \"networks\": [\n        {\n          \n          \"fqdn\": \"lava24449.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.49\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ]\n   \n  \n}\n"
         },
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "description": "Change Network Details"
       },
       "response": []
@@ -939,24 +926,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\r\n         \r\n         \"userName\": \"root\",\r\n         \"password\": \"changeme\",\r\n         \"newPassword\" : \"Changeme@1\"\r\n   }"
         },
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "Change root password"
       },
       "response": []
@@ -979,24 +964,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\r\n      \"osUsers\": [\r\n        {\r\n         \"userName\": \"admin\",\r\n          \"password\":\"?Strong1\",\r\n          \"newPassword\":\"@ppAdm1n\"\r\n         \r\n   }\r\n   ]\r\n   }"
         },
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "description": "Change admin Details"
       },
       "response": []
@@ -1019,24 +1002,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\r\n      \"osUsers\": [\r\n        {\r\n         \"userName\": \"support\",\r\n         \"password\":\"$upp0rt!\",\r\n          \"newPassword\":\"?Strong1?\"\r\n   }\r\n   ]\r\n   }"
         },
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "description": "Change support user password"
       },
       "response": []
@@ -1059,24 +1040,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\r\n\t\"lockbox\" : {\r\n        \r\n        \"name\": \"Lockbox\",\r\n        \"passphrase\":\"?Strong1?\",\r\n       \"newPassphrase\":\"Changeme@1\"\r\n        }\r\n}"
         },
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "description": "Change lockbox password"
       },
       "response": []
@@ -1099,24 +1078,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\r\n\"timeZone\": \"America/Detroit\"\r\n}\r\n\r\n"
         },
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "Change timezone"
       },
       "response": []
@@ -1139,24 +1116,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\r\n\"timeZone\": \"America/Detroit\"\r\n}"
         },
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "Changing landlord should not be allowed"
       },
       "response": []
@@ -1179,24 +1154,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\r\n\"timeZone\": \"America/Detroit\",\r\n\"osUsers\": [\r\n      \t{\r\n         \"userName\": \"support\",\r\n         \"password\": \"Changeme@1\",\r\n         \"newPassword\" : \"?Strong1?\"\r\n   }\r\n   ]\r\n}"
         },
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "description": "Changing more than one property should not be allowed in PATCH operation"
       },
       "response": []
@@ -1224,21 +1197,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
         "description": "GET network configurations in detail"
       },
       "response": []
@@ -1269,24 +1240,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\n      \"id\": \"{id}\",\n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
         },
+        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}",
         "description": ""
       },
       "response": []
@@ -1317,24 +1286,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\n      \"id\": \"{id}\",\n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
         },
+        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}",
         "description": ""
       },
       "response": []
@@ -1343,23 +1310,43 @@
       "_postman_id": "438810b2-0cf1-5f3b-e63a-d3213a45ff3b",
       "name": "GET Tasks",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/tasks?filter=state eq \"Pending_Cancellation\"&orderby=name",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\n      \n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
+        },
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v1/tasks?filter=state eq \"Pending_Cancellation\"&orderby=name",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v1",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "filter",
+              "value": "state eq \"Pending_Cancellation\""
+            },
+            {
+              "key": "orderby",
+              "value": "name"
+            }
+          ]
         },
         "description": ""
       },
@@ -1381,23 +1368,50 @@
         }
       ],
       "request": {
-        "url": "https://10.7.244.132:9443/esrs/v1/devices?Domain=LocalHost&Username=admin&Password=Changeme@1",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/xhtml+xml",
-            "description": ""
+            "value": "application/xhtml+xml"
           },
           {
             "key": "Authorization",
-            "value": "Basic YWRtaW46Q2hhbmdlbWVAMQ==",
-            "description": ""
+            "value": "Basic YWRtaW46Q2hhbmdlbWVAMQ=="
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\"username\":\"admin\", \"password\":\"Changeme@1\"}"
+        },
+        "url": {
+          "raw": "https://10.7.244.132:9443/esrs/v1/devices?Domain=LocalHost&Username=admin&Password=Changeme@1",
+          "protocol": "https",
+          "host": [
+            "10",
+            "7",
+            "244",
+            "132"
+          ],
+          "port": "9443",
+          "path": [
+            "esrs",
+            "v1",
+            "devices"
+          ],
+          "query": [
+            {
+              "key": "Domain",
+              "value": "LocalHost"
+            },
+            {
+              "key": "Username",
+              "value": "admin"
+            },
+            {
+              "key": "Password",
+              "value": "Changeme@1"
+            }
+          ]
         },
         "description": "This request will return auth token from aaa component"
       },
@@ -1406,25 +1420,23 @@
           "id": "27322681-34ef-63f7-8b98-3259e7033b59",
           "name": "token",
           "originalRequest": {
-            "url": "https://{{ip}}:8443/api/login",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
             },
+            "url": "https://{{ip}}:8443/api/login",
             "description": "This request will return auth token from aaa component"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -1525,25 +1537,23 @@
           "id": "41dd002c-7656-55de-e45a-999e323dbab4",
           "name": "X-Auth-Token",
           "originalRequest": {
-            "url": "https://10.7.244.21:8443/api/login",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
             },
+            "url": "https://10.7.244.21:8443/api/login",
             "description": "This request will return auth token from aaa component"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -1658,18 +1668,15 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/upgradePackages/",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
@@ -1699,6 +1706,7 @@
             }
           ]
         },
+        "url": "https://{{ip}}:8443/api/v2/upgradePackages/",
         "description": ""
       },
       "response": []
@@ -1707,24 +1715,22 @@
       "_postman_id": "5a83ecfa-e307-5329-25a0-1d4838e1765e",
       "name": "PUT UpgradePackages by Id",
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}",
         "method": "PUT",
         "header": [
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           },
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \n   \"id\": \"e5acc44a-29cf-4d6d-8667-3bcb1a5359cc\",\n            \"name\": \"EMC eCDM - Major Release\",\n            \"packageVersion\": \"2.0.0-1-SNAPSHOT\",\n            \"type\": \"RELEASE\",\n            \"madeAvailable\": \"2017-08-22T15:33:58.000+0000\",\n            \"description\": \"This package upgrades all the components\",\n            \"rebootRequired\": false,\n            \"sizeInBytes\": 2046925208,\n            \"state\": \"AVAILABLE\",\n            \"fileName\": \"ecdm_upgradepackage_2.0.0.1_snaphsot_20170822.pkg\",\n            \"certificateTrustedByUser\": false\n}"
         },
+        "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}",
         "description": ""
       },
       "response": []
@@ -1733,23 +1739,43 @@
       "_postman_id": "4ec52c7d-3c42-282f-a7c9-3dab2b36b3a3",
       "name": "GET Tasks copy",
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/tasks?filter=state eq \"Pending_Cancellation\"&orderby=name",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": " {\n      \n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
+        },
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v1/tasks?filter=state eq \"Pending_Cancellation\"&orderby=name",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v1",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "filter",
+              "value": "state eq \"Pending_Cancellation\""
+            },
+            {
+              "key": "orderby",
+              "value": "name"
+            }
+          ]
         },
         "description": ""
       },
@@ -1778,24 +1804,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/nodes",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": ""
         },
+        "url": "https://{{ip}}:8443/api/v2/nodes",
         "description": "GET network configurations"
       },
       "response": []
@@ -1829,19 +1853,18 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/login",
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\"username\":\"admin\", \"password\":\"Changeme@1\"}"
         },
+        "url": "https://{{ip}}:8443/api/v2/login",
         "description": "This request will return auth token from aaa component"
       },
       "response": [
@@ -1849,25 +1872,23 @@
           "id": "9b62a3c9-811d-9585-c0ab-b49c78093b8e",
           "name": "X-Auth-Token",
           "originalRequest": {
-            "url": "https://10.7.244.21:8443/api/login",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
             },
+            "url": "https://10.7.244.21:8443/api/login",
             "description": "This request will return auth token from aaa component"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -1968,25 +1989,23 @@
           "id": "b2c210be-56d2-bed7-e244-05b803504df3",
           "name": "token",
           "originalRequest": {
-            "url": "https://{{ip}}:8443/api/login",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
             },
+            "url": "https://{{ip}}:8443/api/login",
             "description": "This request will return auth token from aaa component"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -2089,21 +2108,19 @@
       "_postman_id": "a9aec180-53ae-be00-bb05-ee6be76d806d",
       "name": "GET /node/{id}/configurations/{id}/configStatus",
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}/configStatus",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}/configStatus",
         "description": "Task Progress"
       },
       "response": [
@@ -2111,7 +2128,6 @@
           "id": "f8626f95-a2c0-b2c9-5524-2d0c0362554e",
           "name": "configStatus",
           "originalRequest": {
-            "url": "https://10.7.244.19:8443/api/v1/system/nodes/d74040a8-c1fd-4cc8-adf5-df945e79088f/configurations/ea9226f7-11bd-42f8-81e0-66ec2832b9a3/configStatus",
             "method": "GET",
             "header": [
               {
@@ -2203,12 +2219,12 @@
                 "\"",
                 "}"
               ]
-            }
+            },
+            "url": "https://10.7.244.19:8443/api/v1/system/nodes/d74040a8-c1fd-4cc8-adf5-df945e79088f/configurations/ea9226f7-11bd-42f8-81e0-66ec2832b9a3/configStatus"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -2333,21 +2349,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/licenses",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v2/licenses",
         "description": ""
       },
       "response": [
@@ -2355,7 +2369,6 @@
           "id": "3a4641e9-1826-d676-7158-fed07c8e9f1e",
           "name": "sky30  maintenance failed",
           "originalRequest": {
-            "url": "https://{{ip}}:8443/api/v1/tasks",
             "method": "GET",
             "header": [
               {
@@ -2370,12 +2383,12 @@
                 "enabled": true
               }
             ],
-            "body": {}
+            "body": {},
+            "url": "https://{{ip}}:8443/api/v1/tasks"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -2503,24 +2516,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "\n\n    {\n      \"id\": \"{{configId}}\",\n      \n   \n      \"landlordTenantName\": \"ACME\",\n       \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ],\n          \"nslookupSuccess\": true\n        }\n      ],\n      \"timeZone\": \"America/Denver\",\n     \n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"changeme\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$upp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\":{\n      \"name\": \"lockbox\",\n      \"passphrase\":\"Ch@ngeme1\",\n      \"newPassphrase\":\"Changeme@1\"\n      }\n    }\n  \n"
         },
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "GET configurations By id"
       },
       "response": []
@@ -2548,24 +2559,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
         },
+        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
         "description": "GET configurations By id"
       },
       "response": []
@@ -2593,24 +2602,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
         },
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "GET configurations By id"
       },
       "response": []
@@ -2644,21 +2651,19 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
         "description": "GET network configurations in detail"
       },
       "response": []
@@ -2686,24 +2691,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/configurations/",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
         },
+        "url": "https://{{ip}}:8443/api/v2/configurations/",
         "description": "GET configurations"
       },
       "response": []
@@ -2737,13 +2740,11 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/login",
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
@@ -2757,6 +2758,7 @@
             }
           ]
         },
+        "url": "https://{{ip}}:8443/api/v2/login",
         "description": "This request will return auth token from aaa component"
       },
       "response": []
