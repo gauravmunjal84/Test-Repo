@@ -1,5 +1,4 @@
 {
-  "variables": [],
   "info": {
     "name": "install_sysmgr_Gaurav_Do_not_change",
     "_postman_id": "d363ef2e-93eb-12c7-a434-cb822b08e56d",
@@ -1219,22 +1218,22 @@
       "name": "PUT Tasks",
       "event": [
         {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
-            ]
-          }
-        },
-        {
           "listen": "prerequest",
           "script": {
             "type": "text/javascript",
             "exec": [
               "",
               ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
             ]
           }
         }
@@ -1265,22 +1264,22 @@
       "name": "PUT Tasks copy",
       "event": [
         {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
-            ]
-          }
-        },
-        {
           "listen": "prerequest",
           "script": {
             "type": "text/javascript",
             "exec": [
               "",
               ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
             ]
           }
         }
@@ -1829,16 +1828,6 @@
       "name": "Login - Default",
       "event": [
         {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
-            ]
-          }
-        },
-        {
           "listen": "prerequest",
           "script": {
             "type": "text/javascript",
@@ -1846,8 +1835,18 @@
               "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
               "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
               "postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
-              "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.244.2\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
               ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
             ]
           }
         }
@@ -1862,7 +1861,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\"username\":\"admin\", \"password\":\"Changeme@1\"}"
+          "raw": "{\"username\":\"admin\", \"password\":\"?Strong1?\"}"
         },
         "url": "https://{{ip}}:8443/api/v2/login",
         "description": "This request will return auth token from aaa component"
@@ -2328,22 +2327,22 @@
       "name": "GET nodes post configuration",
       "event": [
         {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
-            ]
-          }
-        },
-        {
           "listen": "prerequest",
           "script": {
             "type": "text/javascript",
             "exec": [
               "",
               ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
             ]
           }
         }
@@ -2716,16 +2715,6 @@
       "name": "Login - Default copy",
       "event": [
         {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
-            ]
-          }
-        },
-        {
           "listen": "prerequest",
           "script": {
             "type": "text/javascript",
@@ -2735,6 +2724,16 @@
               "postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
               "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
               ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
             ]
           }
         }
