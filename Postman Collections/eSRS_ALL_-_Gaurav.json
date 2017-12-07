@@ -460,7 +460,7 @@
               }
             ],
             "body": {},
-            "url": "https://{{ip}}:8443/api/v1/telemetry/deviceConnections/",
+            "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway",
             "description": "This request will return existing license; blank response if no license"
           },
           "response": []
