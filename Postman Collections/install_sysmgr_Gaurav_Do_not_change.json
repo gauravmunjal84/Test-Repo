@@ -1054,7 +1054,7 @@
           "mode": "raw",
           "raw": "{\r\n\t\"lockbox\" : {\r\n        \r\n        \"name\": \"Lockbox\",\r\n        \"passphrase\":\"?Strong1?\",\r\n       \"newPassphrase\":\"Changeme@1\"\r\n        }\r\n}"
         },
-        "url": "https://{{ip}}:8443/api/v1/configurations/{{configId}}",
+        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "Change lockbox password"
       },
       "response": []
