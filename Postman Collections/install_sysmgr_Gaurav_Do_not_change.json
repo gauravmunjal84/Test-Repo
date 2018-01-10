@@ -2589,13 +2589,10 @@
             "exec": [
               "var data = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
-              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
-              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
-              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
-              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
-              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
-              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
-              ""
+              "",
+              "",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
             ]
           }
         }
