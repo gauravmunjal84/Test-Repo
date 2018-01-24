@@ -701,7 +701,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/components/",
+        "url": "https://{{ip}}:8443/api/v2/components",
         "description": ""
       },
       "response": []
