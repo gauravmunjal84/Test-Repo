@@ -1862,9 +1862,9 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": ""
+          "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
         },
-        "url": "https://{{ip}}/nodes",
+        "url": "https://{{ip}}/login",
         "description": "This request will return auth token from aaa component"
       },
       "response": [
