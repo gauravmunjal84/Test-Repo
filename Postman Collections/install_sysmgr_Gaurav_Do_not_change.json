@@ -1835,7 +1835,8 @@
               "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
               "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
               "postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
-              "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.244.2\");",
+              "",
               ""
             ]
           }
@@ -1861,9 +1862,9 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\"username\":\"admin\", \"password\":\"?Strong1?\"}"
+          "raw": ""
         },
-        "url": "https://{{ip}}:8443/api/v2/login",
+        "url": "https://{{ip}}/nodes",
         "description": "This request will return auth token from aaa component"
       },
       "response": [
