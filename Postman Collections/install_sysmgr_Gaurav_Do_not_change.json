@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "install_sysmgr_Gaurav_Do_not_change",
     "_postman_id": "d363ef2e-93eb-12c7-a434-cb822b08e56d",
+    "name": "install_sysmgr_Gaurav_Do_not_change",
     "description": "This suite will run the following:\nGET /api/v1/login\nGET /api/v1/nodes\nGET /api/v1/nodes/{id}\nGET /api/v1/nodes/{id}/configurations\nGET /api/v1/nodes/{id}/configurations/{id}",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
@@ -30,8 +30,7 @@
               "mode": "raw",
               "raw": " {\n      \"id\": \"{{supportId}}\",\n      \"userName\": \"support\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
             },
-            "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{supportId}}",
-            "description": ""
+            "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{supportId}}"
           },
           "response": []
         }
@@ -65,8 +64,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v2/nodes",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v2/nodes"
       },
       "response": [
         {
@@ -213,8 +211,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v2/nodes/{{nodeId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v2/nodes/{{nodeId}}"
       },
       "response": []
     },
@@ -246,8 +243,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas"
       },
       "response": []
     },
@@ -270,8 +266,7 @@
           "mode": "raw",
           "raw": "{\"id\":\"{{eulaId}}\", \"nodeId\":\"{{nodeId}}\", \"accepted\":\"true\"}"
         },
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}"
       },
       "response": []
     },
@@ -291,8 +286,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas/{{eulaId}}"
       },
       "response": []
     },
@@ -425,8 +419,7 @@
               "value": "userName"
             }
           ]
-        },
-        "description": ""
+        }
       },
       "response": []
     },
@@ -449,8 +442,7 @@
           "mode": "raw",
           "raw": " {\n      \"id\": \"{{rootId}}\",\n      \"userName\": \"root\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
         },
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{rootId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{rootId}}"
       },
       "response": []
     },
@@ -473,8 +465,7 @@
           "mode": "raw",
           "raw": " {\n      \"id\": \"{{adminId}}\",\n      \"userName\": \"admin\",\n      \"password\":\"Changeme@2\",\n      \"newPassword\":\"Changeme@1\"\n      \n \n }\n \n"
         },
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{adminId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/osUsers/{{adminId}}"
       },
       "response": []
     },
@@ -506,8 +497,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v1/system/lockboxes",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/lockboxes"
       },
       "response": []
     },
@@ -530,8 +520,7 @@
           "mode": "raw",
           "raw": " {\n      \"id\": \"{{lockId}}\",\n      \"userName\": \"Lockbox\",\n      \"passphrase\":\"{{password}}\",\n      \"newPassphrase\":\"{{newPassword}}\"\n }"
         },
-        "url": "https://{{ip}}:8443/api/v1/system/lockboxes/{{lockId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/lockboxes/{{lockId}}"
       },
       "response": []
     },
@@ -554,8 +543,7 @@
           "mode": "raw",
           "raw": "{\"id\":\"{{nodeId}}\", \"status\":\"MAINTENANCE\"}"
         },
-        "url": "https://{{ip}}:8443/api/v2/nodes/{{nodeId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v2/nodes/{{nodeId}}"
       },
       "response": []
     },
@@ -701,8 +689,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v2/components",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v2/components"
       },
       "response": []
     },
@@ -760,8 +747,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones"
       },
       "response": []
     },
@@ -781,8 +767,7 @@
           }
         ],
         "body": {},
-        "url": "https://10.7.244.22:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}",
-        "description": ""
+        "url": "https://10.7.244.22:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}"
       },
       "response": []
     },
@@ -805,8 +790,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}"
       },
       "response": []
     },
@@ -1254,8 +1238,7 @@
           "mode": "raw",
           "raw": " {\n      \"id\": \"{id}\",\n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
         },
-        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}"
       },
       "response": []
     },
@@ -1300,8 +1283,7 @@
           "mode": "raw",
           "raw": " {\n      \"id\": \"{id}\",\n      \"name\": \"Configure ProtectPoint vDisks\",\n      \"category\": \"CONFIG\",\n      \"username\": \"componentAdmin\",\n      \"parent\": {\n        \"id\": \"e0ba2f8e-6914-4862-8a76-26a661f2d9ea\",\n        \"link\": {\n          \"rel\": \"workflowTask\",\n          \"href\": \"/tasks/e0ba2f8e-6914-4862-8a76-26a661f2d9ea\"\n        }\n      },\n      \"owner\": {\n        \"name\": \"StorageMgrTask\",\n        \"link\": {\n          \"rel\": \"\",\n          \"href\": \"\"\n        }\n      },\n      \"description\": \"Configure ProtectPoint vDisks for protection and recovery\",\n      \"state\": \"Completed\",\n      \"startTime\": \"2016-11-28T21:47:49.202+0000\",\n      \"endTime\": \"2016-11-28T21:47:53.458+0000\",\n      \"progress\": 100,\n      \"result\": {\n        \"status\": \"Running\",\n        \"error\": \"No protection assets specified.\"\n      },\n      \"attributes\": {},\n      \"cancellable\": false,\n      \"links\": [\n        {\n          \"rel\": \"tenant\",\n          \"href\": \"/tenants/00000000-0000-0000-0000-000000000001\"\n        }\n      ]\n    }"
         },
-        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v1/tasks/{{id}}"
       },
       "response": []
     },
@@ -1346,8 +1328,7 @@
               "value": "name"
             }
           ]
-        },
-        "description": ""
+        }
       },
       "response": []
     },
@@ -1705,8 +1686,7 @@
             }
           ]
         },
-        "url": "https://{{ip}}:8443/api/v2/upgradePackages",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v2/upgradePackages"
       },
       "response": []
     },
@@ -1729,8 +1709,7 @@
           "mode": "raw",
           "raw": "{\n  \n   \"id\": \"e5acc44a-29cf-4d6d-8667-3bcb1a5359cc\",\n            \"name\": \"EMC eCDM - Major Release\",\n            \"packageVersion\": \"2.0.0-1-SNAPSHOT\",\n            \"type\": \"RELEASE\",\n            \"madeAvailable\": \"2017-08-22T15:33:58.000+0000\",\n            \"description\": \"This package upgrades all the components\",\n            \"rebootRequired\": false,\n            \"sizeInBytes\": 2046925208,\n            \"state\": \"AVAILABLE\",\n            \"fileName\": \"ecdm_upgradepackage_2.0.0.1_snaphsot_20170822.pkg\",\n            \"certificateTrustedByUser\": false\n}"
         },
-        "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}"
       },
       "response": []
     },
@@ -1775,8 +1754,7 @@
               "value": "name"
             }
           ]
-        },
-        "description": ""
+        }
       },
       "response": []
     },
@@ -2361,8 +2339,7 @@
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v2/licenses",
-        "description": ""
+        "url": "https://{{ip}}:8443/api/v2/licenses"
       },
       "response": [
         {
@@ -2719,7 +2696,7 @@
             "exec": [
               "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
               "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
-              "postman.setEnvironmentVariable(\"ip\", \"10.7.244.21\");",
+              "postman.setEnvironmentVariable(\"ip\", \"10.199.250.83\");",
               "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
               ""
             ]
@@ -2731,7 +2708,7 @@
             "type": "text/javascript",
             "exec": [
               "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
+              "postman.setEnvironmentVariable(\"token\", data[\"access_token\"]);"
             ]
           }
         }
@@ -2745,15 +2722,8 @@
           }
         ],
         "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "Content-Type",
-              "value": "",
-              "description": "",
-              "type": "text"
-            }
-          ]
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
         },
         "url": "https://{{ip}}:8443/api/v2/login",
         "description": "This request will return auth token from aaa component"
