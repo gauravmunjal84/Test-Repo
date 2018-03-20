@@ -2708,7 +2708,7 @@
             "type": "text/javascript",
             "exec": [
               "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"token\", data[access_token]);"
+              "postman.setEnvironmentVariable(\"token\", data.access_token);"
             ]
           }
         }
