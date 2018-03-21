@@ -2672,7 +2672,7 @@
             "value": "application/json"
           },
           {
-            "key": "Bearer",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
