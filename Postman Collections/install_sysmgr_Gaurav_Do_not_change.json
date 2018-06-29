@@ -2280,6 +2280,51 @@
       ]
     },
     {
+      "_postman_id": "720e172d-def8-1765-1228-e08b4857b4e5",
+      "name": "Login - Default copy",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
+              "postman.setEnvironmentVariable(\"ip\", \"10.199.250.83\");",
+              "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"token\", data.access_token);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
+        },
+        "url": "https://{{ip}}:8443/api/v2/login",
+        "description": "This request will return auth token from aaa component"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "2e7fdde0-a30a-0756-d7cf-56f6dd134816",
       "name": "GET nodes post configuration",
       "event": [
@@ -2660,51 +2705,6 @@
         },
         "url": "https://{{ip}}:8443/api/v2/configurations",
         "description": "GET configurations"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "720e172d-def8-1765-1228-e08b4857b4e5",
-      "name": "Login - Default copy",
-      "event": [
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
-              "//postman.setEnvironmentVariable(\"fqdn\", \"lava89021.op.local\");",
-              "postman.setEnvironmentVariable(\"ip\", \"10.199.250.83\");",
-              "//postman.setEnvironmentVariable(\"fqdn\", \"10.7.253.182\");",
-              ""
-            ]
-          }
-        },
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"token\", data.access_token);"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
-        },
-        "url": "https://{{ip}}:8443/api/v2/login",
-        "description": "This request will return auth token from aaa component"
       },
       "response": []
     }
