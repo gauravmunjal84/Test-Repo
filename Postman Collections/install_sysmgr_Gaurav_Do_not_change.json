@@ -1691,54 +1691,6 @@
       "response": []
     },
     {
-      "_postman_id": "5bce6c38-8f4d-ccbc-e5b9-9437d6bbc0d6",
-      "name": "Get upgradePackages copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"packageId\", data.content[0].id);"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}"
-          }
-        ],
-        "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "size",
-              "value": "original",
-              "type": "text",
-              "warning": ""
-            },
-            {
-              "key": "file",
-              "value": null,
-              "type": "file",
-              "warning": ""
-            }
-          ]
-        },
-        "url": "https://{{ip}}:8443/api/v2/upgradePackages"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "5a83ecfa-e307-5329-25a0-1d4838e1765e",
       "name": "PUT UpgradePackages by Id",
       "request": {
