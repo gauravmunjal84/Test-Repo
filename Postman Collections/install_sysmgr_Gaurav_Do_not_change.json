@@ -535,13 +535,21 @@
             "value": "application/json"
           },
           {
+            "key": "Authorization",
+            "value": "{{token}}"
+          },
+          {
+            "key": "",
+            "value": "{{token}}"
+          },
+          {
             "key": "X-Auth-Token",
             "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\"id\":\"{{nodeId}}\", \"status\":\"MAINTENANCE\"}"
+          "raw": "{\n\t\"id\":\"{{nodeId}}\",\n\"status\":\"OPERATIONAL\"\n\t\n}\n\n"
         },
         "url": "https://{{ip}}:8443/api/v2/nodes/{{nodeId}}"
       },
