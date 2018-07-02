@@ -1828,7 +1828,7 @@
           "mode": "raw",
           "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
         },
-        "url": "https://{{ip}}/login",
+        "url": "https://{{ip}}/api/v2/login",
         "description": "This request will return auth token from aaa component"
       },
       "response": [
