@@ -1794,6 +1794,7 @@
         {
           "listen": "prerequest",
           "script": {
+            "id": "88366a5d-7b12-419d-ae0a-891cb06e10ef",
             "type": "text/javascript",
             "exec": [
               "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
@@ -1808,10 +1809,11 @@
         {
           "listen": "test",
           "script": {
+            "id": "d54436c9-6ba3-4e30-a593-c2056aa93492",
             "type": "text/javascript",
             "exec": [
               "var data = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"token\", data[\"x-auth-token\"]);"
+              "postman.setEnvironmentVariable(\"token\", data[\"access_token\"]);"
             ]
           }
         }
@@ -1828,7 +1830,7 @@
           "mode": "raw",
           "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
         },
-        "url": "https://{{ip}}/api/v2/login",
+        "url": "https://{{ip}}:8443/api/v2/login",
         "description": "This request will return auth token from aaa component"
       },
       "response": [
