@@ -1,8 +1,7 @@
 {
   "info": {
-    "name": "eSRS ALL - Gaurav",
     "_postman_id": "a344e296-1ac1-849c-19b7-85bc0745dd99",
-    "description": "",
+    "name": "eSRS ALL - Gaurav",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -27,8 +26,7 @@
               }
             ],
             "body": {},
-            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/",
-            "description": ""
+            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/"
           },
           "response": []
         },
@@ -48,8 +46,7 @@
               }
             ],
             "body": {},
-            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/esrsupgradefileinfo/documents",
-            "description": ""
+            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/esrsupgradefileinfo/documents"
           },
           "response": []
         },
@@ -69,8 +66,7 @@
               }
             ],
             "body": {},
-            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/",
-            "description": ""
+            "url": "http://{{ip}}:9760/documentSpaces/telmgr/documentTypes/"
           },
           "response": []
         }
@@ -601,8 +597,7 @@
               }
             ],
             "body": {},
-            "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds",
-            "description": ""
+            "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds"
           },
           "response": []
         },
@@ -668,9 +663,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"value\":\"2.0.0-6\"\r\n}"
+              "raw": "{\r\n  \"value\":\"2.1.0-78\"\r\n}"
             },
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradeSoftwareVersion",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD0517F909\n/UpgradeSoftwareVersion",
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
           },
           "response": []
@@ -796,8 +791,7 @@
               }
             ],
             "body": {},
-            "url": "http://mftfiletransferprogressDetailsSvc-tst.cfcq.isus.emc.com/mft/filetransferprogress/status/ELM24DQLD04S22/EMCeCDM",
-            "description": ""
+            "url": "http://mftfiletransferprogressDetailsSvc-tst.cfcq.isus.emc.com/mft/filetransferprogress/status/ELM24DQLD04S22/EMCeCDM"
           },
           "response": []
         },
@@ -1013,8 +1007,7 @@
               "mode": "raw",
               "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
             },
-            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5",
-            "description": ""
+            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5"
           },
           "response": []
         },
@@ -1041,8 +1034,7 @@
               "mode": "raw",
               "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
             },
-            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/keepalive",
-            "description": ""
+            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/keepalive"
           },
           "response": []
         },
@@ -1110,8 +1102,7 @@
               "mode": "raw",
               "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
             },
-            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5",
-            "description": ""
+            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5"
           },
           "response": []
         },
@@ -1134,8 +1125,7 @@
               "mode": "raw",
               "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
             },
-            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/mft/getfiles/list",
-            "description": ""
+            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/mft/getfiles/list"
           },
           "response": []
         },
@@ -1158,8 +1148,7 @@
               "mode": "raw",
               "raw": "{\r\n\"ipAddress\":\"10.7.244.21\"\r\n}"
             },
-            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/mft/ecdm-upgrade-2.0.0-3-SNAPSHOT.pkg",
-            "description": ""
+            "url": "https://10.7.252.39:9443/esrs/v1/devices/EMCeCDM/ELMKT94PDTJ0X5/mft/ecdm-upgrade-2.0.0-3-SNAPSHOT.pkg"
           },
           "response": []
         }
@@ -1619,8 +1608,7 @@
               }
             ],
             "body": {},
-            "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds",
-            "description": ""
+            "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds"
           },
           "response": []
         },
@@ -2283,8 +2271,7 @@
                   "value": "properties.component eq\"TelMgr\" and catalogCode eq \"TLM\" and summary eq\"An upgrade package of version: ecdm-upgrade-2.0.0-5-SNAPSHOT.pkg is available to download from the upgrades tab.\""
                 }
               ]
-            },
-            "description": ""
+            }
           },
           "response": []
         },
@@ -2464,8 +2451,7 @@
                   "value": "properties.component eq\"TelMgr\" and catalogCode eq \"TLM\""
                 }
               ]
-            },
-            "description": ""
+            }
           },
           "response": []
         },
