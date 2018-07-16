@@ -907,7 +907,7 @@
               }
             ],
             "body": {},
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageMadeAvailableDate",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD0517F909/UpgradeSoftwareVersion",
             "description": "GET dataitem by name with serial number of product"
           },
           "response": []
