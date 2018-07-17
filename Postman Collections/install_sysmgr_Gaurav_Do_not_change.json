@@ -1695,7 +1695,7 @@
         "method": "PUT",
         "header": [
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           },
           {
