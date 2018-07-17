@@ -59,7 +59,7 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
