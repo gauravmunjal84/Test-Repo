@@ -1663,7 +1663,7 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
@@ -1678,19 +1678,9 @@
             },
             {
               "key": "file",
+              "value": null,
               "type": "file",
-              "warning": "",
-              "src": {
-                "0": {
-                  "name": "ecdm-upgrade-1.1.0-24.pkg",
-                  "lastModified": 1480709663998,
-                  "lastModifiedDate": "2016-12-02T20:14:23.998Z",
-                  "webkitRelativePath": "",
-                  "size": 1153624710,
-                  "type": ""
-                },
-                "length": 1
-              }
+              "warning": ""
             }
           ]
         },
