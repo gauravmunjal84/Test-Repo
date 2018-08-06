@@ -1,9 +1,7 @@
 {
-  "variables": [],
   "info": {
-    "name": "esrsAcceptance",
     "_postman_id": "ca74bac9-7010-ba43-799e-a9221a1107d6",
-    "description": "",
+    "name": "esrsAcceptance",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -11,6 +9,16 @@
       "_postman_id": "0681e56a-f2c5-abdb-69ce-18c0f1db4b03",
       "name": "GET notifications @after GET upgradePackages",
       "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        },
         {
           "listen": "test",
           "script": {
@@ -25,35 +33,40 @@
               "tests[\"Verify the category of notification\"] = data.content[0].category === \"MONITORING\";"
             ]
           }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              ""
-            ]
-          }
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/events?filter=properties.component eq\"TelMgr\" and catalogCode eq \"TLM\" and summary eq\"An upgrade package of version: 2.0.0-5-SNAPSHOT is available to download from the upgrades tab.\"",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
-        "description": ""
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v1/events?filter=properties.component eq\"TelMgr\" and catalogCode eq \"TLM\" and summary eq\"An upgrade package of version: 2.0.0-5-SNAPSHOT is available to download from the upgrades tab.\"",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v1",
+            "events"
+          ],
+          "query": [
+            {
+              "key": "filter",
+              "value": "properties.component eq\"TelMgr\" and catalogCode eq \"TLM\" and summary eq\"An upgrade package of version: 2.0.0-5-SNAPSHOT is available to download from the upgrades tab.\""
+            }
+          ]
+        }
       },
       "response": []
     },
@@ -61,24 +74,22 @@
       "_postman_id": "1e582870-c17f-6a25-b79f-c2a22c2d0ff6",
       "name": "Assign a package to a serial number",
       "request": {
-        "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/multipleAssign",
         "method": "POST",
         "header": [
           {
             "key": "Cookie",
-            "value": "CTSESSION={{ctsession}}",
-            "description": ""
+            "value": "CTSESSION={{ctsession}}"
           },
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\n  \"productName\" :\"EMCeCDM\", \n  \"serialNumber\":\"{{serialNumber}}\",\n  \"fileNameList\" :[\"{{esrsPackageName}}\" ]\n  \n}"
         },
+        "url": "http://mftproductlockermftService-core-sso.cfcq.isus.emc.com/core/mft/productlocker/v1/products/multipleAssign",
         "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
       },
       "response": []
@@ -135,24 +146,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages",
         "method": "GET",
         "header": [
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           },
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
         },
+        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages",
         "description": "GET file will return filenames of newer packages available in the backend for download"
       },
       "response": []
@@ -209,23 +218,40 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/remoteUpgradePackages/?update=yes",
         "method": "GET",
         "header": [
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           },
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
+        },
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v2/remoteUpgradePackages/?update=yes",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v2",
+            "remoteUpgradePackages",
+            ""
+          ],
+          "query": [
+            {
+              "key": "update",
+              "value": "yes"
+            }
+          ]
         },
         "description": "GET file will return filenames of newer packages available in the backend for download"
       },
@@ -235,6 +261,16 @@
       "_postman_id": "388e5234-99e7-61df-3229-de8baf864ccd",
       "name": "Post device connections",
       "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        },
         {
           "listen": "test",
           "script": {
@@ -248,37 +284,25 @@
               ""
             ]
           }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              ""
-            ]
-          }
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway",
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "key": "Authorization",
+            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\"emcSupportUsername\":\"scott.jones@nordstrom.com\", \"emcSupportPassword\":\"Password1\", \"gatewayHostAddress\":\"10.7.252.39\"}"
         },
+        "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway",
         "description": "This request will return existing license; blank response if no license"
       },
       "response": []
@@ -299,32 +323,27 @@
         }
       ],
       "request": {
-        "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds ",
         "method": "POST",
         "header": [
           {
             "key": "username",
-            "value": "krishp18",
-            "description": ""
+            "value": "krishp18"
           },
           {
             "key": "fobkeyvalue",
-            "value": "Password1",
-            "description": ""
+            "value": "Password1"
           },
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "Accept",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {},
-        "description": ""
+        "url": "http://mftRSAAuthenticatorService-test.cfcq.isus.emc.com/mftv3/rsaauthenticator/v1/rsacreds"
       },
       "response": []
     },
@@ -332,6 +351,16 @@
       "_postman_id": "583ac350-21a4-b531-204e-dae17b5afecb",
       "name": "Get device connections after POST",
       "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        },
         {
           "listen": "test",
           "script": {
@@ -349,39 +378,26 @@
               ""
             ]
           }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              ""
-            ]
-          }
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway/{{deviceId}}",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           },
           {
             "key": "xbrs_tenant",
-            "value": "*",
-            "description": ""
+            "value": "*"
           }
         ],
         "body": {},
+        "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway/{{deviceId}}",
         "description": "This request will return existing license; blank response if no license"
       },
       "response": []
@@ -390,24 +406,22 @@
       "_postman_id": "5bcc4717-ef23-6698-e71a-85652efab01f",
       "name": "GET file by id",
       "request": {
-        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages/{{esrsPackageId}}",
         "method": "GET",
         "header": [
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           },
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
         },
+        "url": "https://{{ip}}:8443/api//v2/remoteUpgradePackages/{{esrsPackageId}}",
         "description": "Reads the response from catalog"
       },
       "response": []
@@ -440,24 +454,22 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/remoteUpgradePackages/{{esrsPackageId}}/download",
         "method": "GET",
         "header": [
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           },
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
         },
+        "url": "https://{{ip}}:8443/api/v2/remoteUpgradePackages/{{esrsPackageId}}/download",
         "description": "This API downloads the file by name that is available in the backend to download, should be the newer version."
       },
       "response": []
@@ -490,21 +502,37 @@
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/schedules?filter=name eq \"ESRSUpgradePackage\"",
         "method": "GET",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           },
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           }
         ],
         "body": {},
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v1/schedules?filter=name eq \"ESRSUpgradePackage\"",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v1",
+            "schedules"
+          ],
+          "query": [
+            {
+              "key": "filter",
+              "value": "name eq \"ESRSUpgradePackage\""
+            }
+          ]
+        },
         "description": "GET ESRS notification schedule for upgrade package"
       },
       "response": []
@@ -513,6 +541,16 @@
       "_postman_id": "8386197b-9a1c-848d-ec3d-f1c6a03ed745",
       "name": "Login - Default",
       "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        },
         {
           "listen": "test",
           "script": {
@@ -524,32 +562,21 @@
               "tests[\"Status code is 200\"] = responseCode.code === 200;"
             ]
           }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              ""
-            ]
-          }
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v1/login",
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
         },
+        "url": "https://{{ip}}:8443/api/v1/login",
         "description": "This request will return auth token from aaa component"
       },
       "response": [
@@ -557,25 +584,23 @@
           "id": "1d09a70d-d498-7890-1c4a-4202b72a9717",
           "name": "X-Auth-Token",
           "originalRequest": {
-            "url": "https://10.7.244.21:8443/api/login",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
             },
+            "url": "https://10.7.244.21:8443/api/login",
             "description": "This request will return auth token from aaa component"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -676,25 +701,23 @@
           "id": "79b26686-8516-0c10-cfc0-57a839adc339",
           "name": "token",
           "originalRequest": {
-            "url": "https://{{ip}}:8443/api/login",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
             },
+            "url": "https://{{ip}}:8443/api/login",
             "description": "This request will return auth token from aaa component"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -797,24 +820,22 @@
       "_postman_id": "9278ef3b-15a5-acb7-4696-87f84ffb2542",
       "name": "GET downloadStatus of the file",
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/remoteUpgradePackages/{{esrsPackageId}}/downloadStatus",
         "method": "GET",
         "header": [
           {
             "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
+            "value": "{{token}}"
           },
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "[{    \"name\": \"UpgradePackageVersion\",\r\n      \"description\": \"Upgrade Package version that is available\",\r\n      \"type\": \"STRING\",\r\n      \"stringMinLength\": 0,\r\n      \"stringMaxLength\": 400,\r\n      \"readOnly\": false,\r\n      \"visible\": true,\r\n      \"forwarded\": false\r\n      }]\r\n"
         },
+        "url": "https://{{ip}}:8443/api/v2/remoteUpgradePackages/{{esrsPackageId}}/downloadStatus",
         "description": "GET file will return filenames of newer packages available in the backend for download"
       },
       "response": []
@@ -824,6 +845,16 @@
       "name": "Get device connections",
       "event": [
         {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              ""
+            ]
+          }
+        },
+        {
           "listen": "test",
           "script": {
             "type": "text/javascript",
@@ -832,7 +863,30 @@
               "postman.setEnvironmentVariable(\"deviceId\", data.content[0].id);"
             ]
           }
-        },
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {},
+        "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway",
+        "description": "This request will return existing license; blank response if no license"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "fb956128-3d1e-3a7f-8bb8-c44c2f3c774f",
+      "name": "Login - Default",
+      "event": [
         {
           "listen": "prerequest",
           "script": {
@@ -842,37 +896,7 @@
               ""
             ]
           }
-        }
-      ],
-      "request": {
-        "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}",
-            "description": ""
-          },
-          {
-            "key": "xbrs_tenant",
-            "value": "*",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": "This request will return existing license; blank response if no license"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "fb956128-3d1e-3a7f-8bb8-c44c2f3c774f",
-      "name": "Login - Default",
-      "event": [
+        },
         {
           "listen": "test",
           "script": {
@@ -886,32 +910,21 @@
               "tests[\"Status code is 200\"] = responseCode.code === 200;"
             ]
           }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              ""
-            ]
-          }
         }
       ],
       "request": {
-        "url": "https://{{ip}}:8443/api/v2/login",
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
+            "value": "application/json"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": "{\"username\":\"admin\", \"password\":\"?Strong1?\"}"
         },
+        "url": "https://{{ip}}:8443/api/v2/login",
         "description": "This request will return auth token from aaa component"
       },
       "response": [
@@ -919,25 +932,23 @@
           "id": "10990892-a842-2d67-e247-d0b1bed3767b",
           "name": "X-Auth-Token",
           "originalRequest": {
-            "url": "https://10.7.244.21:8443/api/login",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\"username\":\"admin\",\"password\":\"admin\",\"tenant\":\"ACME\",\"domain\":\"localhost\"}"
             },
+            "url": "https://10.7.244.21:8443/api/login",
             "description": "This request will return auth token from aaa component"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
@@ -1038,25 +1049,23 @@
           "id": "dd4a5977-ca9e-b799-7b95-cd36e8e9420a",
           "name": "token",
           "originalRequest": {
-            "url": "https://{{ip}}:8443/api/login",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\"username\":\"admin\", \"password\":\"admin\",\"domain\":\"localhost\",\"tenant\":\"ACME\"}"
             },
+            "url": "https://{{ip}}:8443/api/login",
             "description": "This request will return auth token from aaa component"
           },
           "status": "OK",
           "code": 200,
           "_postman_previewlanguage": "javascript",
-          "_postman_previewtype": "html",
           "header": [
             {
               "name": "Access-Control-Allow-Headers",
