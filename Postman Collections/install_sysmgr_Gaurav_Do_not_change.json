@@ -760,26 +760,6 @@
       "response": []
     },
     {
-      "_postman_id": "4bf50237-e298-f77b-08bb-5c4b812b9b2f",
-      "name": "GET /timezones/id",
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}"
-          }
-        ],
-        "body": {},
-        "url": "https://10.7.244.22:8443/api/v1/system/nodes/{{nodeId}}/timezones/{{timezoneId}}"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "ee7722d1-5d69-e2b2-2e2e-aa2273509b2e",
       "name": "GET /node/{id}/configurations/{id}/configLogs",
       "request": {
