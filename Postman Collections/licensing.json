@@ -294,7 +294,7 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
@@ -1163,6 +1163,50 @@
           "body": "{\"token\":\"5E01B1AB793F47E532A64E455D9A62A5\"}"
         }
       ]
+    },
+    {
+      "_postman_id": "e327fc1a-b510-47a5-b8da-fc87456c9419",
+      "name": "https://{{ip}}:8443/api/v2/tasks?filter=state eq \"Running\"&orderby=name",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v2/tasks?filter=state eq \"Running\"&orderby=name",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v2",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "filter",
+              "value": "state eq \"Running\"",
+              "equals": true
+            },
+            {
+              "key": "orderby",
+              "value": "name",
+              "equals": true
+            }
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }
