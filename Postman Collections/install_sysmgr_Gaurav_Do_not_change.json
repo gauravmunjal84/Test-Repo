@@ -537,19 +537,11 @@
           {
             "key": "Authorization",
             "value": "{{token}}"
-          },
-          {
-            "key": "",
-            "value": "{{token}}"
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n\t\"id\":\"{{nodeId}}\",\n\"status\":\"OPERATIONAL\"\n\t\n}\n\n"
+          "raw": "{\n  \"id\":\"{{nodeId}}\",\n\"status\":\"QUIESCE\"\n  \n}\n\n"
         },
         "url": "https://{{ip}}:8443/api/v2/nodes/{{nodeId}}"
       },
