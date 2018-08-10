@@ -1181,7 +1181,7 @@
         ],
         "body": {},
         "url": {
-          "raw": "https://{{ip}}:8443/api/v2/tasks?filter=state eq \"Running\"&orderby=name",
+          "raw": "https://{{ip}}:8443/api/v2/tasks/?filter=state eq \"Running\"&orderby=name",
           "protocol": "https",
           "host": [
             "{{ip}}"
@@ -1190,7 +1190,8 @@
           "path": [
             "api",
             "v2",
-            "tasks"
+            "tasks",
+            ""
           ],
           "query": [
             {
