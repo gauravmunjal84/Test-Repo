@@ -684,12 +684,32 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v2/components"
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v2/components/?pageSize=2",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v2",
+            "components",
+            ""
+          ],
+          "query": [
+            {
+              "key": "pageSize",
+              "value": "2",
+              "equals": true
+            }
+          ]
+        }
       },
       "response": []
     },
