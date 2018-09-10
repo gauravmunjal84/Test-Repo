@@ -690,7 +690,7 @@
         ],
         "body": {},
         "url": {
-          "raw": "https://{{ip}}:8443/api/v2/components/?pageSize=2",
+          "raw": "https://{{ip}}:8443/api/v2/components/?pageSize=5",
           "protocol": "https",
           "host": [
             "{{ip}}"
@@ -705,7 +705,7 @@
           "query": [
             {
               "key": "pageSize",
-              "value": "2",
+              "value": "5",
               "equals": true
             }
           ]
