@@ -2592,52 +2592,6 @@
       "response": []
     },
     {
-      "_postman_id": "9bcce856-83d0-c34b-907d-7970f5e007a8",
-      "name": "Get /node/{id}/configurations/{id}",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;\r",
-              "var data = JSON.parse(responseBody);\r",
-              "tests[\"FQDN\"] = data.network[0].fqdn === \"lava24429.op.local\";\r",
-              "tests[\"ipAddress\"] = data.network[0].ipAddress[0] === \"10.7.244.29\";\r",
-              "tests[\"netMask\"] = data.network[0].netMask === \"255.255.255.0\";\r",
-              "tests[\"gateway\"] = data.network[0].gateway === \"10.7.244.1\";\r",
-              "tests[\"dnsServers\"] = data.network[0].dnsServers[0] === \"10.7.244.30\";\r",
-              "tests[\"ipFamily\"] = data.network[0].ipaddressFamily === \"IPv4\";\r",
-              "tests[\"timeZone\"] = data.timeZone === \"PST8PDT\";\r",
-              "tests[\"userName\"] = data.userName === \"root\";\r",
-              "tests[\"state\"] = data.state === \"PENDING\";\r",
-              "\r",
-              "\r",
-              "\r",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}"
-          }
-        ],
-        "body": {},
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
-        "description": "GET network configurations in detail"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "84e5c6fb-4669-2ddc-efe7-4bdfd5d2611b",
       "name": "GET /configurations",
       "event": [
