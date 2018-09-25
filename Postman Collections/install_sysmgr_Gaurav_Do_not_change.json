@@ -690,7 +690,7 @@
         ],
         "body": {},
         "url": {
-          "raw": "https://{{ip}}:8443/api/v2/components/?pageSize=5",
+          "raw": "https://{{ip}}:8443/api/v2/components/?filter",
           "protocol": "https",
           "host": [
             "{{ip}}"
@@ -704,9 +704,9 @@
           ],
           "query": [
             {
-              "key": "pageSize",
-              "value": "5",
-              "equals": true
+              "key": "filter",
+              "value": "",
+              "equals": false
             }
           ]
         }
@@ -1045,13 +1045,13 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n\"timeZone\": \"America/Detroit\"\r\n}\r\n\r\n"
+          "raw": "{\r\n\r\n\r\n\"configType\": \"integrated\"\r\n}\r\n\r\n"
         },
         "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "Change timezone"
@@ -1801,7 +1801,7 @@
         {
           "listen": "prerequest",
           "script": {
-            "id": "88366a5d-7b12-419d-ae0a-891cb06e10ef",
+            "id": "19ef2875-34a7-4a16-96c7-6c97f2fe755e",
             "type": "text/javascript",
             "exec": [
               "//postman.setEnvironmentVariable(\"ip\", \"fda8:6c3:ce53:a890::21\");",
@@ -1835,7 +1835,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\"username\":\"admin\", \"password\":\"admin\"}"
+          "raw": "{\"username\":\"admin\", \"password\":\"?Strong1?\"}"
         },
         "url": "https://{{ip}}:8443/api/v2/login",
         "description": "This request will return auth token from aaa component"
@@ -2488,7 +2488,7 @@
         }
       ],
       "request": {
-        "method": "PUT",
+        "method": "PATCH",
         "header": [
           {
             "key": "Content-Type",
@@ -2578,7 +2578,7 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
@@ -2586,7 +2586,27 @@
           "mode": "raw",
           "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
         },
-        "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v2/configurations/{{configId}}?fields=timeZone",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v2",
+            "configurations",
+            "{{configId}}"
+          ],
+          "query": [
+            {
+              "key": "fields",
+              "value": "timeZone",
+              "equals": true
+            }
+          ]
+        },
         "description": "GET configurations By id"
       },
       "response": []
@@ -2629,7 +2649,26 @@
           "mode": "raw",
           "raw": "{\n  \"content\": [\n    {\n      \"id\": \"{{configId}}\",\n      \n      \"nodeId\": \"{{nodeId}}\",\n      \"landlordTenantName\": \"ACME\",\n      \"networks\": [\n        {\n          \"fqdn\": \"lava24421.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.21\"\n          ],\n          \"ipAddressFamily\": \"IPv4\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ],\n      \"timeZone\": \"PST8PDT\",\n      \"osUsers\": [\n        {\n          \"userName\": \"root\",\n          \"password\":\"?Strong1?\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"admin\",\n         \"password\":\"@ppAdm1n\",\n          \"newPassword\":\"Changeme@1\"\n        },\n        {\n          \"userName\": \"support\",\n          \"password\":\"$Supp0rt!\",\n          \"newPassword\":\"Changeme@1\"\n        }\n      ],\n      \"lockbox\": {\n        \"name\": \"Lockbox\",\n        \"password\":\"Ch@ngeme1\",\n        \"newPassword\":\"Changeme@1\"\n      }\n    }\n  ]\n}"
         },
-        "url": "https://{{ip}}:8443/api/v2/configurations",
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v2/configurations?fields=networks",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v2",
+            "configurations"
+          ],
+          "query": [
+            {
+              "key": "fields",
+              "value": "networks",
+              "equals": true
+            }
+          ]
+        },
         "description": "GET configurations"
       },
       "response": []
