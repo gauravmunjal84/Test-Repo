@@ -628,12 +628,31 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
         "body": {},
-        "url": "https://{{ip}}:8443/api/v2/disks",
+        "url": {
+          "raw": "https://{{ip}}:8443/api/v2/disks?fields=name",
+          "protocol": "https",
+          "host": [
+            "{{ip}}"
+          ],
+          "port": "8443",
+          "path": [
+            "api",
+            "v2",
+            "disks"
+          ],
+          "query": [
+            {
+              "key": "fields",
+              "value": "name",
+              "equals": true
+            }
+          ]
+        },
         "description": "GET /networks"
       },
       "response": []
@@ -880,7 +899,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "\n{\n  \"id\": \"{{configId}}\",\n  \n \"networks\": [\n        {\n          \n          \"fqdn\": \"lava24449.op.local\",\n          \"ipAddress\": [\n            \"10.7.244.49\"\n          ],\n          \"ipAddressFamily\": \"IPv6\",\n          \"interfaceName\": \"eth0\",\n          \"netMask\": \"255.255.255.0\",\n          \"gateway\": \"10.7.244.1\",\n          \"dnsServers\": [\n            \"10.7.244.30\"\n          ]\n        }\n      ]\n   \n  \n}\n"
+          "raw": "\n{\n  \"id\": \"{{configId}}\",\n  \n\"networks\": [\n                {\n                    \"fqdn\": \"lava24421.test01.op.local\",\n                    \"ipAddress\": [\n                        \"10.7.244.49\"\n                    ],\n                    \"ipAddressFamily\": \"IPv4\",\n                    \"interfaceName\": \"eth0\",\n                    \"netMask\": \"255.255.255.0\",\n                    \"prefix\": null,\n                    \"gateway\": \"10.7.244.1\",\n                    \"dnsServers\": [\n                        \"10.5.154.111\",\n                        \"10.7.244.30\"\n                    ]\n                }\n            ]\n   \n  \n}\n"
         },
         "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "Change Network Details"
@@ -2107,7 +2126,7 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
