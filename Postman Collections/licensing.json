@@ -221,12 +221,12 @@
         "method": "GET",
         "header": [
           {
-            "key": "X-Auth-Token",
-            "value": "{{token}}"
-          },
-          {
             "key": "Content-Type",
             "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
           }
         ],
         "body": {
@@ -249,7 +249,8 @@
           "query": [
             {
               "key": "update",
-              "value": "yes"
+              "value": "yes",
+              "equals": true
             }
           ]
         },
@@ -300,7 +301,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\"emcSupportUsername\":\"scott.jones@nordstrom.com\", \"emcSupportPassword\":\"Password1\", \"gatewayHostAddress\":\"10.7.252.39\"}"
+          "raw": "{\"emcSupportUsername\":\"munjag\", \"emcSupportPassword\":\"Password1\", \"gatewayHostAddress\":\"isilon.test@emconlinesupport.com\"}"
         },
         "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway",
         "description": "This request will return existing license; blank response if no license"
