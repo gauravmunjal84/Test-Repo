@@ -641,7 +641,7 @@
               }
             ],
             "body": {},
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMQNLHHBLYNYX/UpgradePackageVersion",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageVersion",
             "description": "GET dataitem by name with serial number of product"
           },
           "response": []
@@ -663,7 +663,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"value\":\"3.1.0-2\"\r\n}"
+              "raw": "{\r\n  \"value\":\"3.0.0-1-20180808.160841-1622.pkg\"\r\n}"
             },
             "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradeSoftwareVersion",
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
@@ -770,7 +770,7 @@
               }
             ],
             "body": {},
-            "url": "http://productlockermftv3service-test.cfcq.isus.emc.com/mft/productlocker/v1/products/queuedPackages/EMCeCDM/ELM24DQLD04S22",
+            "url": "http://productlockermftv3service-test.cfcq.isus.emc.com/mft/productlocker/v1/products/queuedPackages/EMCeCDM/ELMKT94PDTJ0X5",
             "description": "Get metadata from MFT backend, default dataitems basically"
           },
           "response": []
@@ -860,7 +860,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"value\":\"04/05/2017\"\r\n}"
+              "raw": "{\r\n  \"value\":\"08/06/2018\"\r\n}"
             },
             "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageMadeAvailableDate",
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
@@ -962,7 +962,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"value\":\"2.0.0-1\"\r\n}"
+              "raw": "{\r\n  \"value\":\"3.0.0-1-SNAPSHOT\"\r\n}"
             },
             "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/ApplianceCurrentVersion",
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
