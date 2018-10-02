@@ -64,26 +64,7 @@
           }
         ],
         "body": {},
-        "url": {
-          "raw": "https://{{ip}}:8443/api/v2/nodes?fields=status",
-          "protocol": "https",
-          "host": [
-            "{{ip}}"
-          ],
-          "port": "8443",
-          "path": [
-            "api",
-            "v2",
-            "nodes"
-          ],
-          "query": [
-            {
-              "key": "fields",
-              "value": "status",
-              "equals": true
-            }
-          ]
-        }
+        "url": "https://{{ip}}:8443/api/v2/nodes"
       },
       "response": [
         {
@@ -1739,7 +1720,7 @@
             }
           ]
         },
-        "url": "https://{{ip}}:8443/api/v2/upgradePackages"
+        "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}"
       },
       "response": []
     },
