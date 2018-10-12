@@ -556,32 +556,10 @@
           {
             "key": "Content-Type",
             "value": "application/json"
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}"
           }
         ],
         "body": {},
-        "url": {
-          "raw": "https://{{ip}}:8443/api/v1/events?filter=properties.component eq\"SysMgr\"",
-          "protocol": "https",
-          "host": [
-            "{{ip}}"
-          ],
-          "port": "8443",
-          "path": [
-            "api",
-            "v1",
-            "events"
-          ],
-          "query": [
-            {
-              "key": "filter",
-              "value": "properties.component eq\"SysMgr\""
-            }
-          ]
-        },
+        "url": "http://10.7.244.21:14300/index_schedule/_doc/4e31920a-2d46-4429-a8fc-51c90b903d56",
         "description": "GET Events"
       },
       "response": []
@@ -1741,7 +1719,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "\n        {\n            \"id\": \"e1c35301-cfdf-45b1-85fb-7b1be0ac9eba\",\n            \"name\": \"Dell EMC eCDM - Major Release\",\n            \"packageVersion\": \"3.0.0-1-SNAPSHOT\",\n            \"type\": \"RELEASE\",\n            \"madeAvailable\": \"2018-09-05T21:42:39.000+0000\",\n            \"description\": \"This package upgrades all the components\",\n            \"rebootRequired\": false,\n            \"sizeInBytes\": 4392555193,\n            \"state\": \"INSTALLED\",\n            \"fileName\": \"ecdm-upgrade-3.0.0-1-20180905.221637-1911.pkg\",\n            \"subComponentDetails\": [\n                {\n                    \"componentName\": \"eCDM\",\n                    \"subComponentUpgradeState\": \"AVAILABLE\",\n                    \"errorMessage\": null,\n                    \"upgradeVersion\": \"3.0.0-1-SNAPSHOT\"\n                },\n                {\n                    \"componentName\": \"vProxy\",\n                    \"subComponentUpgradeState\": \"AVAILABLE\",\n                    \"errorMessage\": null,\n                    \"upgradeVersion\": \"3.0.0-1-SNAPSHOT\"\n                }\n            ],\n            \"errorMessage\": \"\",\n            \"certificateDetailsMap\": {\n                \"notAfter\": \"2019-02-07T23:59:59.000+0000\",\n                \"serialNumber\": \"6d171277927220905cea984d776c0ed3\",\n                \"sha256\": \"8C:AA:E9:B7:D6:0C:A9:3D:C6:2D:97:A5:F8:6E:FC:1F:5B:88:F1:5D:C9:D4:A3:A4:92:A1:A2:D8:C8:60:68:B5\",\n                \"issuerDN\": \"CN=Symantec Class 3 SHA256 Code Signing CA - G2,OU=Symantec Trust Network,O=Symantec Corporation,C=US\",\n                \"publicKeyModulus\": \"27427160681495154783359000158244380034964202863528239250153792431848646391479784753817716038675625614716607136342341222503588534752920088174496571004061508575609494743490115322912736151581158770149956542750710655666665325849920695734848178763297467619322054822968473830591193780089484689758773000530114497750305546307424758851482342545506861354725830456276484348141838244788113015106263454901860944110711044903147259759783493534792406662977221173166540367947163873181070966724374151624990514989803307011052041666834233311808918147116829445297347212170331680315704180069771032008738285179809946639638185529528929853417\",\n                \"publicKey\": \"RSA public key\",\n                \"version\": \"3\",\n                \"notBefore\": \"2018-02-06T00:00:00.000+0000\",\n                \"sha1\": \"AC:13:1E:81:C0:B1:0D:5C:06:00:DA:54:CF:1A:30:1F:F3:AF:16:5A\",\n                \"publicKeySize\": \"2048\",\n                \"signatureAlgorithmName\": \"SHA256withRSA\",\n                \"signatureAlgorithmOID\": \"1.2.840.113549.1.1.11\",\n                \"publicKeyExponent\": \"65537\",\n                \"subjectDN\": \"CN=EMC Corporation,OU=Dell EMC eCDM,O=EMC Corporation,L=Hopkinton,ST=Massachusetts,C=US\",\n                \"md5\": \"7F:A5:63:3B:D7:EB:08:8F:BE:6F:16:07:BA:8D:C9:68\"\n            },\n            \"certificateTrustedByUser\": true\n        }\n"
+          "raw": "{\n    \"id\": \"9371965c-1138-4f54-b814-1dfe65409ff5\",\n    \"name\": \"Dell EMC eCDM - Major Release\",\n    \"packageVersion\": \"3.0.0-1-SNAPSHOT\",\n    \"type\": \"RELEASE\",\n    \"madeAvailable\": \"2018-10-02T18:21:02.000+0000\",\n    \"description\": \"This package upgrades all the components\",\n    \"rebootRequired\": false,\n    \"sizeInBytes\": 4494701988,\n    \"state\": \"INSTALLED\",\n    \"fileName\": \"ecdm-upgrade-3.0.0-1-20181002.185803-2201.pkg\",\n    \"subComponentDetails\": [\n        {\n            \"componentName\": \"eCDM\",\n            \"subComponentUpgradeState\": \"AVAILABLE\",\n            \"errorMessage\": null,\n            \"upgradeVersion\": \"3.0.0-1-SNAPSHOT\"\n        },\n        {\n            \"componentName\": \"vProxy\",\n            \"subComponentUpgradeState\": \"AVAILABLE\",\n            \"errorMessage\": null,\n            \"upgradeVersion\": \"3.0.0-1-SNAPSHOT\"\n        }\n    ],\n    \"errorMessage\": \"\",\n    \"certificateDetailsMap\": {\n        \"notAfter\": \"2019-02-07T23:59:59.000+0000\",\n        \"serialNumber\": \"6d171277927220905cea984d776c0ed3\",\n        \"sha256\": \"8C:AA:E9:B7:D6:0C:A9:3D:C6:2D:97:A5:F8:6E:FC:1F:5B:88:F1:5D:C9:D4:A3:A4:92:A1:A2:D8:C8:60:68:B5\",\n        \"issuerDN\": \"CN=Symantec Class 3 SHA256 Code Signing CA - G2,OU=Symantec Trust Network,O=Symantec Corporation,C=US\",\n        \"publicKeyModulus\": \"27427160681495154783359000158244380034964202863528239250153792431848646391479784753817716038675625614716607136342341222503588534752920088174496571004061508575609494743490115322912736151581158770149956542750710655666665325849920695734848178763297467619322054822968473830591193780089484689758773000530114497750305546307424758851482342545506861354725830456276484348141838244788113015106263454901860944110711044903147259759783493534792406662977221173166540367947163873181070966724374151624990514989803307011052041666834233311808918147116829445297347212170331680315704180069771032008738285179809946639638185529528929853417\",\n        \"publicKey\": \"RSA public key\",\n        \"version\": \"3\",\n        \"notBefore\": \"2018-02-06T00:00:00.000+0000\",\n        \"sha1\": \"AC:13:1E:81:C0:B1:0D:5C:06:00:DA:54:CF:1A:30:1F:F3:AF:16:5A\",\n        \"publicKeySize\": \"2048\",\n        \"signatureAlgorithmName\": \"SHA256withRSA\",\n        \"signatureAlgorithmOID\": \"1.2.840.113549.1.1.11\",\n        \"publicKeyExponent\": \"65537\",\n        \"subjectDN\": \"CN=EMC Corporation,OU=Dell EMC eCDM,O=EMC Corporation,L=Hopkinton,ST=Massachusetts,C=US\",\n        \"md5\": \"7F:A5:63:3B:D7:EB:08:8F:BE:6F:16:07:BA:8D:C9:68\"\n    },\n    \"certificateTrustedByUser\": true,\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://10.7.244.49:8443/api/v2/upgradePackages/9371965c-1138-4f54-b814-1dfe65409ff5\"\n        },\n        \"node\": {\n            \"href\": \"https://10.7.244.49:8443/api/v2/nodes/a555139e-93dc-4206-b551-38d2f8655632\"\n        }\n    }\n}"
         },
         "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}"
       },
