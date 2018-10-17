@@ -549,16 +549,20 @@
     },
     {
       "_postman_id": "c840818a-02db-4919-a535-88c31e510ae2",
-      "name": "https://{{ip}}:8443/api/v1/events",
+      "name": "Elastic search schedule",
       "request": {
-        "method": "GET",
+        "method": "POST",
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json"
+            "value": "application/json",
+            "disabled": false
           }
         ],
-        "body": {},
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \n   \n    \"id\": \"4e31920a-2d46-4429-a8fc-51c90b903d56\",\n    \n        \"name\": \"TelemetryReport\",\n        \"triggers\": [\n            {\n                \"cronExpression\": null,\n                \"dayOfWeek\": null,\n                \"dayOfMonth\": null,\n                \"startHour\": null,\n                \"minutesFrequency\": 60,\n                \"hourlyFrequency\": null,\n                \"type\": \"MINUTES\",\n                \"startMinute\": null\n            }\n        ],\n        \"enabled\": true,\n        \"priority\": \"HIGH\",\n        \"owner\": \"telmgr\",\n        \"timezone\": \"MST7MDT\",\n        \"scheduleActiveStartDate\": \"2018-10-12T05:58:00.007Z\",\n        \"scheduleActiveEndDate\": null,\n        \"enableHolidayCalendar\": null,\n        \"nextFireTime\": \"2018-10-13T05:58:00.007Z\",\n        \"lastFireTime\": \"2018-10-12T05:58:00.007Z\",\n        \"status\": \"SUCCESS\",\n        \"attributes\": null,\n        \n        \"tenantId\": \"00000000-0000-4000-a000-000000000000\",\n        \"createdAt\": \"2018-10-11T21:42:30.160Z\",\n        \"updatedAt\": \"2018-10-12T05:58:00.175Z\"\n    \n}"
+        },
         "url": "http://10.7.244.21:14300/index_schedule/_doc/4e31920a-2d46-4429-a8fc-51c90b903d56",
         "description": "GET Events"
       },
