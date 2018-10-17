@@ -648,7 +648,7 @@
         {
           "listen": "test",
           "script": {
-            "type": "text/javascript",
+            "id": "2980e9bb-63e6-4d11-9787-37f7c0ad9f0f",
             "exec": [
               "var data = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"workflow\", content.id[0]);",
@@ -673,7 +673,8 @@
               "postman.setEnvironmentVariable(\"storagemgr\", content[19].id);",
               "postman.setEnvironmentVariable(\"elasticsearch\", content[20].id);",
               "postman.setEnvironmentVariable(\"zookeeper\", content[21].id);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -682,35 +683,17 @@
         "header": [
           {
             "key": "Content-Type",
-            "value": "application/json"
+            "value": "application/json",
+            "disabled": false
           },
           {
             "key": "Authorization",
-            "value": "{{token}}"
+            "value": "{{token}}",
+            "disabled": false
           }
         ],
         "body": {},
-        "url": {
-          "raw": "https://{{ip}}:8443/api/v2/components/?filter",
-          "protocol": "https",
-          "host": [
-            "{{ip}}"
-          ],
-          "port": "8443",
-          "path": [
-            "api",
-            "v2",
-            "components",
-            ""
-          ],
-          "query": [
-            {
-              "key": "filter",
-              "value": "",
-              "equals": false
-            }
-          ]
-        }
+        "url": "https://{{ip}}:8443/api/v2/components/"
       },
       "response": []
     },
