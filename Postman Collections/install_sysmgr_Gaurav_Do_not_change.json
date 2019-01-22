@@ -777,44 +777,6 @@
       "response": []
     },
     {
-      "_postman_id": "1e82b3ea-52f0-749f-ad23-171f98f47734",
-      "name": "PUT /node/{id}/configurations/{id}",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              "tests[\"Successful PUT request\"] = responseCode.code === 201 || responseCode.code === 202;",
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "X-Auth-Token",
-            "value": "{{token}}"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"{{configId}}\",\n  \"network\": [\n    {\n      \"interfaceName\": \"eth0\",\n      \"fqdn\": \"sky30.lss.emc.com\",\n      \"ipAddress\": [\n        \"10.13.204.30\"\n      ],\n      \"netMask\": \"255.255.255.0\",\n      \"gateway\": \"10.13.204.1\",\n      \"dnsServers\": [\n         \"10.13.200.50\",\n        \"10.13.201.149\"\n      ],\n      \"ipaddressFamily\": \"IPv4\"\n    }\n  ],\n  \"timeZone\": \"America/Detroit\",\n  \"userName\": \"root\"\n}\n\n"
-        },
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
-        "description": "Change Network Details"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "c7f48f80-6afd-2902-347b-9240741afc6f",
       "name": "PATCH Network  /configurations/{configId}",
       "event": [
