@@ -222,11 +222,12 @@
         {
           "listen": "test",
           "script": {
-            "type": "text/javascript",
+            "id": "6edcf932-2873-4d04-b0f2-68ebbf839483",
             "exec": [
               "var data = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"eulaId\", data.content[0].id);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -238,12 +239,15 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
-        "body": {},
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/eulas"
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "https://{{ip}}:8443/api/v2/timezones"
       },
       "response": []
     },
@@ -2448,7 +2452,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "\n        {\n            \"id\": \"2b543eac-972c-479b-8619-3941d8bcd865\",\n            \"nodeId\": \"dcf2e396-2976-43f7-aaa2-e2e2ac076886\",\n            \"networks\": [\n                {\n                    \"fqdn\": \"lava24421.op.local\",\n                    \"ipAddress\": [\n                        \"10.7.244.21\"\n                    ],\n                    \"ipAddressFamily\": \"IPv4\",\n                    \"interfaceName\": \"eth0\",\n                    \"netMask\": \"255.255.255.0\",\n                    \"prefix\": null,\n                    \"gateway\": \"10.7.244.1\",\n                    \"dnsServers\": [\n                        \"10.7.244.30\",\n                        \"10.7.244.31\"\n                    ],\n                    \"nslookupSuccess\": false\n                },\n                {\n                    \"fqdn\": \"lava24421.op.local\",\n                    \"ipAddress\": [\n                        \"10.7.244.19\"\n                    ],\n                    \"ipAddressFamily\": \"IPv4\",\n                    \"interfaceName\": \"eth1\",\n                    \"netMask\": \"255.255.255.0\",\n                    \"prefix\": null,\n                    \"gateway\": \"\",\n                    \"dnsServers\": [\n                        \"10.7.244.30\",\n                        \"10.7.244.31\"\n                    ],\n                    \"nslookupSuccess\": false\n                }\n            ],\n            \"timeZone\": \"Americas\\\\Denver\",\n            \"osUsers\": [\n                {\n                    \"userName\": \"root\",\n                    \"description\": \"OS root user account\",\n                    \"numberOfDaysToExpire\": 60,\n                    \"password\": \"?Strong11?\",\n                    \"newPassword\": \"?Strong12\"\n                },\n                {\n                    \"userName\": \"admin\",\n                    \"description\": \"OS administrator user account\",\n                    \"numberOfDaysToExpire\": 60,\n                    \"password\": \"?Strong11?\",\n                    \"newPassword\": \"Strong12\"\n                },\n                {\n                    \"userName\": \"support\",\n                    \"description\": \"OS support user account\",\n                    \"numberOfDaysToExpire\": 60,\n                    \"password\": \"Strong11?\",\n                    \"newPassword\": \"Strong12\"\n                }\n            ],\n            \"lockbox\": {\n                \"name\": \"Lockbox\",\n                \"lastUpdatedTime\": \"2019-01-22T19:28:27.276+0000\",\n                \"passphrase\": null,\n                \"newPassphrase\": null\n            },\n            \"configType\": \"hardware_integrated\",\n            \"gettingStartedCompleted\": false,\n            \"autoSupport\": false,\n            \"vsoSecuritySetupCompleted\": true,\n            \"_links\": {\n                \"self\": {\n                    \"href\": \"https://10.7.244.19:8443/api/v2/configurations/2b543eac-972c-479b-8619-3941d8bcd865\"\n                },\n                \"node\": {\n                    \"href\": \"https://10.7.244.19:8443/api/v2/nodes/dcf2e396-2976-43f7-aaa2-e2e2ac076886\"\n                },\n                \"configStatus\": {\n                    \"href\": \"https://10.7.244.19:8443/api/v2/configurations/2b543eac-972c-479b-8619-3941d8bcd865/configStatus\"\n                },\n                \"timezones\": {\n                    \"href\": \"https://10.7.244.19:8443/api/v2/timezones\"\n                }\n            }\n        }\n  \n "
+          "raw": "\n        {\n            \"id\": \"2b543eac-972c-479b-8619-3941d8bcd865\",\n            \"nodeId\": \"dcf2e396-2976-43f7-aaa2-e2e2ac076886\",\n            \"networks\": [\n                {\n                    \"fqdn\": \"lava24421.op.local\",\n                    \"ipAddress\": [\n                        \"10.7.244.21\"\n                    ],\n                    \"ipAddressFamily\": \"IPv4\",\n                    \"interfaceName\": \"eth0\",\n                    \"netMask\": \"255.255.255.0\",\n                    \"prefix\": null,\n                    \"gateway\": \"10.7.244.1\",\n                    \"dnsServers\": [\n                        \"10.7.244.30\",\n                        \"10.7.244.31\"\n                    ],\n                    \"nslookupSuccess\": false\n                },\n                {\n                    \"fqdn\": \"lava24421.op.local\",\n                    \"ipAddress\": [\n                        \"10.7.244.19\"\n                    ],\n                    \"ipAddressFamily\": \"IPv4\",\n                    \"interfaceName\": \"eth1\",\n                    \"netMask\": \"255.255.255.0\",\n                    \"prefix\": null,\n                    \"gateway\": \"\",\n                    \"dnsServers\": [\n                        \"10.7.244.30\",\n                        \"10.7.244.31\"\n                    ],\n                    \"nslookupSuccess\": false\n                }\n            ],\n            \"timeZone\": \"America/Boise\",\n            \"osUsers\": [\n                {\n                    \"userName\": \"root\",\n                    \"description\": \"OS root user account\",\n                    \"numberOfDaysToExpire\": 60,\n                    \"password\": \"?Strong11?\",\n                    \"newPassword\": \"Changeme@12\"\n                },\n                {\n                    \"userName\": \"admin\",\n                    \"description\": \"OS administrator user account\",\n                    \"numberOfDaysToExpire\": 60,\n                    \"password\": \"?Strong11?\",\n                    \"newPassword\": \"Changeme@12\"\n                },\n                {\n                    \"userName\": \"support\",\n                    \"description\": \"OS support user account\",\n                    \"numberOfDaysToExpire\": 60,\n                    \"password\": \"Strong11?\",\n                    \"newPassword\": \"Changeme@12\"\n                }\n            ],\n            \"lockbox\": {\n                \"name\": \"Lockbox\",\n                \"lastUpdatedTime\": \"2019-01-22T19:28:27.276+0000\",\n                \"passphrase\": \"?Strong11?\",\n                \"newPassphrase\": \"Changeme@12\"\n            },\n            \"configType\": \"hardware_integrated\",\n            \"gettingStartedCompleted\": false,\n            \"autoSupport\": false,\n            \"vsoSecuritySetupCompleted\": true,\n            \"_links\": {\n                \"self\": {\n                    \"href\": \"https://10.7.244.19:8443/api/v2/configurations/2b543eac-972c-479b-8619-3941d8bcd865\"\n                },\n                \"node\": {\n                    \"href\": \"https://10.7.244.19:8443/api/v2/nodes/dcf2e396-2976-43f7-aaa2-e2e2ac076886\"\n                },\n                \"configStatus\": {\n                    \"href\": \"https://10.7.244.19:8443/api/v2/configurations/2b543eac-972c-479b-8619-3941d8bcd865/configStatus\"\n                },\n                \"timezones\": {\n                    \"href\": \"https://10.7.244.19:8443/api/v2/timezones\"\n                }\n            }\n        }\n  \n "
         },
         "url": "https://{{ip}}:8443/api/v2/configurations/{{configId}}",
         "description": "GET configurations By id"
