@@ -217,7 +217,7 @@
     },
     {
       "_postman_id": "cb8e78ea-288c-d56c-478f-1429f34ee50f",
-      "name": "Get Eulas",
+      "name": "Get /timezones",
       "event": [
         {
           "listen": "test",
