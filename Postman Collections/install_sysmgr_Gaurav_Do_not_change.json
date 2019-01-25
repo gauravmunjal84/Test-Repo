@@ -2281,7 +2281,7 @@
     },
     {
       "_postman_id": "2e7fdde0-a30a-0756-d7cf-56f6dd134816",
-      "name": "GET nodes post configuration",
+      "name": "GET",
       "event": [
         {
           "listen": "prerequest",
