@@ -2286,38 +2286,43 @@
         {
           "listen": "prerequest",
           "script": {
-            "type": "text/javascript",
+            "id": "baf0dc30-4397-43b6-a3a8-cb4f82c5545e",
             "exec": [
               "",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "test",
           "script": {
-            "type": "text/javascript",
+            "id": "a2d09af6-27b8-4786-a609-32230330b19c",
             "exec": [
               "var data = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"nodeId\", data.content[0].id);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "GET",
+        "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
+            "key": "Authorization",
             "value": "{{token}}"
           }
         ],
-        "body": {},
-        "url": "https://{{ip}}:8443/api/v2/licenses"
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\r\n      \"host\" : \"192.200.88.10\",\r\n\r\n       \"username\" : \"administrator@vsphere.local\",\r\n\r\n       \"password\" :  \"Abcd123.\" \r\n}"
+        },
+        "url": "https://{{ip}}:8443/api/v2/vCenterCredentials"
       },
       "response": [
         {
