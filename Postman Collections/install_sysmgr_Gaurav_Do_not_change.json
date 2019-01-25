@@ -1561,7 +1561,7 @@
     },
     {
       "_postman_id": "484b44a5-feb2-c1c0-6080-19fc9314afa1",
-      "name": "Get upgradePackages",
+      "name": "Get whitelists",
       "event": [
         {
           "listen": "test",
@@ -1614,11 +1614,12 @@
         {
           "listen": "test",
           "script": {
-            "type": "text/javascript",
+            "id": "33a918f8-86ca-4efe-8963-7bbc3fd8cbcd",
             "exec": [
               "var data = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"packageId\", data.content[0].id);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -1635,23 +1636,10 @@
           }
         ],
         "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "size",
-              "value": "original",
-              "type": "text",
-              "warning": ""
-            },
-            {
-              "key": "file",
-              "value": null,
-              "type": "file",
-              "warning": ""
-            }
-          ]
+          "mode": "raw",
+          "raw": ""
         },
-        "url": "https://{{ip}}:8443/api/v2/upgradePackages/{{packageId}}"
+        "url": "https://{{ip}}:8443/api/v2/inventorySources"
       },
       "response": []
     },
