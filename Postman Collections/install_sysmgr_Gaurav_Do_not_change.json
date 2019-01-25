@@ -1734,6 +1734,50 @@
       "response": []
     },
     {
+      "_postman_id": "441ad3b2-1d92-46e8-9d4b-d9384a271530",
+      "name": "PUT passphrase from VCM to validate",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bfceaae0-69e5-4955-b094-5432d1054480",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"operation\": \"change_pphrase\",\r\n\t\"pphrase_request\": {\r\n\t\t\"old_pphrase\": \"?Strong1?\",\r\n\t\t\"new_pphrase\": \"Changeme@1\"\r\n\t}\r\n} "
+        },
+        "url": "https://{{ip}}:8443/rest/v2.0/dd-systems/0/systems",
+        "description": "GET network configurations"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "476efe62-2dc2-fb58-1c66-5cfa573cfd5c",
       "name": "Login - Default",
       "event": [
