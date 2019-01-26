@@ -1814,7 +1814,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n\r\n      \"host\" : \"192.200.88.10\",\r\n\r\n       \"username\" : \"administrator@vsphere.local\",\r\n\r\n       \"password\" :  \"Abcd123.\" \r\n}"
+          "raw": "\r\n{\r\n  \"operation\": \"set\",\r\n  \"hostname\": \"192.200.88.10\",\r\n  \"user\": \"administrator@vsphere.local\",\r\n  \"password\": \"Abcd123.\"\r\n}"
         },
         "url": "https://{{ip}}:8443/rest/v1.0/dd-systems/0/vi/settings"
       },
