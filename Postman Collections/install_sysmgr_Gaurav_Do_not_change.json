@@ -2705,6 +2705,50 @@
         "description": "GET configurations"
       },
       "response": []
+    },
+    {
+      "_postman_id": "94024912-d632-45f0-b621-b4601dac52f1",
+      "name": "Get vCenter Details fom VCM Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bfceaae0-69e5-4955-b094-5432d1054480",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "https://{{ip}}:8443/rest/v1.0/dd-systems/0/vi/settings",
+        "description": "GET network configurations"
+      },
+      "response": []
     }
   ]
 }
