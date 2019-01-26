@@ -2661,6 +2661,50 @@
         "description": "GET configurations"
       },
       "response": []
+    },
+    {
+      "_postman_id": "84957fac-8e98-45ba-80a1-b3bc82fe876a",
+      "name": "Get passphrase from VCM to validate Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "bfceaae0-69e5-4955-b094-5432d1054480",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"configId\", data.content[0].id);",
+              "postman.setEnvironmentVariable(\"adminId\", data.content[0].osUsers[1].id);",
+              "postman.setEnvironmentVariable(\"rootId\", data.content[0].osUsers[0].id);",
+              "postman.setEnvironmentVariable(\"supportId\", data.content[0].osUsers[2].id);",
+              "postman.setEnvironmentVariable(\"lockId\", data.content[0].lockbox.id);",
+              "postman.setEnvironmentVariable(\"nodeId\", data.content[0].nodeId);",
+              "postman.setEnvironmentVariable(\"networkId\", data.content[0].networks[0].id);",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "https://{{ip}}:8443/rest/v2.0/dd-systems/0/systems",
+        "description": "GET network configurations"
+      },
+      "response": []
     }
   ]
 }
