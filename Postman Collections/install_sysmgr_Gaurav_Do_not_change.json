@@ -1779,7 +1779,7 @@
     },
     {
       "_postman_id": "94024912-d632-45f0-b621-b4601dac52f1",
-      "name": "Get vCenter Details fom VCM Copy",
+      "name": "PUT vCenter Details fom VCM Copy",
       "event": [
         {
           "listen": "test",
@@ -1816,8 +1816,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "https://{{ip}}:8443/rest/v1.0/dd-systems/0/vi/settings",
-        "description": "GET network configurations"
+        "url": "https://{{ip}}:8443/rest/v1.0/dd-systems/0/vi/settings"
       },
       "response": []
     },
