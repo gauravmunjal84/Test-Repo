@@ -1735,7 +1735,7 @@
     },
     {
       "_postman_id": "84957fac-8e98-45ba-80a1-b3bc82fe876a",
-      "name": "Get passphrase from VCM to validate Copy",
+      "name": "Get vCenter Details fom VCM",
       "event": [
         {
           "listen": "test",
@@ -1772,7 +1772,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "https://{{ip}}:8443/rest/v2.0/dd-systems/0/systems",
+        "url": "https://{{ip}}:8443/rest/v1.0/dd-systems/0/vi/settings",
         "description": "GET network configurations"
       },
       "response": []
