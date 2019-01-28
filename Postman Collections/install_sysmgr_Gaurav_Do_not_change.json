@@ -1086,7 +1086,7 @@
     },
     {
       "_postman_id": "efd6a8c5-a4a1-f19c-a652-25b4991aef8b",
-      "name": "Get /node/{id}/configurations/{id} - After PUT",
+      "name": "PUT cluster deploy VCM",
       "event": [
         {
           "listen": "test",
