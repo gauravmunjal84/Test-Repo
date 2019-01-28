@@ -1115,13 +1115,13 @@
             "value": "application/json"
           },
           {
-            "key": "X-Auth-Token",
-            "value": "{{token}}"
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
           }
         ],
         "body": {
           "mode": "raw",
-          "raw": ""
+          "raw": "{ \"system_modify\":\r\n\t{\r\n\t\t\"operation\":\"deploy\"\r\n\t\t\r\n\t}\r\n}"
         },
         "url": "https://{{ip}}:8443/rest/v2.0/dd-systems/0/systems",
         "description": "GET network configurations in detail"
