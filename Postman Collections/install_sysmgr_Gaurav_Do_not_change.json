@@ -1645,7 +1645,7 @@
     },
     {
       "_postman_id": "5a83ecfa-e307-5329-25a0-1d4838e1765e",
-      "name": "GET Integrated License",
+      "name": "GET passphrase from VCM",
       "request": {
         "method": "GET",
         "header": [
