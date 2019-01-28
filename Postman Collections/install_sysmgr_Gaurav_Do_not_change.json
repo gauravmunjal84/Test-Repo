@@ -1091,7 +1091,7 @@
         {
           "listen": "test",
           "script": {
-            "type": "text/javascript",
+            "id": "9e988d85-8521-4cd2-bb54-c1c2883ab7cd",
             "exec": [
               "var data = JSON.parse(responseBody);\r",
               "tests[\"FQDN\"] = data.network.fqdn === \"lava24421.op.local\";\r",
@@ -1102,12 +1102,13 @@
               "tests[\"timeZone\"] = data.timeZone === \"America/Denver\";\r",
               "tests[\"userName\"] = data.userName === \"root\";\r",
               "tests[\"state\"] = data.state === \"COMPLETED\";"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "GET",
+        "method": "PUT",
         "header": [
           {
             "key": "Content-Type",
@@ -1118,8 +1119,11 @@
             "value": "{{token}}"
           }
         ],
-        "body": {},
-        "url": "https://{{ip}}:8443/api/v1/system/nodes/{{nodeId}}/configurations/{{configId}}",
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "https://{{ip}}:8443/rest/v2.0/dd-systems/0/systems",
         "description": "GET network configurations in detail"
       },
       "response": []
