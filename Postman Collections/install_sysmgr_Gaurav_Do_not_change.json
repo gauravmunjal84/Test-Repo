@@ -1651,7 +1651,7 @@
         "header": [
           {
             "key": "Authorization",
-            "value": "{{token}}"
+            "value": "Bearer {{token}}"
           },
           {
             "key": "Content-Type",
@@ -1662,7 +1662,7 @@
           "mode": "raw",
           "raw": "{\n    \"id\": \"5b90d508-c342-458b-8a3a-de13d8853aaa\",\n    \"name\": \"Dell EMC eCDM - Major Release\",\n    \"packageVersion\": \"3.0.0-16\",\n    \"type\": \"RELEASE\",\n    \"madeAvailable\": \"2018-12-05T01:11:56.000+0000\",\n    \"description\": \"This package upgrades all the components\",\n    \"rebootRequired\": false,\n    \"sizeInBytes\": 4073374892,\n    \"dateInstalled\": \"2018-12-06T19:15:49.607+0000\",\n    \"state\": \"INSTALLED\",\n    \"fileName\": \"ecdm-upgrade-3.0.0-16.pkg\",\n    \"subComponentDetails\": [\n        {\n            \"componentName\": \"eCDM\",\n            \"subComponentUpgradeState\": \"UPGRADED\",\n            \"errorMessage\": null,\n            \"upgradeVersion\": \"3.0.0-16\"\n        },\n        {\n            \"componentName\": \"vProxy\",\n            \"subComponentUpgradeState\": \"UPGRADED\",\n            \"errorMessage\": null,\n            \"upgradeVersion\": \"3.1.0-9\"\n        }\n    ],\n    \"errorMessage\": \"\",\n    \"certificateDetailsMap\": {\n        \"notAfter\": \"2020-11-13T18:40:58.000+0000\",\n        \"serialNumber\": \"cfaba488b3b34a5c0000000055667d65\",\n        \"sha256\": \"78:14:65:93:0C:1B:05:F9:4A:DF:7F:90:61:2F:FE:29:AE:A3:2A:CE:C8:62:16:81:83:6C:51:6E:91:F4:F5:39\",\n        \"issuerDN\": \"CN=Entrust Code Signing CA - OVCS1,OU=(c) 2015 Entrust\\\\, Inc. - for authorized use only,OU=See www.entrust.net/legal-terms,O=Entrust\\\\, Inc.,C=US\",\n        \"publicKeyModulus\": \"28960436902272994990842327932793501079190030541382043284118832665312776269446498640419791240454180242586486085708937734083403079002675942200659672006922211955640645340519418577217605521853665489538005758686672003656588145476218479453412730875755080172327057354731921316729121658964135024802322078500693787277083123358314858038960555352152289672471625254193779104016053331569238519722568716038933287609754732628187721307712701984454977189333349182725470926457368220839164994041565288508095067640843719732336878602089454538914456233996689333685080643187924928683921102207259893124969451536291317395148153287269036808351\",\n        \"publicKey\": \"RSA public key\",\n        \"version\": \"3\",\n        \"notBefore\": \"2018-11-27T18:11:01.000+0000\",\n        \"sha1\": \"EE:EC:4A:1C:E5:59:0D:39:46:0D:B4:4D:CB:2B:A1:EB:1C:4D:A7:36\",\n        \"publicKeySize\": \"2048\",\n        \"signatureAlgorithmName\": \"SHA256withRSA\",\n        \"signatureAlgorithmOID\": \"1.2.840.113549.1.1.11\",\n        \"publicKeyExponent\": \"65537\",\n        \"subjectDN\": \"CN=Dell Technologies Inc.,OU=Dell EMC eCDM,O=Dell Technologies Inc.,L=Round Rock,ST=Texas,C=US\",\n        \"md5\": \"A8:CA:D7:A2:87:CE:46:7D:54:22:7E:F6:48:00:D7:F7\"\n    },\n    \"certificateTrustedByUser\": false,\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://10.7.253.181:8443/api/v2/upgradePackages/5b90d508-c342-458b-8a3a-de13d8853aaa\"\n        },\n        \"node\": {\n            \"href\": \"https://10.7.253.181:8443/api/v2/nodes/e3839eb0-8add-416e-9623-471a710ab6c3\"\n        }\n    }\n}"
         },
-        "url": "https://{{ip}}:8443/api/v2/integratedLicense"
+        "url": "https://{{ip}}:8443/rest/v1.0/dd-systems/0/vi/settings"
       },
       "response": []
     },
