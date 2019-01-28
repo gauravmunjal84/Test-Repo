@@ -1685,7 +1685,7 @@
           "mode": "raw",
           "raw": "{\r\n\"activeTierCapacityInBytes\": 64000000000000,\r\n\"cloudTierCapacityInBytes\": 64000000000000\r\n} "
         },
-        "url": "https://{{ip}}:8443/api/v2/integratedLicenses"
+        "url": "https://{{ip}}:8443/api/v2/integratedLicense"
       },
       "response": []
     },
