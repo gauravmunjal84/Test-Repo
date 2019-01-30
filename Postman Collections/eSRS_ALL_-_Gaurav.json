@@ -643,8 +643,11 @@
                 "value": "application/json"
               }
             ],
-            "body": {},
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageVersion",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD1018DK5N/UpgradePackageVersion",
             "description": "GET dataitem by name with serial number of product"
           },
           "response": []
