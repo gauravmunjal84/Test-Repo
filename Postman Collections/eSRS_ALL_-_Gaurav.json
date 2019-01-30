@@ -666,7 +666,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"value\":\"3.0.0-11\"\r\n}"
+              "raw": "{\r\n  \"value\":\"4.0.0-3\"\r\n}"
             },
             "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD1018DK5N/UpgradeSoftwareVersion",
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
