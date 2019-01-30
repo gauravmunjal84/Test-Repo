@@ -647,7 +647,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD1018DK5N/UpgradePackageVersion",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD1018DK5N/UpgradeSoftwareVersion",
             "description": "GET dataitem by name with serial number of product"
           },
           "response": []
@@ -820,7 +820,7 @@
               "mode": "raw",
               "raw": "{\r\n  \"value\":\"EMC eCDM - Major Release\"\r\n}"
             },
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradePackageName",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD1018DK5N/UpgradePackageName",
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
           },
           "response": []
@@ -842,9 +842,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"value\":\"This package will upgrade all the skyline components\"\r\n}"
+              "raw": "{\r\n  \"value\":\"This package will upgrade all the power protect components\"\r\n}"
             },
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD0517F909/UpgradePackageDescription",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD1018DK5N/UpgradePackageDescription",
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
           },
           "response": []
