@@ -423,21 +423,23 @@
             {
               "listen": "prerequest",
               "script": {
-                "type": "text/javascript",
+                "id": "ebf8f028-2f14-4264-b8d8-06ac35f51277",
                 "exec": [
                   "",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
+                "id": "a31fe098-0f1f-4f29-87a4-8ead0728d2ce",
                 "exec": [
                   "var data = JSON.parse(responseBody);",
                   "postman.setEnvironmentVariable(\"deviceId\", data.content[0].id);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -449,15 +451,14 @@
                 "value": "application/json"
               },
               {
-                "key": "X-Auth-Token",
+                "key": "Authorization",
                 "value": "{{token}}"
-              },
-              {
-                "key": "xbrs_tenant",
-                "value": "*"
               }
             ],
-            "body": {},
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": "https://{{ip}}:8443/api/v2/remoteServicesGateway",
             "description": "This request will return existing license; blank response if no license"
           },
@@ -667,7 +668,7 @@
               "mode": "raw",
               "raw": "{\r\n  \"value\":\"3.0.0-11\"\r\n}"
             },
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMKT94PDTJ0X5/UpgradeSoftwareVersion",
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD1018DK5N/UpgradeSoftwareVersion",
             "description": "This API will set the value of the dataitem for particulat serial number of the product. This will be done by support guys in the backend."
           },
           "response": []
@@ -908,8 +909,11 @@
                 "value": "application/json"
               }
             ],
-            "body": {},
-            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD0517F909/UpgradeSoftwareVersion",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "https://mftDataItemSvc-tst-sso.cfcq.isus.emc.com/mft/dataitem/v1/data/products/EMCeCDM/ELMECD1018DK5N/UpgradeSoftwareVersion",
             "description": "GET dataitem by name with serial number of product"
           },
           "response": []
